@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Competitor - Compono Intelligence Hub</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo-horizontal-color.png" alt="Compono">
+      <span class="brand-title">Competitor Intelligence Hub</span>
+    </div>
+    <div class="last-updated">Last updated: <strong id="lastUpdated"></strong></div>
+  </div>
+</header>
+
+<main class="wrap" id="page"></main>
+
+<footer class="site-footer">
+  <div class="wrap">Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.</div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById("lastUpdated").textContent = LAST_UPDATED;
+
+  const id = new URLSearchParams(location.search).get("id");
+  const c = COMPETITORS.find(x => x.id === id);
+  const page = document.getElementById("page");
+
+  if (!c) {
+    page.innerHTML = `<p style="padding:40px 0">Competitor not found. <a href="index.html">Back to the hub</a>.</p>`;
+  } else {
+    document.title = c.name + " - Compono Intelligence Hub";
+    const cat = CATEGORIES[c.category];
+
+    const assessSection = (c.category === "hire" && c.assessment) ? `
+      <div class="section">
+        <h2>Assessment capability</h2>
+        <div class="panel">
+          <span class="pill ${c.assessment.level === "Native" ? "assess-native" : c.assessment.level === "Basic" ? "assess-basic" : "assess-none"}">${c.assessment.level}</span>
+          <p style="margin-top:12px; font-size:14px;">${c.assessment.detail}</p>
+        </div>
+      </div>` : "";
+
+    const recent = c.recentActivity && c.recentActivity.length
+      ? c.recentActivity.map(a => `<div class="activity-item"><div class="date">${a.date}</div>${a.note}</div>`).join("")
+      : `<p class="recent-empty">No entries yet - run the monthly refresh prompt to populate this section with the latest product releases, brand messaging changes and partnerships.</p>`;
+
+    page.innerHTML = `
+      <a class="back-link" href="index.html">← Back to all competitors</a>
+
+      <div class="comp-header">
+        <div class="eyebrow">${cat.label} competitor</div>
+        <h1>${c.name}</h1>
+        <p style="color:var(--muted); max-width:760px;">${c.summary}</p>
+        <div class="card-meta" style="margin-top:14px;">
+          <span class="pill">${c.targetMarket}</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Company snapshot</h2>
+        <div class="panel">
+          <div class="snapshot-grid">
+            <div class="snap-item"><div class="label">HQ</div><div class="value">${c.snapshot.hq}</div></div>
+            <div class="snap-item"><div class="label">Founded</div><div class="value">${c.snapshot.founded}</div></div>
+            <div class="snap-item"><div class="label">Funding</div><div class="value">${c.snapshot.funding}</div></div>
+            <div class="snap-item"><div class="label">Headcount</div><div class="value">${c.snapshot.headcount}</div></div>
+            <div class="snap-item"><div class="label">ANZ presence</div><div class="value">${c.snapshot.anz}</div></div>
+          </div>
+        </div>
+      </div>
+
+      ${assessSection}
+
+      <div class="section">
+        <h2>Pricing model</h2>
+        <div class="panel"><p style="font-size:14.5px;">${c.pricing}</p></div>
+      </div>
+
+      <div class="section">
+        <h2>Key features</h2>
+        <div class="panel">
+          <ul class="clean">${c.features.map(f => `<li>${f}</li>`).join("")}</ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>FAB - theirs vs ours</h2>
+        <div class="fab-grid">
+          <div class="panel fab-col theirs">
+            <h3>${c.name}'s pitch</h3>
+            <div class="fab-block"><div class="fab-label">Features</div><p>${c.fabTheirs.features}</p></div>
+            <div class="fab-block"><div class="fab-label">Advantages</div><p>${c.fabTheirs.advantages}</p></div>
+            <div class="fab-block"><div class="fab-label">Benefits</div><p>${c.fabTheirs.benefits}</p></div>
+          </div>
+          <div class="panel fab-col ours">
+            <h3>Compono in this matchup</h3>
+            <div class="fab-block"><div class="fab-label">Features</div><p>${c.fabOurs.features}</p></div>
+            <div class="fab-block"><div class="fab-label">Advantages</div><p>${c.fabOurs.advantages}</p></div>
+            <div class="fab-block"><div class="fab-label">Benefits</div><p>${c.fabOurs.benefits}</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="two-col">
+          <div>
+            <h2>How Compono wins</h2>
+            <div class="panel"><ul class="clean wins">${c.wins.map(w => `<li>${w}</li>`).join("")}</ul></div>
+          </div>
+          <div>
+            <h2>How Compono loses</h2>
+            <div class="panel"><ul class="clean losses">${c.losses.map(l => `<li>${l}</li>`).join("")}</ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="battlecard">
+          <h2>Battle card seed</h2>
+          <p>${c.battlecard}</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Social / brand signal</h2>
+        <div class="panel"><p style="font-size:14px;">${c.social}</p></div>
+      </div>
+
+      <div class="section">
+        <h2>Recent activity</h2>
+        <div class="panel">${recent}</div>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>
