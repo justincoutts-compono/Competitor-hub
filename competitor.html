@@ -92,6 +92,15 @@
       </div>
 
       <div class="section">
+        <h2>Key integrations</h2>
+        <div class="panel">
+          ${c.integrations && c.integrations.length
+            ? `<ul class="clean">${c.integrations.map(i => `<li>${i}</li>`).join("")}</ul>`
+            : `<p class="recent-empty">No integrations listed yet - add them on the next refresh.</p>`}
+        </div>
+      </div>
+
+      <div class="section">
         <h2>FAB - theirs vs ours</h2>
         <div class="fab-grid">
           <div class="panel fab-col theirs">
