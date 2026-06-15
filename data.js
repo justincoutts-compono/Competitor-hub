@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "13 June 2026 (added 53 competitors across Hire, Engage, Develop and HRIS; added Key integrations section; all 91 competitors fact-checked)";
+const LAST_UPDATED = "15 June 2026 (added Feature comparison drop-down tables for all 20 Hire competitors - 1-v-1 vs Compono)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
