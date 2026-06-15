@@ -118,6 +118,41 @@
         </div>
       </div>
 
+
+      ${c.fabComparison ? `
+      <div class="section">
+        <details class="fab-compare">
+          <summary>
+            <span class="fab-compare-title">Feature comparison - ${c.name} vs Compono</span>
+            <span class="fab-compare-hint">Click to expand</span>
+          </summary>
+          <div class="fab-compare-body">
+            <div class="fab-legend">
+              <span><i class="mk yes">&#10003;</i> Native</span>
+              <span><i class="mk partial">&#9680;</i> Partial / via integration</span>
+              <span><i class="mk no">&#10007;</i> None</span>
+            </div>
+            ${c.fabComparison.groups.map(g => `
+              <div class="fab-compare-group">
+                <div class="fab-compare-grouptitle">${g.title}</div>
+                <table class="fab-compare-table">
+                  <thead>
+                    <tr><th class="cap">Capability</th><th class="vendor">${c.name}</th><th class="vendor us">Compono</th></tr>
+                  </thead>
+                  <tbody>
+                    ${g.rows.map(r => `
+                      <tr>
+                        <td class="cap">${r.label}</td>
+                        <td class="mark"><i class="mk ${r.them}">${r.them === "yes" ? "&#10003;" : r.them === "partial" ? "&#9680;" : "&#10007;"}</i></td>
+                        <td class="mark"><i class="mk ${r.us}">${r.us === "yes" ? "&#10003;" : r.us === "partial" ? "&#9680;" : "&#10007;"}</i></td>
+                      </tr>`).join("")}
+                  </tbody>
+                </table>
+              </div>`).join("")}
+          </div>
+        </details>
+      </div>` : ""}
+
       <div class="section">
         <div class="two-col">
           <div>
