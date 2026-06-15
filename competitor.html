@@ -136,6 +136,7 @@
               <div class="fab-compare-group">
                 <div class="fab-compare-grouptitle">${g.title}</div>
                 <table class="fab-compare-table">
+                  <colgroup><col class="col-cap"><col class="col-them"><col class="col-us"></colgroup>
                   <thead>
                     <tr><th class="cap">Capability</th><th class="vendor">${c.name}</th><th class="vendor us">Compono</th></tr>
                   </thead>
@@ -144,7 +145,7 @@
                       <tr>
                         <td class="cap">${r.label}</td>
                         <td class="mark"><i class="mk ${r.them}">${r.them === "yes" ? "&#10003;" : r.them === "partial" ? "&#9680;" : "&#10007;"}</i></td>
-                        <td class="mark"><i class="mk ${r.us}">${r.us === "yes" ? "&#10003;" : r.us === "partial" ? "&#9680;" : "&#10007;"}</i></td>
+                        <td class="mark us"><i class="mk ${r.us}">${r.us === "yes" ? "&#10003;" : r.us === "partial" ? "&#9680;" : "&#10007;"}</i></td>
                       </tr>`).join("")}
                   </tbody>
                 </table>
@@ -185,5 +186,6 @@
     `;
   }
 </script>
+  <script src="enhance.js"></script>
 </body>
 </html>
