@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "15 June 2026 (Hire feature-comparison tables redesigned and accuracy-swept; reference-checking marks corrected to integration-based across all ATS competitors)";
+const LAST_UPDATED = "16 June 2026 (added Engage feature-comparison tables for all 26 competitors - engagement platforms and assessment vendors, 1-v-1 vs Compono)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
@@ -555,6 +555,12 @@ const COMPETITORS = [
   wins: ["Measures sentiment, not work style - they know people are unhappy, not why the team composition makes them unhappy", "Survey fatigue is real and CFOs increasingly question survey ROI", "Personality/behavioural layer is thin vs our validated work personality model", "Premium pricing at scale"],
   losses: ["Massive brand gravity - often the default shortlist name", "Benchmark dataset depth is genuinely unmatched", "Strong performance management module if that is the bundled need", "Local Melbourne hero story"],
   battlecard: "Never dismiss Culture Amp - prospects respect them and so should we. The wedge is the difference between measuring feelings and explaining work. Culture Amp tells you engagement dropped 6 points; it cannot tell you that the team's composition has three competing work styles and no coordinator. Compono Engage explains how people actually work together - which is what you change. Surveys describe the weather; we explain the climate system. Both/and framing works: some clients run both.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "yes", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Very strong - one of the loudest HR tech brands globally. Verify on refresh.",
   recentActivity: []
 }
@@ -574,6 +580,12 @@ const COMPETITORS = [
   wins: ["Sentiment trends without behavioural explanation - same gap as all survey tools", "Only compelling inside a Workday estate - irrelevant lock-in for most ANZ mid-market", "Enterprise pricing and motion"],
   losses: ["If the prospect runs Workday, the bundle is hard to dislodge", "Strong continuous-listening analytics engine"],
   battlecard: "Peakon only really appears when Workday is already in the building. If so, do not fight the bundle on survey features - reframe entirely: Peakon listens, Compono explains. Their analytics tell you scores moved; our work personality data tells you the mechanism inside the team that moved them. That insight also feeds hiring and development decisions - something a listening tool structurally cannot do.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "partial", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Folded into Workday corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -593,6 +605,12 @@ const COMPETITORS = [
   wins: ["Process-rich, insight-poor - rituals (reviews, 1:1s) without behavioural understanding", "Module pricing stacks up fast", "HRIS expansion dilutes focus and signals identity drift", "US-centric playbooks for ANZ buyers"],
   losses: ["Slick product experience managers genuinely like", "Strong if the entry pain is performance process, not culture insight", "Loud content/brand machine"],
   battlecard: "Lattice systematises management rituals - reviews, goals, 1:1s. Useful plumbing. But a 1:1 template does not tell a manager that their direct report's work style needs autonomy while the team runs on tight coordination. Compono provides the insight layer those rituals are missing. If the prospect's pain is 'our reviews are chaos', Lattice is credible - probe whether the real pain is 'we do not understand our people', which rituals never fix.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "yes", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Very active content brand. Verify on refresh.",
   recentActivity: []
 }
@@ -612,6 +630,12 @@ const COMPETITORS = [
   wins: ["Manager training without people data - generic skills applied blindly", "Check-in fatigue mirrors survey fatigue", "Light analytical depth"],
   losses: ["Manager-enablement angle resonates emotionally with HR buyers", "Cheaper entry point"],
   battlecard: "15Five's bet is that better managers fix engagement - half right. The missing half: a manager cannot adapt to what they cannot see. Compono shows managers exactly how each team member works - then management improvement has a target. Position as the data layer their coaching philosophy needs.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "yes", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Active, manager-focused content. Verify on refresh.",
   recentActivity: []
 }
@@ -631,6 +655,12 @@ const COMPETITORS = [
   wins: ["The ultimate measurement tool with the same structural gap - no behavioural work-style model", "Enterprise cost and complexity absurd for mid-market", "Needs analyst resource to extract value"],
   losses: ["Unmatched survey methodology credibility", "Enterprise procurement preference for consolidated XM platforms"],
   battlecard: "Qualtrics appearing in a mid-market deal usually signals an over-scoped RFP. The argument is not survey sophistication - concede it. The argument is that sophistication of measurement cannot fix poverty of explanation. A perfect measure of dissatisfaction still does not say which team dynamics caused it. Compono does, at a price and footprint a mid-market team can actually run.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "partial", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -650,6 +680,12 @@ const COMPETITORS = [
   wins: ["Breadth-over-depth modular play with no behavioural science core", "Minimal ANZ presence, EU-centric support hours", "Same survey-tool explanatory gap"],
   losses: ["Attractive consolidation economics", "Solid product polish"],
   battlecard: "Leapsome sells consolidation - fewer tools, one bill. Fair. But consolidating processes that all run on the same shallow sentiment data does not improve any decision. Ask what the platform actually knows about how their people work. Also probe ANZ support reality for a Berlin-based vendor.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "yes", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Moderate, EU-focused. Verify on refresh.",
   recentActivity: []
 }
@@ -669,6 +705,12 @@ const COMPETITORS = [
   wins: ["Toy-depth analytics - genuinely lightweight", "No behavioural model at all", "SMB tool stretched thin in mid-market"],
   losses: ["Very cheap and frictionless", "Fine for tiny teams that just want a mood check"],
   battlecard: "Rarely a serious head-to-head - Officevibe is a mood thermometer. If a prospect compares us, the qualification question is whether they want to monitor sentiment or change outcomes. Thermometers do not treat fevers.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Light-moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -688,6 +730,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment requiring consultants and ATS integrations to be operational - cost and friction stack up", "4-factor model is simpler/older than modern validated frameworks", "Partner-channel quality varies wildly", "No ATS, no engagement platform, no LMS - data lives beside the work, not in it"],
   losses: ["Six decades of brand trust in assessment", "Consultant relationships create sticky accounts", "Deep assessment-only credibility if that is all the buyer wants"],
   battlecard: "PI validates behavioural science in hiring - excellent, the category sells itself. The wedge is operationalisation: PI gives you a report and a consultant; Compono gives you the insight inside the hiring, engagement and development workflow itself. Ask what PI costs all-in (platform + consultant + the ATS they still need + integration) vs one platform where the science is native. Heritage is not architecture.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Strong US content presence, partner-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -707,6 +755,12 @@ const COMPETITORS = [
   wins: ["AI-inference-from-text faces growing scrutiny vs direct validated measurement - defensibility argument is ours", "Screening-stage only; no engagement/development continuation", "Volume/frontline niche - weaker for professional roles"],
   losses: ["Outstanding candidate experience story and NPS data", "Strong ANZ enterprise logos in volume hiring", "Genuine automation value at extreme volume"],
   battlecard: "Sapia is impressive at the top of high-volume funnels - acknowledge it. Two wedges: first, method - inferring personality from chat text is contested science vs direct validated psychometric measurement, and HR leaders increasingly need AI decisions they can defend. Second, scope - Sapia's insight evaporates after screening; Compono's work personality data lives on through engagement and development. Measurement vs inference, lifecycle vs funnel.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "partial", us: "yes" }, { label: "Filter by team, location, demographic", them: "no", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "no", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Active ANZ presence, AI-ethics-led content. Verify on refresh.",
   recentActivity: []
 }
@@ -726,6 +780,12 @@ const COMPETITORS = [
   wins: ["Standalone tool tax - prospect still needs an ATS, integration, and process glue", "Generic tests scored against generic norms, not modelled against their team and culture", "Hire-moment only - no lifecycle continuation"],
   losses: ["Cheap unlimited-testing economics", "CCAT is a respected cognitive instrument", "Local presence via Alcami acquisition"],
   battlecard: "Criteria sells tests; Compono sells decisions. A test score against a national norm is trivia until it is modelled against the actual role and team - which is what our matching does natively, inside the workflow, without a second vendor and integration. If they want cognitive data points, fine. If they want to know who fits, that is us.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "no", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -745,6 +805,12 @@ const COMPETITORS = [
   wins: ["Consultant-mediated delivery = cost, latency and dependency", "Per-assessment economics punish scale", "Assessment reports beside the work vs insight inside the work", "Dated platform experience"],
   losses: ["Genuinely deep assessment instrument respected by practitioners", "Entrenched consultant relationships", "Strong in exec/leadership assessment niches"],
   battlecard: "Harrison's science is credible - the delivery model is the wedge. Reports plus consultants is the 2010 architecture; insight embedded in your hiring, engagement and development workflows is the current one. Ask what each assessment-plus-debrief actually costs at their hiring volume, then compare platform economics where the science is simply part of how work happens.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "partial", us: "yes" }, { label: "Custom / editable survey questions", them: "partial", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "partial", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Light, partner-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -764,6 +830,12 @@ const COMPETITORS = [
   wins: ["Measures sentiment, does not explain the underlying behavioural drivers", "Survey snapshots age - they capture a moment, not how people are built", "No work personality model linking engagement to hiring and development", "Strong on diagnosis-by-survey, silent on what to do with each individual"],
   losses: ["Genuinely validated survey methodology (Voice Project heritage)", "Strong ANZ benchmark data and public sector trust", "Established local incumbent with reference-checking cross-sell"],
   battlecard: "Xref Engage has real survey credibility in ANZ - do not dismiss the methodology. The wedge is measurement versus explanation. A survey tells you engagement dropped; it does not tell you why this team is wired the way it is or what to do about this person. Ask: 'When the score moves, does the tool explain the people behind it?' Compono adds work personality science that explains behaviour, so engagement data becomes action, not just a reading.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "partial", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Solid ANZ HR and public sector presence. Verify on refresh.",
   recentActivity: []
 }
@@ -783,6 +855,12 @@ const COMPETITORS = [
   wins: ["Sentiment measurement at scale, no behavioural explanation layer", "Survey data is a feeling snapshot, not a model of how people work", "Locked to Microsoft ecosystem value", "No link from engagement to hiring or development decisions"],
   losses: ["Microsoft distribution and bundling power", "Strong enterprise analytics and scale", "Native fit for Microsoft-committed organisations"],
   battlecard: "Viva Glint rides Microsoft's distribution - if the prospect is all-in on Microsoft, acknowledge the convenience. The wedge is the same as any survey tool: it measures feeling, it does not explain people. A real-time engagement score is the weather, not the climate. Ask: 'When engagement dips, does Glint tell you how these people are actually wired?' Compono explains behaviour and carries it across hiring and development - one connected people model, not a survey silo.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "partial", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Amplified by Microsoft Viva marketing. Verify on refresh.",
   recentActivity: []
 }
@@ -802,6 +880,12 @@ const COMPETITORS = [
   wins: ["Consulting-led and periodic - insight arrives as a study, not live in the workflow", "Measures engagement, does not explain individual work personality", "High cost and consultant dependency", "Data sits beside hiring and development, not inside them"],
   losses: ["Deep methodology and unmatched normative benchmark data", "Trusted board-level advisory brand", "Strong linkage to rewards and broader HR strategy"],
   battlecard: "WTW brings genuine methodological weight and board credibility - never belittle it. The wedge is operating model and scope: WTW measures engagement through periodic consultant-led studies, then leaves. It does not explain how each individual is wired or carry that into hiring and development. Ask the all-in question: 'What does the engagement work cost, and how often does the insight actually reach a manager's decision?' Compono is continuous people intelligence built into the platform.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "partial", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "partial", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Corporate advisory presence, thought-leadership led. Verify on refresh.",
   recentActivity: []
 }
@@ -821,6 +905,12 @@ const COMPETITORS = [
   wins: ["Survey and performance tracking measure outputs and feelings, not behavioural drivers", "No validated work personality model", "Benchmark-and-survey worldview we position against", "No link from engagement data to selection science"],
   losses: ["Strong Best Places to Work brand and benchmark data", "Genuinely connected engagement and performance suite", "Established US mid-market presence"],
   battlecard: "Quantum Workplace has a recognisable benchmark brand and a tidy engagement-plus-performance suite. The wedge is measurement versus explanation: surveys capture how people feel, performance modules capture what they did, but neither explains how they are wired. Ask: 'When you see the engagement and performance numbers, what tells you why these people behave the way they do?' Compono adds the work personality layer that turns measurement into understanding.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "partial", us: "no" }, { label: "Recognition / 1-on-1s", them: "yes", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Active US HR content, Best Places to Work amplification. Verify on refresh.",
   recentActivity: []
 }
@@ -840,6 +930,12 @@ const COMPETITORS = [
   wins: ["Listening and analytics measure sentiment richly, but still measure feeling not behavioural wiring", "No validated work personality matching model", "Enterprise cost and complexity", "Insight sits in an analytics layer, not in hiring and development workflows"],
   losses: ["Genuinely advanced listening and analytics capability", "Strong enterprise references and survey science", "Deep people-analytics expertise"],
   battlecard: "Perceptyx is a serious enterprise listening platform - the analytics are real. The wedge: listening, however sophisticated, is measurement. It tells you what people say and feel, not how they are wired or how to act on each individual. Ask: 'You can hear the whole workforce - but what explains the behaviour underneath the sentiment?' Compono adds work personality science and connects it to hiring and development, so listening leads to decisions.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "yes", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "yes", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Enterprise people-analytics thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -859,6 +955,12 @@ const COMPETITORS = [
   wins: ["Captures qualitative sentiment, does not model behavioural drivers", "Feedback is what people choose to say, not how they are wired", "No work personality or selection science", "Conversation-rich, decision-light at the individual level"],
   losses: ["Genuinely strong frontline and deskless reach", "Candid qualitative feedback traditional surveys miss", "Modern conversational approach with ANZ roots"],
   battlecard: "Joyous does something real - honest conversation from frontline workers surveys never reach. Respect that. The wedge is still measurement versus explanation, just qualitative: open feedback tells you what people say in the moment, not how they are built or what each person needs. Ask: 'The conversation is rich - but what explains the behaviour behind it?' Compono adds work personality science that turns voice into understanding tied to decisions.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "partial", us: "no" }, { label: "Action planning from results", them: "partial", us: "yes" }, { label: "External benchmark library", them: "no", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Modern ANZ engagement content. Verify on refresh.",
   recentActivity: []
 }
@@ -878,6 +980,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment - still needs an ATS, integration and often a consultant to operationalise", "Per-assessment credit model makes cost scale painfully", "Insight arrives as a report beside the workflow, not inside it", "Breadth and rigour, but no native hiring, engagement or development platform"],
   losses: ["Unmatched depth and validity of assessment catalogue", "Decades of psychometric credibility and global norms", "Trusted enterprise and consultant relationships"],
   battlecard: "SHL is the heavyweight of assessment science - never argue the validity, you will lose and you should not try. The wedge is operationalisation and cost. SHL gives you superb assessments that you then have to wire into an ATS, administer by credits, and often interpret with a consultant. Ask the all-in question: 'What does SHL cost once you add the platform, the credits, the ATS it plugs into, and the integration?' Compono builds validated work personality science into the workflow itself - the science is native, not a report you buy by the unit.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Strong global assessment thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -897,6 +1005,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment requiring ATS integration and often advisory to operationalise", "Cost stacks across assessments, platform and consulting", "Report-beside-the-workflow model, not embedded science", "No native engagement or development platform"],
   losses: ["Genuinely validated, modern adaptive assessments", "Aon brand weight and advisory backing", "Strong in graduate and high-volume hiring"],
   battlecard: "Aon Assessment pairs real psychometric science with consulting muscle - concede both. The wedge is the same as any assessment house: it is a test you must operationalise, integrate and often interpret with help. Ask: 'What is the all-in cost - assessments, platform, advisory, and the ATS it has to plug into?' Compono operationalises work personality science inside the hiring and development workflow, so the insight is native rather than purchased and bolted on.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Aon-amplified advisory presence. Verify on refresh.",
   recentActivity: []
 }
@@ -916,6 +1030,12 @@ const COMPETITORS = [
   wins: ["Requires certified consultant interpretation - cost and dependency per use", "Leadership-focused, not built for whole-workforce hiring at scale", "Report-and-coach model sits beside the workflow, not inside it", "No native ATS, engagement or development platform"],
   losses: ["Outstanding research pedigree and leadership credibility", "Derailment insight that few rivals match", "Sticky consultant and coaching relationships"],
   battlecard: "Hogan is genuinely revered in leadership assessment - the science is excellent and you should say so. The wedge is scope and operating model: Hogan is a consultant-interpreted report, usually for leaders, priced per use. It does not run your hiring or scale across the whole workforce. Ask: 'What does Hogan cost per person once you include certification and interpretation, and who gets assessed - everyone, or just the executives?' Compono operationalises validated work personality science for the whole workforce, inside the workflow.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "no", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "no", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Strong leadership-assessment and coaching presence. Verify on refresh.",
   recentActivity: []
 }
@@ -935,6 +1055,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment - still needs an ATS and integration to operationalise", "PPA is DISC-derived, an older model than modern validated frameworks", "Report-and-certify model sits beside the workflow", "No native hiring, engagement or development platform"],
   losses: ["Accessible and trusted in SMB and mid-market", "Long heritage and broad certification base", "Lower barrier to entry than enterprise assessment houses"],
   battlecard: "Thomas International made assessment accessible to smaller organisations - respect the reach and heritage. The wedge: it is still a standalone test you administer and then have to wire into your hiring process, built on a DISC-derived model. Ask: 'Once you have the Thomas report, what carries that insight into the actual hiring decision and beyond into development?' Compono operationalises work personality science inside the lifecycle, so you are not exporting reports into a separate workflow.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "no", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Established SMB-assessment presence. Verify on refresh.",
   recentActivity: []
 }
@@ -954,6 +1080,12 @@ const COMPETITORS = [
   wins: ["DiSC is a development and self-awareness tool, not validated for selection", "Workshop and facilitation model - insight lives in a session, not the workflow", "Per-profile and facilitation costs add up", "No hiring, engagement or development platform"],
   losses: ["Hugely popular and approachable for team development", "Strong facilitator network and brand familiarity", "Genuinely useful for communication and self-awareness"],
   battlecard: "Everything DiSC is loved for team workshops - and for that purpose it is fine, so do not attack it as bad science for what it is. The wedge is purpose: DiSC is built for self-awareness and development conversations, not for defensible selection decisions. If a prospect is using DiSC to inform hiring, that is a misuse worth gently flagging. Ask: 'Are you using DiSC to build awareness, or to make hiring decisions?' Compono is decision-grade work personality science operationalised across hire and develop.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "no", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "no", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "no", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Very broad training-market presence via Wiley. Verify on refresh.",
   recentActivity: []
 }
@@ -973,6 +1105,12 @@ const COMPETITORS = [
   wins: ["Strengths model is built for development and self-awareness, not validated selection", "Insight delivered via coaches and reports, not embedded in workflows", "Engagement (Q12) and strengths are separate from any hiring decision", "No ATS, no native development platform tying it to capability gaps"],
   losses: ["Enormous brand recognition and trust", "Genuinely strong engagement research heritage", "Large, loyal coach and practitioner community"],
   battlecard: "Gallup is a giant and CliftonStrengths has real affection behind it - acknowledge the brand and the engagement research. The wedge is purpose and operating model: strengths is a development tool delivered by coaches, not a validated selection system, and Q12 is a survey beside the workflow. Ask: 'Are you using Gallup to develop people or to make hiring and team decisions?' Compono is decision-grade work personality science operationalised across the lifecycle - and it respects strengths work rather than replacing the coaching.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "yes", us: "yes" }, { label: "Custom / editable survey questions", them: "yes", us: "no" }, { label: "eNPS (employee net promoter score)", them: "partial", us: "no" }, { label: "Sentiment and trend analytics", them: "yes", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "yes", us: "yes" }, { label: "Filter by team, location, demographic", them: "yes", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "yes", us: "yes" }, { label: "External benchmark library", them: "yes", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
+    ]
+  },
   social: "Massive global brand and content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -992,6 +1130,12 @@ const COMPETITORS = [
   wins: ["Primarily an assessment and matching layer - still relies on integrating with your ATS and HRIS", "Strong on hiring and mobility matching, lighter as a full engagement and development platform", "North America-centric with no ANZ presence or local support", "Matching science without the surrounding hire-engage-develop workflow we provide natively"],
   losses: ["Genuinely modern, validated matching science - philosophically close to us", "Strong internal mobility and reskilling use cases", "Credible product with good enterprise references"],
   battlecard: "Plum is the rival closest to our own worldview - treat it with respect, not dismissal, because overclaiming against a strong product backfires. We agree on the premise: match people on validated science, not gut feel. The wedge is architecture and locality. Plum is a matching and assessment layer you integrate into your ATS and HRIS; Compono builds the same scientific rigour natively into a connected hire, engage and develop platform, with real ANZ presence and support. Ask: 'Do you want a matching engine to integrate, or the workflow with the science already inside it?'",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Modern talent-assessment thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1011,6 +1155,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment requiring ATS integration and certification to operationalise", "PE-owned and consultant-led, with enterprise-level cost", "Report-beside-the-workflow model", "No native hiring, engagement or development platform"],
   losses: ["Excellent predictive validity (Wave heritage)", "WTW backing and enterprise credibility", "Strong research and matching reports"],
   battlecard: "Saville's Wave assessments have real predictive validity - never argue the science. The wedge is operating model and cost: it is a high-quality report you administer, certify and integrate, often with consultant support. Ask the all-in question: 'What does Saville cost once you add certification, the platform, and the ATS it plugs into?' Compono operationalises validated work personality science inside the workflow - the rigour is native, not a unit you purchase and wire in.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "partial", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Assessment thought leadership, WTW-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -1030,6 +1180,12 @@ const COMPETITORS = [
   wins: ["Standalone assessment - needs an ATS and integration to operationalise", "Job-fit model is solid but narrower and older than modern validated frameworks", "Report-and-certify delivery sits beside the workflow", "No native hiring, engagement or development platform"],
   losses: ["Long heritage and accessible job-fit approach", "Practical role-profiling methodology", "Trusted in SMB and mid-market hiring"],
   battlecard: "McQuaig has a sensible job-fit philosophy - profile the role, match the person - which we actually agree with. The wedge is operationalisation and breadth: it is a standalone assessment you administer, certify and integrate, focused on the hiring moment. Ask: 'Once the McQuaig report is done, what carries that into the decision and into development afterward?' Compono builds matching science into the whole lifecycle natively, so role-fit insight is not a separate step you have to wire in.",
+  fabComparison: {
+    groups: [
+      { title: "What an engagement platform does", rows: [{ label: "Engagement and pulse surveys", them: "no", us: "yes" }, { label: "Custom / editable survey questions", them: "no", us: "no" }, { label: "eNPS (employee net promoter score)", them: "no", us: "no" }, { label: "Sentiment and trend analytics", them: "partial", us: "yes" }, { label: "Open-text feedback and comment analysis", them: "no", us: "yes" }, { label: "Filter by team, location, demographic", them: "partial", us: "yes" }, { label: "Lifecycle surveys (onboarding, exit)", them: "no", us: "no" }, { label: "Action planning from results", them: "no", us: "yes" }, { label: "External benchmark library", them: "no", us: "no" }, { label: "Performance reviews and goals", them: "no", us: "no" }, { label: "Recognition / 1-on-1s", them: "no", us: "no" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
+    ]
+  },
   social: "Established SMB-hiring assessment presence. Verify on refresh.",
   recentActivity: []
 }
