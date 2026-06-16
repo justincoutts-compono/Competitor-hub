@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "16 June 2026 (added Engage feature-comparison tables for all 26 competitors - engagement platforms and assessment vendors, 1-v-1 vs Compono)";
+const LAST_UPDATED = "16 June 2026 (added Develop feature-comparison tables for all 21 competitors - LMS platforms, LXPs and content libraries, 1-v-1 vs Compono; all three categories now complete)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
@@ -1207,6 +1207,11 @@ const COMPETITORS = [
   wins: ["Content without diagnosis - no model of what each person actually needs", "Not an LMS - still needs a delivery platform", "Completion-tracking world view we explicitly position against"],
   losses: ["Unbeatable content breadth at the price", "Often complementary, not competitive - can sit inside a deal", "ANZ hero brand"],
   battlecard: "Go1 is frequently a partner-shaped object, not an enemy - they sell the haystack, we find the needle. If positioned competitively, the line is simple: 100,000 courses does not answer the only question that matters - what does THIS person need next? Compono Develop starts from capability gaps grounded in work personality and role data. Diagnosis before prescription.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Strong ANZ tech brand presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1226,6 +1231,11 @@ const COMPETITORS = [
   wins: ["Legendary implementation weight and admin burden", "Completion-and-compliance DNA - the exact world view we challenge", "Massively over-scoped for mid-market"],
   losses: ["Enterprise compliance depth genuinely unmatched", "Procurement-safe incumbent for 10,000+ seat estates"],
   battlecard: "Cornerstone in a mid-market deal means someone copied an enterprise RFP. Concede enterprise compliance scale, then contrast: their model tracks what people completed; ours diagnoses what people need. Ask how long their last LMS implementation took and what changed in actual capability afterwards.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1245,6 +1255,11 @@ const COMPETITORS = [
   wins: ["AI content generation without need diagnosis just produces more content faster", "External-training strength is irrelevant to internal capability deals", "Still fundamentally completion-paradigm"],
   losses: ["Strong product and AI story momentum", "If extended enterprise (customer training) is in scope, they are genuinely strong"],
   battlecard: "Docebo's AI makes content faster; it does not make development smarter. Faster production of generic learning is the haystack problem with a turbocharger. Compono Develop starts from the person - work personality, role, capability gap - and prescribes accordingly. If the deal includes customer/partner training, qualify carefully; that is their turf, not ours.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Active, AI-narrative-led. Verify on refresh.",
   recentActivity: []
 }
@@ -1264,6 +1279,11 @@ const COMPETITORS = [
   wins: ["Pure delivery container - zero intelligence about needs", "SMB depth ceiling hit fast", "No people data of any kind"],
   losses: ["Price and setup speed unbeatable at the low end", "Rarely competes in qualified mid-market deals"],
   battlecard: "If TalentLMS satisfies the prospect, their need is course hosting, not capability development - possibly a qualification signal. The honest contrast: TalentLMS stores training; Compono Develop directs it. Different jobs.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Moderate SMB content. Verify on refresh.",
   recentActivity: []
 }
@@ -1283,6 +1303,11 @@ const COMPETITORS = [
   wins: ["Compliance-content DNA equals completion paradigm", "Post-acquisition drift questions", "No people insight layer"],
   losses: ["Compliance library is genuinely convenient", "Established mid-market base"],
   battlecard: "Litmos sells audit safety. If that is the whole need, fine - but ask the prospect what changed in actual team capability after last year's completions hit 100%. Silence is our opening. Compono Develop is for organisations who want development to mean something.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Light-moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -1302,6 +1327,11 @@ const COMPETITORS = [
   wins: ["Delivery-focused, no diagnosis layer", "Multi-audience strength irrelevant in internal-only deals", "Completion paradigm"],
   losses: ["Genuine local presence (Sydney)", "Well-liked support", "Strong if customer training is in scope"],
   battlecard: "LearnUpon runs clean training operations - if the prospect's problem is operational (portals, audiences, admin), they are credible. If the problem is 'our people are not developing the capabilities we need', no portal architecture answers that. Compono Develop does - by knowing the person before prescribing the path.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -1321,6 +1351,11 @@ const COMPETITORS = [
   wins: ["Authoring philosophy without need diagnosis", "Depends heavily on internal authoring energy - fades after launch enthusiasm", "No people science layer"],
   losses: ["Compelling philosophy for L&D believers", "Good product experience"],
   battlecard: "360Learning answers 'who creates content' - internal experts, nice. It does not answer 'what does each person need' - which is the prior question. Compono Develop sequences it correctly: diagnose the capability gap from real people data, then source content (theirs, ours, anyone's). Philosophy second, diagnosis first.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Active, philosophy-led content. Verify on refresh.",
   recentActivity: []
 }
@@ -1340,6 +1375,11 @@ const COMPETITORS = [
   wins: ["Framework mapping and tracking, but no behavioural model of individual need", "Compliance and completion worldview we explicitly position against", "Learning delivery without work personality based diagnosis", "Often complementary - can sit beneath Compono's intelligence layer"],
   losses: ["Genuine ANZ and government credibility", "Strong capability-framework and compliance depth", "Trusted local incumbent with good support"],
   battlecard: "Acorn is a credible ANZ PLMS, especially in government - respect the local and compliance strength. The wedge is diagnosis versus delivery: Acorn maps learning to frameworks and tracks completion, but a framework is generic and completion is not capability. Ask: 'How does Acorn know what THIS person needs, beyond their role's framework?' Compono diagnoses individual capability gaps from work personality and role data - and can sit above an LMS rather than fighting it.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Solid ANZ government and L&D presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1359,6 +1399,11 @@ const COMPETITORS = [
   wins: ["Authoring and delivery strength, but no diagnosis of individual capability need", "Completion-tracking worldview we position against", "No work personality model linking development to role and fit", "Often complementary as a content and delivery layer"],
   losses: ["Genuinely strong, easy authoring", "Good value for ANZ SMBs", "Engaging content with low setup effort"],
   battlecard: "Tribal Habits is great at making training easy to build - a real strength, not a weakness. The wedge is diagnosis: easy authoring answers 'how do we make a course?' not 'what does this person actually need?' Ask: 'How do you decide what to build and who to assign it to?' Compono diagnoses capability gaps from work personality and role data, so the content - whoever authors it - is aimed at the right people. Often a partner, not a rival.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Active ANZ L&D content. Verify on refresh.",
   recentActivity: []
 }
@@ -1378,6 +1423,11 @@ const COMPETITORS = [
   wins: ["Authoring excellence, but no diagnosis of who needs what", "Content creation tool, not a capability intelligence layer", "Completion and content worldview we position against", "Frequently complementary rather than competitive"],
   losses: ["Excellent design and accessibility focus", "Strong, modern authoring experience", "ANZ-built with good local traction"],
   battlecard: "HowToo makes genuinely beautiful, accessible content - concede that fully. The wedge: design quality is about how content looks and works, not whether it targets the right need for the right person. Ask: 'Once the content is gorgeous, how do you know who actually needs it?' Compono diagnoses capability gaps from work personality and role data. HowToo and Compono can coexist - they make the content, we aim it.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "partial", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "no", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Design-led ANZ L&D presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1397,6 +1447,11 @@ const COMPETITORS = [
   wins: ["Engagement and content breadth, but no diagnosis of individual need", "Self-directed model risks activity without targeted outcomes", "Completion and consumption worldview we position against", "Skills features are tagging, not validated capability diagnosis"],
   losses: ["Genuinely engaging modern LXP experience", "Strong content marketplace and social learning", "Good enterprise references"],
   battlecard: "Thrive is a polished, engaging LXP - the experience is real. The wedge is engagement versus outcome: a self-directed library drives consumption, but consumption is not capability and engagement is not a closed gap. Ask: 'How do you know the learning people choose is the learning they need?' Compono diagnoses capability gaps from work personality and role data, so development is targeted - and Thrive's content can serve those targets.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Active L&D and LXP content. Verify on refresh.",
   recentActivity: []
 }
@@ -1416,6 +1471,11 @@ const COMPETITORS = [
   wins: ["Delivery platform, not a diagnosis of who needs what", "Flexibility comes with build, configuration and maintenance overhead", "Completion-tracking worldview we position against", "No behavioural model linking learning to capability need"],
   losses: ["Unbeatable flexibility and zero licence cost", "Massive global community and plugin ecosystem", "ANZ-born hero brand in education"],
   battlecard: "Moodle is an institution - free, flexible, ANZ-born, and you cannot beat its price or customisability, so do not try. The wedge is diagnosis versus delivery and the hidden cost of build-it-yourself. Moodle hosts whatever learning you configure; it has no view on what each person actually needs. Ask: 'Who decides what each person learns, and what is the real cost of building and maintaining it?' Compono diagnoses capability gaps and targets development - it can complement a Moodle delivery layer.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Huge global open-source community. Verify on refresh.",
   recentActivity: []
 }
@@ -1435,6 +1495,11 @@ const COMPETITORS = [
   wins: ["Delivery channel for the frontline, not a diagnosis of need", "Microlearning completion is not capability", "No work personality model or selection linkage", "Often complementary for deskless delivery"],
   losses: ["Genuinely strong frontline and deskless reach", "Excellent mobile, in-the-flow delivery", "Good fit for gig and high-turnover sectors"],
   battlecard: "eduMe solves a real problem - training people who never see a desk - and does it well. The wedge is delivery versus diagnosis: getting microlearning completed on a phone is valuable, but completion is not capability and a delivery channel has no view of individual need. Ask: 'How do you decide what each frontline worker needs to learn?' Compono diagnoses that from work personality and role - eduMe can be the delivery layer for the answer.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Frontline-learning content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1454,6 +1519,11 @@ const COMPETITORS = [
   wins: ["Authoring and delivery strength, no diagnosis of individual need", "Completion-tracking worldview we position against", "No work personality model linking learning to role and fit", "Often complementary as an authoring and delivery layer"],
   losses: ["Genuinely strong, accessible authoring toolkit", "Good value bundling authoring with LMS", "Stable, well-reviewed product"],
   battlecard: "iSpring is a solid authoring-plus-LMS combo at a fair price - no need to overstate the contest. The wedge is the familiar one for content tools: it answers 'how do we make and deliver courses?' not 'what does this person need?' Ask: 'How do you decide what to build and who to assign it to?' Compono diagnoses capability gaps from work personality and role data. iSpring can build and deliver against those targets.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Steady L&D and authoring content. Verify on refresh.",
   recentActivity: []
 }
@@ -1473,6 +1543,11 @@ const COMPETITORS = [
   wins: ["Delivery and commerce platform, not a diagnosis of need", "Completion and consumption worldview we position against", "No work personality model or selection linkage", "Strong delivery, silent on individual capability gaps"],
   losses: ["Genuinely polished, scalable LMS", "Strong external/customer training and commerce", "Good enterprise references and reliability"],
   battlecard: "Absorb is a strong, scalable LMS, especially for external training - concede the delivery quality. The wedge is delivery versus diagnosis: Absorb runs and even sells learning brilliantly, but has no model of what each internal person needs. Ask: 'For your own people, how does Absorb decide who needs what?' Compono diagnoses capability gaps from work personality and role data - and can feed targeted development into a delivery platform like Absorb.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Active corporate-LMS content. Verify on refresh.",
   recentActivity: []
 }
@@ -1492,6 +1567,11 @@ const COMPETITORS = [
   wins: ["AI personalises content, but personalisation of delivery is not validated capability diagnosis", "Knowledge-and-learning focus, no work personality or selection model", "Completion and consumption worldview, even if AI-dressed", "Premium price for content intelligence, not people intelligence"],
   losses: ["Genuinely modern, impressive AI-native experience", "Strong knowledge-plus-learning proposition", "Well-funded, fast-moving product"],
   battlecard: "Sana is one of the slickest AI-native learning products around - acknowledge the technology, it is real. The wedge is AI-of-content versus science-of-people: Sana uses AI to personalise and surface content, which is impressive, but it is still optimising consumption, not diagnosing validated capability need. Ask: 'Your AI personalises the content - but what evidences the gap it is filling for this individual?' Compono diagnoses capability from validated work personality and role data.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "High-profile AI-learning content. Verify on refresh.",
   recentActivity: []
 }
@@ -1511,6 +1591,11 @@ const COMPETITORS = [
   wins: ["Skills are largely inferred from activity and self-report, not validated diagnosis", "Aggregation breadth without a behavioural model of individual need", "Enterprise cost and implementation weight", "Completion and consumption worldview we position against"],
   losses: ["Category-defining LXP and skills brand", "Unmatched content aggregation breadth", "Strong enterprise skills-strategy positioning"],
   battlecard: "Degreed defined the LXP and skills category - the brand and breadth are real. The wedge is inference versus diagnosis: Degreed infers skills from what people consume and self-report, which is activity data dressed as capability. Ask: 'Are your skills data validated, or inferred from clicks and self-ratings?' Compono diagnoses capability from validated work personality and role data - evidenced need, not inferred skills. At enterprise scale, also weigh Degreed's cost and implementation against the value of inferred data.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Strong enterprise skills thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1530,6 +1615,11 @@ const COMPETITORS = [
   wins: ["Aggregation and curation, not validated diagnosis of individual need", "Enterprise cost and complexity, now inside a large suite", "Completion and consumption worldview we position against", "Skills features are inference and tagging, not behavioural diagnosis"],
   losses: ["Enterprise-grade aggregation and knowledge features", "Cornerstone ecosystem backing", "Established enterprise references"],
   battlecard: "EdCast brings enterprise LXP and knowledge muscle, now backed by Cornerstone. The wedge is the standard content-platform one plus suite weight: aggregation and curation are not validated diagnosis, and inside Cornerstone the cost and complexity climb. Ask: 'Beyond aggregating content, what tells you what each individual genuinely needs?' Compono diagnoses capability from validated work personality and role data - and is right-sized for the mid-market rather than carrying enterprise-suite weight.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Enterprise-learning presence via Cornerstone. Verify on refresh.",
   recentActivity: []
 }
@@ -1549,6 +1639,11 @@ const COMPETITORS = [
   wins: ["Social and knowledge engagement, but no diagnosis of individual capability need", "Peer sharing is valuable but unstructured against role requirements", "Completion and consumption worldview we position against", "No work personality model or selection linkage"],
   losses: ["Genuinely strong social and video learning", "Good in-the-flow knowledge sharing", "Engaged-community references"],
   battlecard: "Fuse does social and knowledge-led learning well - peer knowledge is genuinely valuable. The wedge is engagement versus diagnosis: a thriving learning community shares a lot, but sharing is not the same as closing each person's specific capability gap. Ask: 'With all that knowledge flowing, how do you know what this individual still needs?' Compono diagnoses capability from validated work personality and role data, so social learning is aimed, not just abundant.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Social-learning thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1568,6 +1663,11 @@ const COMPETITORS = [
   wins: ["Content breadth without diagnosis of individual need", "Recommendations are content-affinity based, not validated capability diagnosis", "Completion-and-consumption worldview we position against", "Often complementary - a content source, not a capability layer"],
   losses: ["Enormous, recognisable content library", "Strong LinkedIn brand and skills integration", "Easy, broad access at a reasonable per-seat price"],
   battlecard: "LinkedIn Learning has unbeatable content breadth and brand - do not fight it on library size, you will lose. The wedge is the classic catalogue-versus-diagnosis line: owning thousands of courses does not answer what this person needs next. Ask: 'Out of that whole library, what tells you the right course for this individual?' Compono diagnoses capability from validated work personality and role data - and LinkedIn Learning can be the content people are pointed to.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "no", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Massive brand reach via LinkedIn. Verify on refresh.",
   recentActivity: []
 }
@@ -1587,6 +1687,11 @@ const COMPETITORS = [
   wins: ["Content breadth and practicality without diagnosis of individual need", "Marketplace curation, not validated capability assessment", "Completion-and-consumption worldview we position against", "Often complementary - a content source, not a capability layer"],
   losses: ["Strong practical and technical content depth", "Recognisable brand and good per-seat value", "Hands-on labs valued by technical teams"],
   battlecard: "Udemy Business is great for practical, especially technical, content - concede the breadth and the hands-on labs. The wedge is the same catalogue-versus-diagnosis point: a big practical library does not tell you what this person needs. Ask: 'How do you decide which Udemy courses matter for this individual?' Compono diagnoses capability from validated work personality and role data - Udemy can supply the content once the need is clear.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "no", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
   social: "Strong tech-learning content presence. Verify on refresh.",
   recentActivity: []
 }
