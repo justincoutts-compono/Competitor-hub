@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Compono Competitor Intelligence Hub</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo-horizontal-color.png" alt="Compono">
+      <span class="brand-title">Competitor Intelligence Hub</span>
+    </div>
+    <div class="last-updated">Last updated: <strong id="lastUpdated"></strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero-strip">
+    <div class="eyebrow">Internal use only</div>
+    <h1>Know the field. Win the conversation.</h1>
+    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Click any competitor for the full breakdown - FAB, pricing, win/loss reasons and the battle card seed. Refreshed monthly.</p>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="toolbar">
+    <input type="text" class="search" id="search" placeholder="Search a competitor or a feature they have (eg requisition, SCORM, assessment)...">
+    <span class="tab-desc" id="tabDesc"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.</div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById("lastUpdated").textContent = LAST_UPDATED;
+
+  const tabOrder = ["hire", "engage", "develop", "hris"];
+  let activeTab = sessionStorage.getItem("activeTab") || "hire";
+  let query = "";
+
+  const tabsEl = document.getElementById("tabs");
+  const gridEl = document.getElementById("grid");
+  const descEl = document.getElementById("tabDesc");
+
+  const searchEl = document.getElementById("search");
+
+  // Build the searchable text for each competitor once, on load.
+  // Capability-true only: this is what a competitor actually HAS.
+  // We include the name (so you can still find them by name), their own
+  // features, a real assessment capability for Hire (Basic or Native, never
+  // None), and the FAB comparison rows they tick (them = yes or partial).
+  // We deliberately leave OUT summary, their marketing pitch and integrations,
+  // so a competitor is not pulled up for a feature just because it appears in
+  // their description, or because they only plug into a partner that does it.
+  function buildSearchText(c) {
+    const parts = [];
+    parts.push(c.name || "");
+    if (Array.isArray(c.features)) parts.push(c.features.join("  "));
+    if (c.category === "hire" && c.assessment && c.assessment.level !== "None") parts.push("assessment");
+    if (c.fabComparison && Array.isArray(c.fabComparison.groups)) {
+      c.fabComparison.groups.forEach(g => {
+        (g.rows || []).forEach(r => {
+          if (r && (r.them === "yes" || r.them === "partial")) parts.push(r.label || "");
+        });
+      });
+    }
+    return parts.join("  ").toLowerCase();
+  }
+  COMPETITORS.forEach(c => { c._search = buildSearchText(c); });
+
+  // All words typed must be present (so "native assessment" narrows the list).
+  function matchesQuery(c) {
+    if (query === "") return true;
+    return query.split(/\s+/).filter(Boolean).every(token => c._search.includes(token));
+  }
+
+  function renderTabs() {
+    const searching = query !== "";
+    tabsEl.innerHTML = tabOrder.map(key => {
+      const count = COMPETITORS.filter(c => c.category === key).length;
+      const isActive = !searching && key === activeTab;
+      return `<button class="tab ${isActive ? "active" : ""}" data-tab="${key}">
+        <span class="dot dot-${key}"></span>${CATEGORIES[key].label} <span class="count">${count}</span>
+      </button>`;
+    }).join("");
+    tabsEl.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Clicking a tab returns to normal browsing and clears any search.
+        activeTab = btn.dataset.tab;
+        sessionStorage.setItem("activeTab", activeTab);
+        query = "";
+        searchEl.value = "";
+        renderTabs(); renderGrid();
+      });
+    });
+  }
+
+  function assessPill(c) {
+    if (c.category !== "hire" || !c.assessment) return "";
+    const lvl = c.assessment.level;
+    const cls = lvl === "Native" ? "assess-native" : lvl === "Basic" ? "assess-basic" : "assess-none";
+    return `<span class="pill ${cls}">Assessment: ${lvl}</span>`;
+  }
+
+  // Category tag shown on cards when searching across all tabs.
+  function categoryPill(c) {
+    const label = CATEGORIES[c.category] ? CATEGORIES[c.category].label : c.category;
+    return `<span class="pill"><span class="dot dot-${c.category}" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px"></span>${label}</span>`;
+  }
+
+  function renderGrid() {
+    const searching = query !== "";
+
+    // Empty search browses the active tab. A search looks across all categories.
+    const list = searching
+      ? COMPETITORS.filter(matchesQuery)
+      : COMPETITORS.filter(c => c.category === activeTab);
+
+    if (searching) {
+      descEl.textContent = list.length === 1
+        ? "1 competitor matches across all categories"
+        : list.length + " competitors match across all categories";
+    } else {
+      descEl.textContent = CATEGORIES[activeTab].desc;
+    }
+
+    const emptyMsg = searching
+      ? "No competitors match that search."
+      : "No competitors in this tab.";
+
+    gridEl.innerHTML = list.length ? list.map(c => `
+      <a class="comp-card ${c.category}" href="competitor.html?id=${c.id}">
+        <h3>${c.name}</h3>
+        <div class="card-meta">
+          ${searching ? categoryPill(c) : ""}
+          <span class="pill">${c.targetMarket.split(",")[0]}</span>
+          ${assessPill(c)}
+        </div>
+        <p>${c.summary}</p>
+        <span class="card-link">Full breakdown →</span>
+      </a>
+    `).join("") : `<p style="color:var(--muted)">${emptyMsg}</p>`;
+  }
+
+  searchEl.addEventListener("input", e => {
+    query = e.target.value.toLowerCase().trim();
+    renderTabs(); renderGrid();
+  });
+
+  renderTabs();
+  renderGrid();
+</script>
+</body>
+</html>
