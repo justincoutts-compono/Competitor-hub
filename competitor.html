@@ -71,7 +71,7 @@
     page.innerHTML = `
       <a class="back-link" href="index.html">← Back to all competitors</a>
 
-      <div class="comp-header">
+      <div class="comp-header ${c.category}">
         <div class="eyebrow">${cat.label} competitor</div>
         <div class="comp-title-row">${compChipLg}<h1>${c.name}</h1></div>
         <p style="color:var(--muted); max-width:760px;">${c.summary}</p>
@@ -79,6 +79,16 @@
           <span class="pill">${c.targetMarket}</span>
         </div>
       </div>
+
+      ${c.quickTake ? `
+      <div class="section">
+        <div class="quick-take ${c.category}">
+          <h2>Quick take</h2>
+          <div class="qt-row"><div class="qt-label">Their pitch</div><p>${c.quickTake.theirPitch}</p></div>
+          <div class="qt-row"><div class="qt-label">Our angle</div><p>${c.quickTake.ourAngle}</p></div>
+          <div class="qt-row"><div class="qt-label">Watch out</div><p>${c.quickTake.watchOut}</p></div>
+        </div>
+      </div>` : ""}
 
       <div class="section">
         <h2>Company snapshot</h2>
@@ -185,10 +195,22 @@
 
       <div class="section">
         <div class="battlecard">
-          <h2>Battle card seed</h2>
+          <div class="bc-head">
+            <h2>Battle card seed</h2>
+            <button class="copy-btn" id="copyBattlecard" type="button" title="Copy the battle card text">Copy</button>
+          </div>
           <p>${c.battlecard}</p>
         </div>
       </div>
+
+      ${c.landmines && c.landmines.length ? `
+      <div class="section">
+        <h2>Landmine questions</h2>
+        <div class="panel">
+          <p class="landmine-intro">Ask these in the call - they expose what ${c.name} cannot answer.</p>
+          <ol class="landmines">${c.landmines.map(q => `<li>${q}</li>`).join("")}</ol>
+        </div>
+      </div>` : ""}
 
       <div class="section">
         <h2>Social / brand signal</h2>
@@ -200,6 +222,50 @@
         <div class="panel">${recent}</div>
       </div>
     `;
+
+    // Copy the battle card text to the clipboard, with a fallback for
+    // older browsers. The button flips to "Copied" briefly as feedback.
+    const copyBtn = document.getElementById("copyBattlecard");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", () => {
+        const text = c.name + " - battle card seed\n\n" + c.battlecard;
+        const done = () => {
+          copyBtn.textContent = "Copied";
+          copyBtn.classList.add("copied");
+          setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.classList.remove("copied"); }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+        } else {
+          fallbackCopy(text, done);
+        }
+      });
+    }
+    function fallbackCopy(text, done) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // Print support: open every collapsed comparison table and make all
+    // sections visible before printing, then restore afterwards.
+    window.addEventListener("beforeprint", () => {
+      document.querySelectorAll("details").forEach(d => {
+        d.dataset.wasOpen = d.open ? "1" : "";
+        d.open = true;
+      });
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+    });
+    window.addEventListener("afterprint", () => {
+      document.querySelectorAll("details").forEach(d => {
+        if (!d.dataset.wasOpen) d.open = false;
+      });
+    });
   }
 </script>
   <script src="enhance.js"></script>

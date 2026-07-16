@@ -22,6 +22,11 @@
   --green:#1d9e6f;
   --red:#d14545;
   --radius:16px;
+  /* Darker, text-safe versions of the category colours */
+  --hire-ink:#0a7fb5;
+  --engage-ink:#9a1a8d;
+  --develop-ink:#c9552f;
+  --hris-ink:#a87708;
 }
 
 * { box-sizing:border-box; margin:0; padding:0; }
@@ -52,11 +57,32 @@ a:hover { text-decoration:underline; }
 .last-updated { font-size:13px; color:var(--muted); }
 .last-updated strong { color:var(--text); font-weight:600; }
 
-/* ---------- Hero strip ---------- */
-.hero-strip { padding:36px 0 8px; }
+/* ---------- Hero ---------- */
 .eyebrow { text-transform:uppercase; letter-spacing:2px; font-size:11px; font-weight:600; color:var(--purple); }
-.hero-strip h1 { font-size:30px; font-weight:700; margin:8px 0 6px; letter-spacing:-0.3px; }
-.hero-strip p { color:var(--muted); max-width:760px; }
+.hero {
+  margin-top:28px;
+  padding:34px 36px 30px;
+  border-radius:var(--radius);
+  background:
+    radial-gradient(600px 260px at 88% -20%, rgba(53,198,255,.22), transparent 60%),
+    radial-gradient(520px 300px at -10% 120%, rgba(154,26,141,.28), transparent 60%),
+    linear-gradient(135deg, #1A1944 0%, #2a2960 100%);
+  color:#fff;
+}
+.hero .eyebrow { color:var(--cyan); }
+.hero h1 { font-size:30px; font-weight:700; margin:8px 0 6px; letter-spacing:-0.3px; }
+.hero p { color:rgba(255,255,255,.78); max-width:760px; font-size:14.5px; }
+.hero-stats { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+.stat-chip {
+  font-size:12.5px; font-weight:500;
+  color:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:9999px;
+  padding:7px 14px;
+}
+.stat-chip strong { color:#fff; font-weight:700; }
+@media (max-width:600px){ .hero { padding:26px 22px 24px; } }
 
 /* ---------- Tabs ---------- */
 .tabs { display:flex; gap:8px; margin:28px 0 22px; flex-wrap:wrap; }
@@ -141,7 +167,19 @@ a:hover { text-decoration:underline; }
 
 /* ---------- Competitor page ---------- */
 .back-link { display:inline-block; margin:26px 0 4px; font-size:13px; font-weight:600; }
-.comp-header { padding:10px 0 26px; border-bottom:1px solid var(--line); margin-bottom:30px; }
+.comp-header { position:relative; padding:18px 0 26px; border-bottom:1px solid var(--line); margin-bottom:30px; }
+.comp-header::before {
+  content:""; position:absolute; top:0; left:0;
+  width:64px; height:4px; border-radius:2px; background:var(--purple);
+}
+.comp-header.hire::before { background:var(--cyan); }
+.comp-header.engage::before { background:var(--purple); }
+.comp-header.develop::before { background:var(--coral); }
+.comp-header.hris::before { background:var(--amber); }
+.comp-header.hire .eyebrow { color:var(--hire-ink); }
+.comp-header.engage .eyebrow { color:var(--engage-ink); }
+.comp-header.develop .eyebrow { color:var(--develop-ink); }
+.comp-header.hris .eyebrow { color:var(--hris-ink); }
 .comp-header h1 { font-size:32px; font-weight:700; letter-spacing:-0.3px; margin:6px 0 10px; }
 .comp-header .card-meta { margin-top:4px; }
 
@@ -185,6 +223,63 @@ ul.clean.losses li::before { color:var(--red); }
 }
 .battlecard h2 { color:var(--cyan) !important; }
 .battlecard p { font-size:15px; line-height:1.7; }
+.bc-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.bc-head h2 { margin-bottom:12px; }
+
+/* Copy button (battle card) */
+.copy-btn {
+  font-family:inherit; font-size:12px; font-weight:600;
+  text-transform:uppercase; letter-spacing:.06em;
+  color:#fff; background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:9999px; padding:7px 16px;
+  cursor:pointer; transition:all .15s ease;
+  flex:0 0 auto; margin-bottom:12px;
+}
+.copy-btn:hover { background:rgba(255,255,255,.22); }
+.copy-btn.copied { background:var(--green); border-color:var(--green); }
+
+/* ---------- Quick take ---------- */
+.quick-take {
+  background:linear-gradient(135deg, #1A1944 0%, #2a2960 100%);
+  color:#fff;
+  border-radius:var(--radius);
+  border-left:5px solid var(--purple);
+  padding:24px 28px;
+}
+.quick-take.hire { border-left-color:var(--cyan); }
+.quick-take.engage { border-left-color:var(--purple); }
+.quick-take.develop { border-left-color:var(--coral); }
+.quick-take.hris { border-left-color:var(--amber); }
+.quick-take h2 { color:var(--cyan) !important; margin-bottom:14px; }
+.qt-row { display:grid; grid-template-columns:110px 1fr; gap:14px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.10); }
+.qt-row:last-child { border-bottom:none; }
+.qt-label {
+  font-size:11px; text-transform:uppercase; letter-spacing:1px;
+  font-weight:600; color:rgba(255,255,255,.55); padding-top:2px;
+}
+.qt-row p { font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.92); }
+@media (max-width:600px){ .qt-row { grid-template-columns:1fr; gap:3px; } }
+
+/* ---------- Landmine questions ---------- */
+.landmine-intro { font-size:13px; color:var(--muted); margin-bottom:12px; }
+ol.landmines { list-style:none; counter-reset:lm; margin:0; padding:0; }
+ol.landmines li {
+  counter-increment:lm;
+  position:relative;
+  padding:11px 0 11px 42px;
+  font-size:14.5px; font-weight:500;
+  border-bottom:1px solid var(--bg);
+}
+ol.landmines li:last-child { border-bottom:none; }
+ol.landmines li::before {
+  content:counter(lm);
+  position:absolute; left:0; top:9px;
+  width:26px; height:26px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700;
+  color:#fff; background:var(--navy);
+}
 
 .recent-empty {
   font-size:13.5px; color:var(--muted); font-style:italic;
@@ -390,4 +485,27 @@ ul.clean.wins li:hover,ul.clean.losses li:hover{transform:translateX(3px);}
 
 @media (max-width:600px){
   .fab-compare-table .logo-chip.sm{ display:none; }
+}
+
+/* ============================================================
+   PRINT STYLES
+   Any competitor page prints as a clean one-click PDF for
+   board prep. Comparison tables are opened by the page script
+   before printing.
+   ============================================================ */
+@media print {
+  body { background:#fff; font-size:12px; }
+  .site-header { border-bottom:1px solid #ccc; padding:10px 0; }
+  .hub-subnav, .back-link, .copy-btn, footer.site-footer,
+  .fab-compare-hint, .search, .toolbar, .tabs { display:none !important; }
+  .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+  .section { break-inside:avoid; margin-bottom:18px; }
+  .panel, .comp-card, .battlecard, .quick-take, .fab-compare { box-shadow:none !important; }
+  .battlecard, .quick-take, .fab-compare > summary, .mk,
+  .comp-header::before, ol.landmines li::before {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .fab-compare > summary::after { display:none; }
+  .fab-compare-table tr:hover td { background:transparent; }
+  .hero { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }

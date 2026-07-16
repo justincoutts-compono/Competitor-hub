@@ -20,10 +20,11 @@
 </header>
 
 <main class="wrap">
-  <div class="hero-strip">
+  <div class="hero">
     <div class="eyebrow">Internal use only</div>
     <h1>Know the field. Win the conversation.</h1>
-    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Click any competitor for the full breakdown - FAB, pricing, win/loss reasons and the battle card seed. Refreshed monthly.</p>
+    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Click any competitor for the full breakdown - quick take, FAB, pricing, win/loss reasons, landmine questions and the battle card seed. Refreshed monthly.</p>
+    <div class="hero-stats" id="heroStats"></div>
   </div>
 
   <div class="tabs" id="tabs"></div>
@@ -43,6 +44,19 @@
 <script src="data.js"></script>
 <script>
   document.getElementById("lastUpdated").textContent = LAST_UPDATED;
+
+  // Hero stat chips - computed from the data so they never go stale.
+  (function () {
+    const statsEl = document.getElementById("heroStats");
+    if (!statsEl) return;
+    const tables = COMPETITORS.filter(c => c.fabComparison).length;
+    const shortDate = LAST_UPDATED.split(" (")[0];
+    statsEl.innerHTML = `
+      <span class="stat-chip"><strong>${COMPETITORS.length}</strong> competitors</span>
+      <span class="stat-chip"><strong>${Object.keys(CATEGORIES).length}</strong> categories</span>
+      <span class="stat-chip"><strong>${tables}</strong> comparison tables</span>
+      <span class="stat-chip">Updated <strong>${shortDate}</strong></span>`;
+  })();
 
   const tabOrder = ["hire", "engage", "develop", "hris"];
   let activeTab = sessionStorage.getItem("activeTab") || "hire";

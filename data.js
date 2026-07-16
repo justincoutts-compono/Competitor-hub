@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "16 July 2026 (monthly refresh - recent activity updated across major competitors; company logos added to cards, pages and comparison tables)";
+const LAST_UPDATED = "16 July 2026 (hub v2 - quick take and landmine questions added for every competitor; battle card copy button, upgraded hero, category-coloured pages and print styles)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
@@ -41,6 +41,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Fill roles fast with wide job board reach and AI sourcing.",
+    ourAngle: "Speed is half the problem. We match for skills AND fit in one workflow, with science you can defend.",
+    watchOut: "Cheaper entry point and stronger global distribution - do not fight them on sourcing reach."
+  },
+  landmines: [
+    "When the role is filled, how confident are you the person will actually fit the team?",
+    "What objective data sits behind the shortlist - or is it still CV screening at speed?",
+    "If a hire fails at six months, what in Workable would have predicted it?"
+  ],
   social: "Large global following, high content volume - mostly SEO/recruiting how-to content. Verify current numbers on refresh.",
   recentActivity: []
 }
@@ -68,6 +78,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "ANZ-built recruitment workflow with strong local credibility and agency-grade pipeline tools.",
+    ourAngle: "JobAdder manages the recruitment process. Compono manages the hiring decision - natively.",
+    watchOut: "Strong local brand loyalty and often already embedded. Reframe the category, never attack the brand."
+  },
+  landmines: [
+    "After the shortlist, how do you know who will actually succeed in the team?",
+    "What does JobAdder tell you about a candidate beyond their CV and your pipeline notes?",
+    "How do you defend a hiring decision to your executive team - process followed, or evidence gathered?"
+  ],
   social: "Solid ANZ LinkedIn presence, regular recruiter-focused content. Verify on refresh.",
   recentActivity: []
 }
@@ -95,6 +115,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Employer branding and ATS in one - a beautiful front door for candidates.",
+    ourAngle: "Attraction is not selection. We answer the question their partners charge extra for - who will succeed here.",
+    watchOut: "Genuinely excellent UX with strong ANZ momentum. Design-led buyers love it."
+  },
+  landmines: [
+    "Once those well-nurtured candidates apply, how does Teamtailor tell you which one will succeed in your team?",
+    "What does the third-party assessment partner add to your cost and your workflow?",
+    "Is your problem attracting candidates, or picking the right one? Which does Teamtailor solve?"
+  ],
   social: "Very active, design-forward LinkedIn and content presence. Strong employer brand voice. Verify on refresh.",
   recentActivity: []
 }
@@ -122,6 +152,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Proactive sourcing and CRM - build talent pipelines before you need them.",
+    ourAngle: "Lever tracks the courtship. Compono assesses the marriage - validated fit before the offer goes out.",
+    watchOut: "Stronger sourcing and CRM motion for proactive enterprise talent teams."
+  },
+  landmines: [
+    "Knowing a candidate's engagement history is useful - but what tells you they will succeed in the role?",
+    "How deep is Lever's ANZ support and Seek integration compared to what you need locally?",
+    "When the pipeline delivers three finalists, what objective data separates them?"
+  ],
   social: "Moderate activity, folded increasingly into Employ group messaging. Verify on refresh.",
   recentActivity: []
 }
@@ -149,6 +189,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Structured hiring at scale - scorecards, interview kits and process discipline.",
+    ourAngle: "Structure organises opinions. It does not improve the data. We add validated behavioural measurement to the process.",
+    watchOut: "Enterprise brand gravity and the deepest integration marketplace in the category. Premium price is our friend in mid-market."
+  },
+  landmines: [
+    "Ten interviewers with beautiful scorecards are still ten gut feels - what objective data joins them?",
+    "What is the all-in cost and implementation timeline compared to the value your team will actually use?",
+    "Your process is consistent - but what tells you the candidate fits this team, not just the process?"
+  ],
   social: "High-volume thought leadership engine, strong brand. Verify on refresh.",
   recentActivity: [
     { date: "May 2026", note: "Acquired Ezra AI Labs, a voice AI interviewer, extending AI screening to the top of its funnel. Expect Greenhouse deals to lean harder on AI interviewing." }
@@ -178,6 +228,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Enterprise hiring infrastructure at global scale, now inside SAP SuccessFactors.",
+    ourAngle: "They sell hiring infrastructure for enterprises. We sell hiring intelligence for organisations that feel every hire.",
+    watchOut: "Genuine enterprise scale - but a mid-market prospect choosing it is usually over-buying."
+  },
+  landmines: [
+    "How many of the enterprise modules would your team actually use in year one?",
+    "What does the SAP integration roadmap mean for the product you are buying today?",
+    "Under the AI matching, what validated people science is actually there?"
+  ],
   social: "Active enterprise-focused content, conference-heavy. Verify on refresh.",
   recentActivity: []
 }
@@ -205,6 +265,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Cheap, collaborative SMB hiring that anyone can adopt without training.",
+    ourAngle: "An ATS that organises bad decisions efficiently still produces bad hires. One mis-hire outweighs years of price difference.",
+    watchOut: "Cheaper entry point wins with cost-driven small buyers. Qualify hard before competing."
+  },
+  landmines: [
+    "What does one failed hire cost you compared to the software saving?",
+    "What in Recruitee tells you a candidate suits your team, not just your pipeline stage?",
+    "How well do its Europe-first job boards and support hours serve an ANZ team?"
+  ],
   social: "Moderate, European SMB-focused content. Verify on refresh.",
   recentActivity: []
 }
@@ -232,6 +302,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Free-to-start SMB hiring with drag-and-drop pipelines.",
+    ourAngle: "If Breezy is the real alternative, check the prospect is qualified. If they are, the argument is the cost of a bad hire.",
+    watchOut: "Free is free. Rarely a real competitor in qualified deals."
+  },
+  landmines: [
+    "A mis-hire on a 60k salary costs far more than any software - what protects you from that?",
+    "What happens when you outgrow a free tool - what does the migration cost?",
+    "What does Breezy tell you about a candidate that their CV does not?"
+  ],
   social: "Light presence. Verify on refresh.",
   recentActivity: []
 }
@@ -259,6 +339,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The cheapest path - hiring bundled into the Zoho suite on one bill.",
+    ourAngle: "Zoho organises recruitment data cheaply. Compono improves hiring decisions. Different categories.",
+    watchOut: "The price is nearly impossible to match, and Zoho ecosystem lock-in is real."
+  },
+  landmines: [
+    "What can a suite vendor's 43rd module know about predicting human performance in your team?",
+    "When you need local support fast, what does Zoho's ANZ coverage look like?",
+    "Is the goal cheaper admin, or better hires? Which are you buying?"
+  ],
   social: "Large Zoho-corp-level presence, product-line content thin. Verify on refresh.",
   recentActivity: []
 }
@@ -286,6 +376,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "partial", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Culture fit benchmark on a role", them: "partial", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "partial", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "partial", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Australian predictive hiring - match on attitude and fit for high-volume frontline roles.",
+    ourAngle: "Their matching is a black box scoped to the hire. Ours is transparent, validated, and lives on into engagement and development.",
+    watchOut: "Long ANZ relationships in retail, hospitality and care, with sharp pricing for pure volume."
+  },
+  landmines: [
+    "What happens to that fit data on day two - does it help you manage and grow the person?",
+    "Can you explain to a board exactly how the matching model reaches its decision?",
+    "How does it perform outside frontline roles - professional and knowledge positions?"
+  ],
   social: "Light. Verify on refresh.",
   recentActivity: []
 }
@@ -313,6 +413,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Melbourne-born enterprise talent suite with government-grade process depth.",
+    ourAngle: "In mid-market their enterprise machinery becomes cost and drag. Process maturity is not decision quality.",
+    watchOut: "ANZ enterprise incumbency, especially government and higher ed panels. That turf is theirs."
+  },
+  landmines: [
+    "What is the realistic time to value - months of implementation, or weeks?",
+    "Beyond workflow, what behavioural insight does the platform add to each hiring decision?",
+    "How much of the enterprise suite would a team your size actually switch on?"
+  ],
   social: "Moderate ANZ enterprise presence. Verify on refresh.",
   recentActivity: []
 }
@@ -340,6 +450,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Warm talent communities - source from engaged pools instead of cold ads.",
+    ourAngle: "They solve candidate supply. We solve candidate selection. Warm is not the same as right.",
+    watchOut: "Genuine differentiation in contingent direct sourcing - often adjacent rather than competitive."
+  },
+  landmines: [
+    "How does a talent community tell you which warm candidate will succeed in the team?",
+    "What is the vendor's corporate position now, and what does that mean for the roadmap?",
+    "Once the pool delivers candidates, what science decides between them?"
+  ],
   social: "Light-moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -367,6 +487,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Run an entire staffing business end to end - the dominant agency CRM and ATS.",
+    ourAngle: "Bullhorn measures pipeline and placement speed. We measure whether the person will fit and stay.",
+    watchOut: "Unmatched depth for staffing agencies. If the prospect is an agency, respect the incumbent."
+  },
+  landmines: [
+    "Once they are placed, what tells you they were the right hire?",
+    "Is fit a recruiter's gut call dressed up as workflow, or actual data?",
+    "For an internal talent team, how much agency-grade CRM weight are you paying for?"
+  ],
   social: "Strong agency-recruitment industry presence, large events footprint. Verify current numbers on refresh.",
   recentActivity: []
 }
@@ -394,6 +524,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "ANZ recruitment marketing - stronger candidate flow and employer brand for internal teams.",
+    ourAngle: "More applicants does not mean better hires if selection is still a gut call. We add the selection science.",
+    watchOut: "Genuine local recruitment-marketing depth and public sector trust."
+  },
+  landmines: [
+    "Once the applications are in, what objective data decides who fits?",
+    "Does a bigger pile of CVs change the quality of the final decision?",
+    "What do the third-party testing partners add in cost, delay and workflow friction?"
+  ],
   social: "Solid ANZ recruitment-marketing presence and content. Verify on refresh.",
   recentActivity: []
 }
@@ -421,6 +561,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Fast, affordable ATS and CRM for smaller recruitment agencies.",
+    ourAngle: "Its AI reads keywords, not character. We embed validated work personality science in the workflow.",
+    watchOut: "Excellent value and reviews for small agencies - fair strengths, concede them."
+  },
+  landmines: [
+    "What in the tool tells you this person suits the team, not just the job description?",
+    "Does the AI score skills on paper, or how the person actually works?",
+    "Where is the local ANZ support when something breaks mid-hire?"
+  ],
   social: "Active SMB-recruitment content and strong review-site presence. Verify on refresh.",
   recentActivity: []
 }
@@ -448,6 +598,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Modern, well-designed in-house ATS with strong careers sites and structured hiring.",
+    ourAngle: "Structured scorecards make opinions consistent - they are still opinions. We back structure with evidence.",
+    watchOut: "Genuinely excellent candidate experience and DEI reporting. Concede the design."
+  },
+  landmines: [
+    "Your process is consistent - but what objective signal tells you they fit the team?",
+    "What does the AI screening actually read - behaviour, or keywords?",
+    "Which third-party assessment do you bolt on, and what does that add in cost and friction?"
+  ],
   social: "Strong design-led content and good review presence. Verify on refresh.",
   recentActivity: []
 }
@@ -475,6 +635,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Analytics-first recruiting - ATS, CRM, scheduling and deep funnel reporting in one.",
+    ourAngle: "Ashby measures everything about the process and nothing about the person. We add the behavioural layer.",
+    watchOut: "Genuinely excellent analytics loved by sophisticated tech talent teams."
+  },
+  landmines: [
+    "Your funnel data is superb - what data do you have on whether the person will succeed in the team?",
+    "Time-to-hire is a process metric. What is your quality-of-hire metric?",
+    "What premium are you paying for process optimisation that never touches the decision itself?"
+  ],
   social: "Strong data-driven recruiting content, respected in tech talent circles. Verify on refresh.",
   recentActivity: []
 }
@@ -502,6 +672,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "AI recruiting features at the lowest price point on the market.",
+    ourAngle: "Their AI scores resumes against job text - keyword matching with a confidence number. Not behavioural science.",
+    watchOut: "Very strong price-to-feature value for budget-constrained teams."
+  },
+  landmines: [
+    "Does the AI tell you they can do the job, or that they fit the team?",
+    "What validation sits behind the AI score - could you defend it to a board?",
+    "Who supports you locally when hiring stalls in an ANZ time zone?"
+  ],
   social: "Active SMB and emerging-market recruiting content. Verify on refresh.",
   recentActivity: []
 }
@@ -529,6 +709,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Simple, affordable, repeatable hiring for small US businesses.",
+    ourAngle: "Knockout questions filter - they do not assess fit. One bad hire costs a growing business dearly.",
+    watchOut: "Mature, cheap and stable in its SMB lane. No need to overstate the contest."
+  },
+  landmines: [
+    "What in JazzHR tells you the person fits the team, not just clears the filter?",
+    "What does the paid assessment add-on cost, and does it model fit to your team?",
+    "How does a US-centric tool handle ANZ job boards, compliance and support hours?"
+  ],
   social: "Moderate SMB-hiring content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -556,6 +746,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Established ANZ talent suite - attraction to onboarding with deep local compliance.",
+    ourAngle: "Breadth across the process is not insight into the person. We embed the science natively and play well with the local stack.",
+    watchOut: "Long-standing ANZ incumbency and genuine compliance depth. Respect it."
+  },
+  landmines: [
+    "Across all those modules, where is the objective data on whether the person fits the team?",
+    "Reference checks organise feedback - what actually predicts fit before the offer?",
+    "Do the third-party tests sit inside the decision, or beside the workflow?"
+  ],
   social: "Established ANZ talent-acquisition presence, lower content volume. Verify on refresh.",
   recentActivity: []
 }
@@ -584,6 +784,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The engagement survey category leader - feedback, benchmarks and performance in one platform.",
+    ourAngle: "They measure how people feel. We explain how people work - which is what you actually change. Some clients run both.",
+    watchOut: "Massive brand gravity and an unmatched benchmark dataset. Never dismiss them."
+  },
+  landmines: [
+    "When engagement drops six points, what tells you why - and what to change in the team?",
+    "How much survey data do you already have that never turned into action?",
+    "Does the platform explain how your people are wired, or just how they answered?"
+  ],
   social: "Very strong - one of the loudest HR tech brands globally. Verify on refresh.",
   recentActivity: [
     { date: "Jun 2026", note: "Cut about 70 roles (roughly 9 per cent of staff) in its third round of layoffs in three years, as the new CEO restructures the business." },
@@ -613,6 +823,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Continuous listening inside Workday - no extra vendor, enterprise analytics.",
+    ourAngle: "Peakon listens. Compono explains - and the insight feeds hiring and development too, which a listening tool cannot.",
+    watchOut: "Hard to dislodge inside a Workday estate. Do not fight the bundle on survey features."
+  },
+  landmines: [
+    "The scores moved - what mechanism inside the team moved them?",
+    "Does the listening data help you hire or develop anyone, or does it stay in a dashboard?",
+    "Outside a Workday estate, what is Peakon's case on its own?"
+  ],
   social: "Folded into Workday corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -639,6 +859,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Performance rituals in one place - reviews, goals, 1:1s with surveys attached.",
+    ourAngle: "Rituals without understanding. We give managers the insight layer their reviews and 1:1s are missing.",
+    watchOut: "Slick product managers genuinely like, with a loud content machine."
+  },
+  landmines: [
+    "Does a 1:1 template tell a manager how their direct report actually needs to be managed?",
+    "What do the modules cost once you stack performance, engagement and the rest?",
+    "Is your pain really review chaos, or that you do not understand your people?"
+  ],
   social: "Very active content brand. Verify on refresh.",
   recentActivity: []
 }
@@ -665,6 +895,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Build better managers - weekly check-ins, surveys and manager training combined.",
+    ourAngle: "A manager cannot adapt to what they cannot see. We are the data layer their coaching philosophy needs.",
+    watchOut: "The manager-enablement angle resonates emotionally with HR buyers, at a cheaper entry point."
+  },
+  landmines: [
+    "Better managers of what, exactly - can they see how each team member is wired?",
+    "Is generic manager training applied blindly, or targeted at what this team needs?",
+    "How is check-in fatigue trending against the insight the check-ins produce?"
+  ],
   social: "Active, manager-focused content. Verify on refresh.",
   recentActivity: []
 }
@@ -691,6 +931,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Research-grade employee listening inside an enterprise experience mega-platform.",
+    ourAngle: "Sophistication of measurement cannot fix poverty of explanation. We explain, at a mid-market footprint.",
+    watchOut: "Unmatched survey methodology credibility. Its appearance in mid-market usually signals an over-scoped RFP."
+  },
+  landmines: [
+    "A perfect measure of dissatisfaction still does not say which team dynamics caused it - what does?",
+    "Who on your team will do the analyst work the platform needs to produce value?",
+    "What will this cost, all-in, against what a mid-market team can actually run?"
+  ],
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: [
     { date: "May 2026", note: "Completed its US$6.75 billion acquisition of Press Ganey Forsta, deepening its healthcare experience data and AI position." }
@@ -719,6 +969,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Consolidate performance, engagement, learning and compensation into one European platform.",
+    ourAngle: "Consolidating processes that run on shallow sentiment data does not improve any decision.",
+    watchOut: "Attractive consolidation economics and solid product polish."
+  },
+  landmines: [
+    "What does the platform actually know about how your people work?",
+    "What do ANZ support hours look like for a Berlin-based vendor?",
+    "Fewer tools, one bill - but which decision got better?"
+  ],
   social: "Moderate, EU-focused. Verify on refresh.",
   recentActivity: []
 }
@@ -745,6 +1005,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Lightweight pulse surveys - engagement signal with zero admin.",
+    ourAngle: "A mood thermometer. Thermometers do not treat fevers. Qualify whether they want to monitor sentiment or change outcomes.",
+    watchOut: "Very cheap and frictionless - fine for tiny teams wanting a mood check."
+  },
+  landmines: [
+    "When the mood dips, what does the tool tell you to do about it?",
+    "Is the goal to watch sentiment, or to change the outcomes behind it?",
+    "What depth is left when your team and questions grow?"
+  ],
   social: "Light-moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -771,6 +1041,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Six decades of behavioural assessment wrapped in talent optimisation, delivered with consultants.",
+    ourAngle: "PI gives you a report and a consultant. We build the insight into the hiring, engagement and development workflow itself.",
+    watchOut: "Deep brand trust and sticky consultant relationships. They validate our category - use that."
+  },
+  landmines: [
+    "What does PI cost all-in - platform, consultant, the ATS you still need, and the integration?",
+    "How does a four-factor model from the 1950s compare with modern validated frameworks?",
+    "Where does the PI data live during an actual hiring decision - in the workflow, or in a PDF?"
+  ],
   social: "Strong US content presence, partner-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -797,6 +1077,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "AI chat interviews - fair, scalable screening candidates genuinely enjoy.",
+    ourAngle: "Inferring personality from chat text is contested science. We measure directly, with validated psychometrics a board can trust.",
+    watchOut: "Outstanding candidate experience story and strong ANZ enterprise logos in volume hiring."
+  },
+  landmines: [
+    "Could you defend an AI's text-based personality inference to your board or a regulator?",
+    "What happens to the screening insight after the hire - does it help you manage the person?",
+    "How does chat inference perform for professional roles, outside high-volume frontline funnels?"
+  ],
   social: "Active ANZ presence, AI-ethics-led content. Verify on refresh.",
   recentActivity: [
     { date: "Apr 2026", note: "Launched Ask Sapia.ai, a public chat tool that explains how its AI hiring decisions work - a push for 'glass box' AI." },
@@ -826,6 +1116,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Objective pre-employment testing - cognitive, personality and skills data on every candidate, cheaply.",
+    ourAngle: "Criteria sells tests. Compono sells decisions - scores modelled against your role and team, inside the workflow.",
+    watchOut: "Cheap unlimited-testing economics and a respected cognitive instrument in CCAT."
+  },
+  landmines: [
+    "A score against a national norm - what does it say about fit to your team specifically?",
+    "What does the second vendor, the integration and the process glue cost you?",
+    "Does the insight survive past the hire, or end at the offer letter?"
+  ],
   social: "Moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -852,6 +1152,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Deep veteran assessment for selection and development, guided by consulting partners.",
+    ourAngle: "Reports plus consultants is the 2010 architecture. Insight embedded in the workflow is the current one.",
+    watchOut: "Genuinely deep instrument, entrenched consultant relationships, strong in exec assessment."
+  },
+  landmines: [
+    "What does each assessment plus debrief cost at your hiring volume?",
+    "How long between assessment and insight reaching the manager who needs it?",
+    "What happens when the consultant relationship ends - who owns the capability?"
+  ],
   social: "Light, partner-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -878,6 +1188,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Validated ANZ engagement surveys with credible local benchmarks, from the Voice Project heritage.",
+    ourAngle: "Measurement versus explanation. A survey says engagement dropped - we explain the people behind the number.",
+    watchOut: "Real survey credibility, strong ANZ benchmarks and public sector trust."
+  },
+  landmines: [
+    "When the score moves, does the tool explain the people behind it?",
+    "A snapshot captures a moment - what explains how your people are actually built?",
+    "How does the survey data connect to your hiring and development decisions?"
+  ],
   social: "Solid ANZ HR and public sector presence. Verify on refresh.",
   recentActivity: []
 }
@@ -904,6 +1224,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Enterprise engagement measurement at scale, riding Microsoft Viva distribution.",
+    ourAngle: "A real-time engagement score is the weather, not the climate. We explain behaviour and carry it across the lifecycle.",
+    watchOut: "Microsoft bundling power - a natural default for Microsoft-committed organisations."
+  },
+  landmines: [
+    "When engagement dips, does Glint tell you how these people are actually wired?",
+    "Does the survey data ever reach a hiring or development decision?",
+    "Are you choosing the best tool, or the one already in the bundle?"
+  ],
   social: "Amplified by Microsoft Viva marketing. Verify on refresh.",
   recentActivity: []
 }
@@ -930,6 +1260,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Board-grade engagement diagnostics from a trusted global advisory brand.",
+    ourAngle: "Consultant-led studies arrive, then leave. Compono is continuous people intelligence built into the platform.",
+    watchOut: "Deep methodology, unmatched normative data and board-level trust. Never belittle it."
+  },
+  landmines: [
+    "What does the engagement work cost, and how often does the insight reach a manager's decision?",
+    "What happens between studies - who is watching the teams then?",
+    "Does the diagnostic explain each individual, or describe the organisation in aggregate?"
+  ],
   social: "Corporate advisory presence, thought-leadership led. Verify on refresh.",
   recentActivity: []
 }
@@ -956,6 +1296,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Engagement and performance in one suite, with the Best Places to Work benchmark brand.",
+    ourAngle: "Surveys capture feelings, performance modules capture outputs - neither explains how people are wired.",
+    watchOut: "Recognisable benchmark brand and an established US mid-market presence."
+  },
+  landmines: [
+    "The engagement and performance numbers are in - what explains why people behave this way?",
+    "Does a Best Places to Work badge change anything about how your teams actually work?",
+    "How does any of this data improve your next hiring decision?"
+  ],
   social: "Active US HR content, Best Places to Work amplification. Verify on refresh.",
   recentActivity: []
 }
@@ -982,6 +1332,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Sophisticated enterprise listening and people analytics across the employee lifecycle.",
+    ourAngle: "Listening, however sophisticated, is still measurement. We explain the behaviour underneath the sentiment.",
+    watchOut: "Genuinely advanced analytics and strong enterprise references."
+  },
+  landmines: [
+    "You can hear the whole workforce - what explains the behaviour underneath the sentiment?",
+    "How does the analytics layer reach an individual manager's next decision?",
+    "What does enterprise listening cost against the mid-market footprint you need?"
+  ],
   social: "Enterprise people-analytics thought leadership. Verify on refresh.",
   recentActivity: [
     { date: "Feb 2026", note: "Acquired Lyceum, an AI-native learning platform, moving beyond listening into acting on engagement data." }
@@ -1010,6 +1370,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Team work-personality / team design", them: "no", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Open conversational feedback at scale - honest voice from frontline workers surveys never reach.",
+    ourAngle: "Open feedback tells you what people say in the moment, not how they are built or what each person needs.",
+    watchOut: "Genuinely strong frontline reach and candid qualitative feedback, with ANZ roots."
+  },
+  landmines: [
+    "The conversation is rich - but what explains the behaviour behind it?",
+    "How do you turn thousands of comments into a decision about one team or one person?",
+    "Does the voice data connect to who you hire and how you develop them?"
+  ],
   social: "Modern ANZ engagement content. Verify on refresh.",
   recentActivity: []
 }
@@ -1036,6 +1406,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "World-class psychometric rigour - the heavyweight global assessment catalogue.",
+    ourAngle: "Never argue the validity. Argue the architecture - credits, consultants and integrations versus science native in the workflow.",
+    watchOut: "Unmatched assessment depth and decades of credibility. The science is real."
+  },
+  landmines: [
+    "What does SHL cost once you add the platform, the credits, the ATS it plugs into and the integration?",
+    "Who interprets the reports, and how long before insight reaches the hiring manager?",
+    "Does the assessment data flow into engagement and development, or stop at selection?"
+  ],
   social: "Strong global assessment thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1062,6 +1442,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Rigorous, candidate-friendly assessment at volume, backed by Aon's advisory muscle.",
+    ourAngle: "A test you must operationalise, integrate and often interpret with help. Our science is native, not bolted on.",
+    watchOut: "Genuinely validated modern assessments, strong in graduate and high-volume hiring."
+  },
+  landmines: [
+    "What is the all-in cost - assessments, platform, advisory, and the ATS it has to plug into?",
+    "How much advisory time does it take to turn results into decisions?",
+    "What happens to the assessment data after the intake round ends?"
+  ],
   social: "Aon-amplified advisory presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1088,6 +1478,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Revered leadership assessment - deep insight into strengths and derailment risks, via certified consultants.",
+    ourAngle: "A consultant-interpreted report for leaders, priced per use. We operationalise the science for the whole workforce.",
+    watchOut: "Outstanding research pedigree and sticky coaching relationships. Say so."
+  },
+  landmines: [
+    "What does Hogan cost per person once certification and interpretation are included?",
+    "Who gets assessed - everyone, or just the executives?",
+    "Does the insight run your hiring and development, or sit in a coaching binder?"
+  ],
   social: "Strong leadership-assessment and coaching presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1114,6 +1514,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Accessible validated assessment for SMB and mid-market, without enterprise complexity.",
+    ourAngle: "Still a standalone test on a DISC-derived model. We build matching science into the lifecycle itself.",
+    watchOut: "Trusted heritage and a low barrier to entry in our own segment."
+  },
+  landmines: [
+    "Once you have the Thomas report, what carries that insight into the actual hiring decision?",
+    "How does a DISC-derived model compare with modern validated frameworks?",
+    "What does the insight do after the hire - anything for engagement or development?"
+  ],
   social: "Established SMB-assessment presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1140,6 +1550,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "DiSC workshops for self-awareness and team communication, via a big facilitator network.",
+    ourAngle: "DiSC is a development tool, not validated for selection. If it is informing hires, that is a misuse worth gently flagging.",
+    watchOut: "Hugely popular and genuinely useful for communication workshops. Do not attack what it is."
+  },
+  landmines: [
+    "Are you using DiSC to build awareness, or to make hiring decisions?",
+    "Would the DiSC profile stand up if a hiring decision were ever challenged?",
+    "What happens after the workshop - where does the insight live day to day?"
+  ],
   social: "Very broad training-market presence via Wiley. Verify on refresh.",
   recentActivity: []
 }
@@ -1166,6 +1586,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "no", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Strengths-based development on trusted Gallup research, delivered through a huge coach network.",
+    ourAngle: "Strengths is a coaching tool beside the workflow. We are decision-grade science across the lifecycle - and we respect the coaching.",
+    watchOut: "Enormous brand trust and a loyal practitioner community."
+  },
+  landmines: [
+    "Are you using Gallup to develop people, or to make hiring and team decisions?",
+    "How does a strengths report connect to who you hire next?",
+    "What does the coach network cost annually against a platform where the science is built in?"
+  ],
   social: "Massive global brand and content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1192,6 +1622,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Modern validated matching - people to roles and teams on psychometric data, now part of Phenom.",
+    ourAngle: "We agree on the premise. The difference is architecture and locality - their matching layer integrates into your stack; our science is native in a connected platform, with real ANZ support.",
+    watchOut: "Philosophically our closest rival, with credible science. Respect it - overclaiming backfires."
+  },
+  landmines: [
+    "Do you want a matching engine to integrate, or the workflow with the science already inside it?",
+    "What does the Phenom acquisition mean for the product's direction and your contract?",
+    "Where is the local support when something breaks in an ANZ time zone?"
+  ],
   social: "Modern talent-assessment thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1218,6 +1658,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Wave assessments with strong predictive validity, sold to enterprise and via consultants.",
+    ourAngle: "Never argue the science. Argue the operating model - certification, integration and consultants versus rigour native in the workflow.",
+    watchOut: "Excellent predictive validity and enterprise credibility, with WTW as a preferred partner."
+  },
+  landmines: [
+    "What does Saville cost once you add certification, the platform and the ATS it plugs into?",
+    "What does private-equity ownership mean for pricing and product investment?",
+    "Does the Wave data follow the person into engagement and development?"
+  ],
   social: "Assessment thought leadership, WTW-amplified. Verify on refresh.",
   recentActivity: []
 }
@@ -1244,6 +1694,16 @@ const COMPETITORS = [
       { title: "What Compono adds (unique value)", rows: [{ label: "Validated culture assessment (12 dimensions)", them: "no", us: "yes" }, { label: "Current vs desired culture gap analysis", them: "no", us: "yes" }, { label: "Subculture analysis", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "partial", us: "yes" }, { label: "Team work-personality / team design", them: "partial", us: "yes" }, { label: "Culture data feeds hiring benchmarks", them: "partial", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Job-fit assessment - define the role behaviourally, then match candidates to it.",
+    ourAngle: "A philosophy we share, delivered as a standalone report at the hiring moment. We build it into the whole lifecycle natively.",
+    watchOut: "Sensible methodology with long heritage and mid-market trust."
+  },
+  landmines: [
+    "Once the McQuaig report is done, what carries that into the decision - and into development afterward?",
+    "Who administers, certifies and integrates it, and what does that cost in time?",
+    "How does the model compare with modern validated frameworks?"
+  ],
   social: "Established SMB-hiring assessment presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1271,6 +1731,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "One subscription, 100,000-plus courses - stop buying content vendor by vendor.",
+    ourAngle: "They sell the haystack. We find the needle - diagnosing what THIS person needs before any content is prescribed.",
+    watchOut: "Unbeatable content breadth and an ANZ hero brand. Often complementary, not competitive."
+  },
+  landmines: [
+    "Out of 100,000 courses, what tells you the right one for this person?",
+    "Where does the library get delivered - you still need a platform, so what does that add?",
+    "How much of last year's content spend changed anyone's actual capability?"
+  ],
   social: "Strong ANZ tech brand presence. Verify on refresh.",
   recentActivity: [
     { date: "Feb 2026", note: "Launched Go1 Pay, letting HR fund manager-led development beyond eLearning." },
@@ -1299,6 +1769,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The enterprise learning estate on one vendor - compliance depth at maximum scale.",
+    ourAngle: "Their model tracks what people completed. Ours diagnoses what people need.",
+    watchOut: "Enterprise compliance depth is genuinely unmatched. In mid-market, their weight is our friend."
+  },
+  landmines: [
+    "How long did the last LMS implementation take, and what changed in actual capability afterwards?",
+    "How much admin resource does the platform consume just to run?",
+    "Completion hit 100 per cent - so why do the capability gaps remain?"
+  ],
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: [
     { date: "May 2026", note: "Launched Cornerstone Workforce AI, repositioning the platform around workforce readiness, skills intelligence and AI agents." },
@@ -1327,6 +1807,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "AI-powered LMS - one platform for employee, customer and partner learning.",
+    ourAngle: "AI content generation without need diagnosis just produces more content faster. We start from the person.",
+    watchOut: "Strong AI story and momentum. If customer or partner training is in scope, that is genuinely their turf."
+  },
+  landmines: [
+    "The AI makes content faster - what tells it which person needs what?",
+    "Is your problem making learning, or aiming it?",
+    "How much of the platform is built for external training you will not use?"
+  ],
   social: "Active, AI-narrative-led. Verify on refresh.",
   recentActivity: [
     { date: "Feb 2026", note: "Acquired 365Talents, a skills intelligence platform, to link skills data with learning and workforce decisions." }
@@ -1354,6 +1844,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The budget self-serve LMS - quick setup, tiny cost, no procurement.",
+    ourAngle: "TalentLMS stores training. Compono Develop directs it. Different jobs.",
+    watchOut: "Price and setup speed are unbeatable at the low end. Rarely meets us in qualified deals."
+  },
+  landmines: [
+    "Is the need course hosting, or capability development?",
+    "What happens when you outgrow the depth ceiling?",
+    "What does the platform know about your people beyond their login?"
+  ],
   social: "Moderate SMB content. Verify on refresh.",
   recentActivity: []
 }
@@ -1379,6 +1879,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Tick compliance boxes fast, with a convenient built-in content library.",
+    ourAngle: "Audit safety is fine - but ask what changed in team capability after completions hit 100 per cent.",
+    watchOut: "The compliance library is genuinely convenient, with an established mid-market base."
+  },
+  landmines: [
+    "After last year's completions hit 100 per cent, what changed in actual team capability?",
+    "What has product investment looked like since the ownership changes?",
+    "Is compliance the whole need, or the easy part of it?"
+  ],
   social: "Light-moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -1404,6 +1914,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Clean multi-portal LMS for employee, customer and partner training, with well-liked support.",
+    ourAngle: "Portal architecture solves operations. It does not answer why your people are not developing the capabilities you need.",
+    watchOut: "Genuine local presence in Sydney and strong support reputation."
+  },
+  landmines: [
+    "Is your problem training operations, or capability outcomes?",
+    "How does the platform know what any individual actually needs?",
+    "Which portals matter if the internal capability problem stays unsolved?"
+  ],
   social: "Moderate. Verify on refresh.",
   recentActivity: []
 }
@@ -1429,6 +1949,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Collaborative learning - your own experts author courses, peers co-build knowledge.",
+    ourAngle: "They answer who creates content. We answer the prior question - what does each person need.",
+    watchOut: "Compelling philosophy for L&D believers, with a good product experience."
+  },
+  landmines: [
+    "Before anyone authors anything - what tells you what each person needs?",
+    "What happens when the internal authoring energy fades after launch?",
+    "Relevant content, but aimed at whom, and why them?"
+  ],
   social: "Active, philosophy-led content. Verify on refresh.",
   recentActivity: []
 }
@@ -1454,6 +1984,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "ANZ performance learning platform - learning mapped to capability frameworks and compliance.",
+    ourAngle: "A framework is generic and completion is not capability. We diagnose the individual - and can sit above an LMS rather than fight it.",
+    watchOut: "Genuine ANZ government credibility and compliance depth."
+  },
+  landmines: [
+    "How does Acorn know what THIS person needs, beyond their role's framework?",
+    "Does mapping learning to a framework change what anyone can actually do?",
+    "What individual data drives the assignments - role title, or how the person works?"
+  ],
   social: "Solid ANZ government and L&D presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1479,6 +2019,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Build engaging training fast, without an instructional designer - authoring plus delivery in one.",
+    ourAngle: "Easy authoring answers how to make a course, not what this person needs. Often a partner - they make content, we aim it.",
+    watchOut: "Genuinely strong authoring and good ANZ SMB value."
+  },
+  landmines: [
+    "How do you decide what to build and who to assign it to?",
+    "Engaging content - but is it closing anyone's specific gap?",
+    "What people data sits behind the assignments?"
+  ],
   social: "Active ANZ L&D content. Verify on refresh.",
   recentActivity: []
 }
@@ -1504,6 +2054,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "partial", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "no", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Fast, beautiful, accessible course creation with instructional best practice built in.",
+    ourAngle: "Design quality is how content looks, not whether it targets the right need. They make it, we aim it - often coexisting.",
+    watchOut: "Excellent design and accessibility focus with good ANZ traction."
+  },
+  landmines: [
+    "Once the content is gorgeous, how do you know who actually needs it?",
+    "What diagnoses the gap the course is meant to close?",
+    "Is the spend going to better content, or better-targeted content?"
+  ],
   social: "Design-led ANZ L&D presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1529,6 +2089,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Modern LXP - self-directed learning, social features and a big content marketplace.",
+    ourAngle: "Consumption is not capability and engagement is not a closed gap. We diagnose the need; their content can serve it.",
+    watchOut: "Genuinely engaging experience with good enterprise references."
+  },
+  landmines: [
+    "How do you know the learning people choose is the learning they need?",
+    "Skills tags are not diagnosis - what validates the gap being filled?",
+    "High engagement, but what changed in team performance?"
+  ],
   social: "Active L&D and LXP content. Verify on refresh.",
   recentActivity: []
 }
@@ -1554,6 +2124,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Free, open-source, endlessly customisable - build exactly the learning environment you want.",
+    ourAngle: "Moodle hosts whatever you configure. It has no view on what each person needs - and build-it-yourself has a real hidden cost.",
+    watchOut: "Zero licence cost, massive community, ANZ-born. Do not fight the price."
+  },
+  landmines: [
+    "Who decides what each person learns, and on what data?",
+    "What is the real cost of building, hosting and maintaining it - people, not licences?",
+    "When the configuration expert leaves, who owns the platform?"
+  ],
   social: "Huge global open-source community. Verify on refresh.",
   recentActivity: []
 }
@@ -1579,6 +2159,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Mobile-first microlearning for deskless and frontline workers, in the flow of work.",
+    ourAngle: "A delivery channel with no view of individual need. We diagnose what each frontline worker needs - eduMe can deliver it.",
+    watchOut: "Genuinely strong frontline reach - a real problem solved well."
+  },
+  landmines: [
+    "How do you decide what each frontline worker needs to learn?",
+    "Completions on a phone are up - is capability?",
+    "What links the microlearning to who you hire and how they perform?"
+  ],
   social: "Frontline-learning content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1604,6 +2194,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Polished PowerPoint-based authoring plus a straightforward LMS, at fair value.",
+    ourAngle: "It answers how to make and deliver courses, not what this person needs. We diagnose; iSpring can build against the targets.",
+    watchOut: "Solid, well-reviewed and good value. No need to overstate the contest."
+  },
+  landmines: [
+    "How do you decide what to build and who to assign it to?",
+    "What people data informs the curriculum - roles, or how individuals actually work?",
+    "Completion reports are tidy - what do they say about capability?"
+  ],
   social: "Steady L&D and authoring content. Verify on refresh.",
   recentActivity: []
 }
@@ -1629,6 +2229,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "yes", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Polished, scalable LMS for internal training plus external customer education and commerce.",
+    ourAngle: "Absorb runs and even sells learning brilliantly - but has no model of what each internal person needs.",
+    watchOut: "Genuinely strong delivery and external-training capability."
+  },
+  landmines: [
+    "For your own people, how does Absorb decide who needs what?",
+    "How much of the platform is commerce and external features you will not use?",
+    "Delivery is solved - what diagnoses the gaps it should be filling?"
+  ],
   social: "Active corporate-LMS content. Verify on refresh.",
   recentActivity: []
 }
@@ -1654,6 +2264,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "AI-native learning and knowledge - generative AI personalising content and search, now part of Workday.",
+    ourAngle: "AI of content versus science of people. Personalising delivery is not diagnosing validated capability need.",
+    watchOut: "Genuinely impressive AI-native product, now with Workday behind it."
+  },
+  landmines: [
+    "The AI personalises the content - but what evidences the gap it is filling for this individual?",
+    "Is the premium buying content intelligence, or people intelligence?",
+    "What does the Workday acquisition mean for roadmap and pricing outside Workday shops?"
+  ],
   social: "High-profile AI-learning content. Verify on refresh.",
   recentActivity: [
     { date: "May 2026", note: "Workday shipped Sana-built self-service agents into Microsoft 365 Copilot and across its suite - Sana is now the engine of Workday's agentic AI." }
@@ -1681,6 +2301,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The category-defining LXP and skills platform - all content sources, one skills strategy.",
+    ourAngle: "Degreed infers skills from clicks and self-report. We diagnose capability from validated work personality and role data.",
+    watchOut: "Category-defining brand with unmatched aggregation breadth - at enterprise cost."
+  },
+  landmines: [
+    "Are your skills data validated, or inferred from clicks and self-ratings?",
+    "What does implementation cost and take at enterprise scale - and what is the data worth at the end?",
+    "Would the skills graph survive an audit of how it was built?"
+  ],
   social: "Strong enterprise skills thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1706,6 +2336,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "yes", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "partial", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Enterprise LXP and knowledge aggregation, now inside the Cornerstone suite.",
+    ourAngle: "Aggregation and tagging are not validated diagnosis - and inside Cornerstone the cost and complexity climb.",
+    watchOut: "Enterprise-grade aggregation with Cornerstone ecosystem backing."
+  },
+  landmines: [
+    "Beyond aggregating content, what tells you what each individual genuinely needs?",
+    "What has changed for the product since it went into the Cornerstone suite?",
+    "Is this right-sized for a mid-market team, or carrying enterprise weight?"
+  ],
   social: "Enterprise-learning presence via Cornerstone. Verify on refresh.",
   recentActivity: []
 }
@@ -1731,6 +2371,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "partial", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "partial", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "partial", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Social and video learning - capture and share peer knowledge in the flow of work.",
+    ourAngle: "Sharing is not the same as closing each person's specific gap. We aim the community's knowledge at diagnosed needs.",
+    watchOut: "Genuinely strong social learning with engaged-community references."
+  },
+  landmines: [
+    "With all that knowledge flowing, how do you know what this individual still needs?",
+    "Is peer content structured against role requirements, or just abundant?",
+    "Activity is high - what happened to capability?"
+  ],
   social: "Social-learning thought leadership. Verify on refresh.",
   recentActivity: []
 }
@@ -1756,6 +2406,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "no", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "The recognisable giant - a vast professional library tied to LinkedIn profiles and skills.",
+    ourAngle: "The classic catalogue problem - thousands of courses cannot answer what this person needs next. We can, and their library can serve it.",
+    watchOut: "Enormous brand and breadth at a reasonable per-seat price. Do not fight the library."
+  },
+  landmines: [
+    "Out of that whole library, what tells you the right course for this individual?",
+    "Are recommendations based on the person's real capability gap, or their viewing habits?",
+    "Licences are widely bought - how much are they actually moving capability?"
+  ],
   social: "Massive brand reach via LinkedIn. Verify on refresh.",
   recentActivity: []
 }
@@ -1781,6 +2441,16 @@ const COMPETITORS = [
       { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "partial", us: "yes" }, { label: "Course authoring built in", them: "no", us: "yes" }, { label: "Off-the-shelf content library", them: "yes", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "no", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "partial", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "no", us: "yes" }, { label: "Group / cohort management", them: "no", us: "yes" }, { label: "Completion tracking and reporting", them: "partial", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "no", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
     ]
   },
+  quickTake: {
+    theirPitch: "Practical, technical upskilling from a huge curated marketplace, with hands-on labs.",
+    ourAngle: "Same catalogue-versus-diagnosis point - a big practical library does not tell you what this person needs.",
+    watchOut: "Strong technical content depth and good per-seat value, valued by technical teams."
+  },
+  landmines: [
+    "How do you decide which Udemy courses matter for this individual?",
+    "Marketplace curation is broad - what diagnoses the need it should serve?",
+    "Are the hands-on labs mapped to anyone's actual capability gap?"
+  ],
   social: "Strong tech-learning content presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1803,6 +2473,16 @@ const COMPETITORS = [
   wins: ["Hiring/engagement/learning modules are shallow checkbox features vs specialist depth", "No behavioural science anywhere in the stack", "Land-and-expand pricing creep frustrates customers", "Their breadth is our both/and: keep their payroll, add our intelligence"],
   losses: ["Consolidation economics are seductive for SMBs", "Massive ANZ brand momentum and channel (accountants)", "Payroll gravity - owning payroll makes everything else sticky"],
   battlecard: "Never fight Employment Hero on payroll - concede it, even compliment it. The wedge: ask the prospect to open the hiring or engagement module and find the science. There is none - they are admin features wearing product names. Compono coexists: keep EH for employment admin, use Compono for the decisions that determine who you employ and how they perform. Both/and beats rip-and-replace, and it defuses their consolidation pitch.",
+  quickTake: {
+    theirPitch: "The ANZ employment super-app - HR, payroll, benefits and hiring on one bill.",
+    ourAngle: "Keep their payroll, add our intelligence. Their hiring and engagement modules are admin features wearing product names.",
+    watchOut: "Seductive consolidation economics and massive local momentum through the accountant channel."
+  },
+  landmines: [
+    "Open the hiring or engagement module - where is the science?",
+    "How has the pricing moved since you signed, module by module?",
+    "Does consolidating the admin change the quality of a single people decision?"
+  ],
   social: "Very loud ANZ presence, aggressive marketing. Verify on refresh.",
   recentActivity: [
     { date: "Jun 2026", note: "Partnered with Intuit QuickBooks to embed its HeroClear super engine in QuickBooks Payroll ahead of Payday Super starting 1 July 2026." },
@@ -1826,6 +2506,16 @@ const COMPETITORS = [
   wins: ["Module breadth, insight zero - no behavioural science anywhere", "Post-take-private product investment perceptions worth probing", "Modules individually beatable by every specialist", "Survey-basic engagement vs our explanatory depth"],
   losses: ["Entrenched mid-market incumbency - often already installed", "Procurement preference for module consolidation", "Local brand familiarity and compliance trust"],
   battlecard: "ELMO is usually the incumbent, so the motion is displacement or coexistence, not bake-off. Probe satisfaction module by module - recruitment and learning are commonly the weakest-loved. The line: ELMO digitised your HR processes; it never improved a single people decision. Compono can sit beside the ELMO core and own the decision layer - hiring, engagement insight, capability - where workflow tools structurally cannot follow.",
+  quickTake: {
+    theirPitch: "One local vendor, broad module coverage - the ANZ mid-market suite incumbent.",
+    ourAngle: "ELMO digitised your HR processes. It never improved a single people decision. We own the decision layer beside their core.",
+    watchOut: "Usually already installed - the motion is displacement or coexistence, not a bake-off."
+  },
+  landmines: [
+    "Module by module, which ones does your team actually love - and which do they tolerate?",
+    "What has product investment looked like since the take-private?",
+    "Where in the suite is the behavioural science - recruitment, engagement, anywhere?"
+  ],
   social: "Moderate ANZ presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1846,6 +2536,16 @@ const COMPETITORS = [
   wins: ["People modules (recruiting, learning, engagement) are checkbox-thin vs the ops core", "Zero behavioural science", "Ops/IT-led buying centre often is not our buyer anyway - coexistence framing easy", "ANZ depth (awards, local nuance) still maturing despite the launch"],
   losses: ["Ferocious product velocity and funding", "Consolidation pitch resonates with cost-cutting CFOs", "Slick demo experience"],
   battlecard: "Rippling's genius is admin automation - conceding that costs nothing because it is not our category. The reframe: Rippling treats an employee as a record to provision; Compono treats them as a human to understand. No employee graph tells you whether a candidate fits the team or why a team is misfiring. Coexistence is natural: their rails, our intelligence. Watch their ANZ localisation claims closely on refresh - it is moving fast.",
+  quickTake: {
+    theirPitch: "The employee graph - HR, IT and finance provisioning automated from one record.",
+    ourAngle: "Rippling treats an employee as a record to provision. We treat them as a human to understand. Their rails, our intelligence.",
+    watchOut: "Ferocious product velocity and a slick demo. ANZ localisation is maturing fast - re-check on every refresh."
+  },
+  landmines: [
+    "Does the employee graph tell you whether a candidate fits the team, or why a team is misfiring?",
+    "How deep is the ANZ awards and compliance handling today, in writing?",
+    "Who in your building is buying this - IT and ops, or the people making people decisions?"
+  ],
   social: "Extremely loud, high-velocity marketing. Verify on refresh.",
   recentActivity: [
     { date: "Feb 2026", note: "Won a US federal court ruling allowing its racketeering and trade-secret lawsuit against Deel to proceed towards trial." }
@@ -1868,6 +2568,16 @@ const COMPETITORS = [
   wins: ["ATS and survey features are deliberately basic - no science, no depth", "US-centric (leave/compliance localisation gaps for ANZ)", "Coexistence story trivial to tell"],
   losses: ["Genuinely loved product with loyal advocates", "Simple economics for small teams"],
   battlecard: "BambooHR rarely deserves attack - it is a records system people like. When prospects conflate it with a hiring or engagement solution, gently separate the jobs: Bamboo stores what happened to employees; Compono informs what should happen next. The basic ATS comparison wins itself on one demo of behavioural matching.",
+  quickTake: {
+    theirPitch: "The friendly SMB HRIS - records, time off, basic ATS and eNPS people genuinely like.",
+    ourAngle: "Bamboo stores what happened to employees. Compono informs what should happen next.",
+    watchOut: "Genuinely loved product with loyal advocates. Coexistence is the easy story."
+  },
+  landmines: [
+    "The ATS is deliberately basic - what does it tell you about who will succeed?",
+    "How do the US-centric leave and compliance defaults fit ANZ reality?",
+    "An eNPS number moved - what do you do with that?"
+  ],
   social: "Strong SMB content brand. Verify on refresh.",
   recentActivity: []
 }
@@ -1888,6 +2598,16 @@ const COMPETITORS = [
   wins: ["HR is a side-business of an accounting company - depth reflects it", "No behavioural anything", "Easy coexistence framing"],
   losses: ["Ecosystem gravity where Sage finance is entrenched", "Cheap bundled economics"],
   battlecard: "Sage HR appears via the accountant channel, not HR strategy. The respectful line: Sage is excellent at money and adequate at records - nobody, including Sage, claims it understands people. When the conversation is about who to hire or why a team underperforms, Sage has no entry. We do.",
+  quickTake: {
+    theirPitch: "HR modules from the Sage accounting empire - one vendor where the finance already runs.",
+    ourAngle: "Sage is excellent at money and adequate at records. Nobody, including Sage, claims it understands people.",
+    watchOut: "Ecosystem gravity and cheap bundled economics where Sage finance is entrenched."
+  },
+  landmines: [
+    "When the question is who to hire or why a team underperforms, where does Sage enter?",
+    "Is HR a core business for this vendor, or a side module?",
+    "What people science exists anywhere in the stack?"
+  ],
   social: "Group-level corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1908,6 +2628,16 @@ const COMPETITORS = [
   wins: ["People analytics (intelliHR) is reporting, not behavioural insight", "Hiring capability minimal - rostering DNA", "Coexistence natural: they schedule the workforce we helped select"],
   losses: ["Deep frontline/awards moat in ANZ", "Entrenched in care/hospitality verticals we also target"],
   battlecard: "Humanforce owns the roster; the open question is who deserves to be on it. In shared verticals (care especially), the pitch is sequential: Compono selects for personality and care quality - per our childcare/early-learning positioning - and explains team dynamics; Humanforce schedules the result. If their intelliHR module is raised, distinguish dashboards about people from science about how people work.",
+  quickTake: {
+    theirPitch: "Frontline workforce management - rostering and awards handled, with people analytics via intelliHR.",
+    ourAngle: "Humanforce owns the roster. The open question is who deserves to be on it - we select and explain, they schedule.",
+    watchOut: "Deep frontline and awards moat, entrenched in care and hospitality verticals we also target."
+  },
+  landmines: [
+    "The roster is optimised - but how were the people on it selected?",
+    "Is the intelliHR module dashboards about people, or science about how people work?",
+    "In a high-turnover workforce, what is fixing the turnover rather than scheduling around it?"
+  ],
   social: "Moderate ANZ presence. Verify on refresh.",
   recentActivity: [
     { date: "Jul 2026", note: "Launched Humanforce HR Analytics and Humanforce Learning, adding AI-driven workforce insight and automated compliance training to its frontline suite." },
@@ -1931,6 +2661,16 @@ const COMPETITORS = [
   wins: ["Talent modules are RFP-grade, not decision-grade - no science", "Enterprise weight irrelevant below 1,000 seats", "Coexistence framing with payroll incumbency"],
   losses: ["Payroll engine genuinely superb - immovable where installed", "Enterprise procurement consolidation pressure"],
   battlecard: "Dayforce deals are payroll deals wearing HCM clothes. Never contest payroll. The opening: ask which Dayforce talent module the HR team actually loves - the answer is reliably none. Compono coexists as the people-decision layer above any payroll spine. Both/and, zero rip-out.",
+  quickTake: {
+    theirPitch: "Enterprise HCM anchored on a celebrated continuous-calculation payroll engine.",
+    ourAngle: "Dayforce deals are payroll deals wearing HCM clothes. Never contest payroll - be the decision layer above it.",
+    watchOut: "The payroll engine is genuinely superb and immovable where installed."
+  },
+  landmines: [
+    "Which Dayforce talent module does your HR team actually love?",
+    "Below 1,000 seats, what is the enterprise weight buying you?",
+    "Where is the science in the talent modules - or are they RFP checkboxes?"
+  ],
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: [{ date: "Feb 2026", note: "Thoma Bravo completed its take-private acquisition for about US$12.3 billion; Dayforce delisted from the NYSE and TSX." }]
 }
@@ -1951,6 +2691,16 @@ const COMPETITORS = [
   wins: ["Talent/culture features are certification-and-survey paradigm - the exact gap we exploit", "Enterprise-only relevance; rare in our segment", "Module depth thin outside payroll/WFM"],
   losses: ["Enormous enterprise installed base", "GPTW brand halo in culture conversations"],
   battlecard: "UKG rarely meets us directly below enterprise. When the GPTW halo enters a culture conversation, the distinction is sharp: a Great Place To Work certificate describes how people felt last quarter; Compono explains how your specific people work and what your teams need next. Certification is marketing; explanation is management.",
+  quickTake: {
+    theirPitch: "Enterprise scale, compliance and culture credentials - including Great Place To Work ownership.",
+    ourAngle: "A GPTW certificate describes how people felt last quarter. We explain how your specific people work and what teams need next.",
+    watchOut: "Enormous enterprise base and a culture-brand halo. Rarely meets us below enterprise."
+  },
+  landmines: [
+    "Does a certification change anything about how your teams actually work?",
+    "Outside payroll and workforce management, how deep are the modules really?",
+    "Is this sized for your organisation, or for the enterprise RFP it came from?"
+  ],
   social: "Large corporate presence. Verify on refresh.",
   recentActivity: []
 }
@@ -1971,6 +2721,16 @@ const COMPETITORS = [
   wins: ["Engagement and performance modules are feature-deep, not behavioural science", "No validated work personality or matching model", "Survey-and-track worldview, not explanation", "Their breadth is our both/and: keep Bob, add our intelligence"],
   losses: ["Genuinely modern, well-loved HRIS experience", "Strong mid-market and scale-up momentum", "Growing ANZ traction"],
   battlecard: "HiBob is a lovely modern HRIS and prospects enjoy using it - do not attack the core. The wedge: Bob's culture, engagement and performance features are well-designed process tools, but there is no behavioural science underneath them. Ask the prospect to find the validated people model inside Bob - there is not one. Compono coexists: keep Bob as the system of record, use Compono for the hiring, engagement and development decisions that need defensible science. Both/and, not rip-and-replace.",
+  quickTake: {
+    theirPitch: "The modern, design-led HRIS scale-ups love, with culture and engagement features built in.",
+    ourAngle: "Bob's people features are well-designed process tools with no behavioural science underneath. Keep Bob, add our intelligence.",
+    watchOut: "Genuinely well-loved product with growing ANZ traction. Do not attack the core."
+  },
+  landmines: [
+    "Find the validated people model inside Bob - what is actually there?",
+    "The engagement features track sentiment - what explains it?",
+    "When a hiring or team decision gets challenged, what evidence does Bob give you?"
+  ],
   social: "Strong modern-HR brand and content. Verify on refresh.",
   recentActivity: []
 }
@@ -1991,6 +2751,16 @@ const COMPETITORS = [
   wins: ["Core HR and compliance focus, no behavioural science or matching", "Surveys are basic, not an explanation model", "No hiring selection science or capability diagnosis", "Their core is our both/and: keep Worknice, add our intelligence"],
   losses: ["Genuinely clean, modern local HRIS", "Good ANZ SMB fit and support", "Strong local payroll integrations"],
   battlecard: "Worknice is a tidy modern HRIS for ANZ SMBs - concede the core admin, it does it well and locally. The wedge: it is deliberately core-HR focused, with no people-decision science. Ask: 'For hiring and development decisions, what science does Worknice give you?' None - that is not its job. Compono coexists: keep Worknice as the system of record, add Compono for defensible hiring, engagement and development decisions. Both/and, with two ANZ players.",
+  quickTake: {
+    theirPitch: "Clean, modern ANZ HRIS - core HR, onboarding and compliance done tidily and locally.",
+    ourAngle: "Deliberately core-HR focused with no people-decision science - which is not its job. Keep Worknice, add Compono. Two ANZ players.",
+    watchOut: "Genuinely clean local product with good SMB fit and support."
+  },
+  landmines: [
+    "For hiring and development decisions, what science does Worknice give you?",
+    "The records are tidy - what informs the decisions about the people in them?",
+    "As you grow, what carries fit and capability data across the lifecycle?"
+  ],
   social: "Growing ANZ SMB-HR presence. Verify on refresh.",
   recentActivity: []
 }
@@ -2011,6 +2781,16 @@ const COMPETITORS = [
   wins: ["Workforce scheduling, not people-decision science", "No behavioural matching, engagement explanation or capability model", "High-turnover sectors where hiring fit matters most are left unsupported on selection", "Their scheduling is our both/and: keep Deputy, add our hiring intelligence"],
   losses: ["Best-in-class shift scheduling and time", "ANZ-born hero brand with global reach", "Deep hospitality and retail penetration"],
   battlecard: "Deputy owns shift scheduling and does it superbly - never fight it there. The wedge is scope: Deputy decides when people work, not who you should hire or how they fit. In hospitality and retail, where turnover is brutal, selection fit is exactly the unsolved problem. Ask: 'Deputy rosters them - but what helps you hire the right people in the first place?' Compono adds validated work personality matching. Keep Deputy for scheduling; add Compono for the hire. Both/and.",
+  quickTake: {
+    theirPitch: "Best-in-class shift scheduling, time and labour compliance for hourly teams.",
+    ourAngle: "Deputy decides when people work, not who you should hire. In high-turnover sectors, selection is the unsolved problem.",
+    watchOut: "ANZ-born hero brand, dominant in hospitality and retail scheduling. Never fight it there."
+  },
+  landmines: [
+    "Deputy rosters them - but what helps you hire the right people in the first place?",
+    "Turnover is brutal in your sector - what is fixing selection, not just scheduling?",
+    "What does one wrong frontline hire cost across churn, training and coverage?"
+  ],
   social: "Strong ANZ and global shift-work presence. Verify on refresh.",
   recentActivity: []
 }
@@ -2031,6 +2811,16 @@ const COMPETITORS = [
   wins: ["Workforce management and compliance, not people-decision science", "No behavioural matching or capability diagnosis", "High-turnover sectors left unsupported on selection fit", "Their compliance core is our both/and: keep Tanda, add our hiring intelligence"],
   losses: ["Strong ANZ award-compliance depth", "Solid local workforce-management brand", "Good payroll and POS integration"],
   battlecard: "Tanda is strong on ANZ award compliance and rostering - concede it, award interpretation is genuinely hard and valuable. The wedge is scope: Tanda gets people paid correctly for shifts worked; it has nothing to say about who you should hire or whether they fit. Ask: 'Tanda handles the roster and the award - but what helps you pick the right person for a high-turnover role?' Compono adds validated work personality matching. Keep Tanda; add Compono. Both/and, both ANZ.",
+  quickTake: {
+    theirPitch: "Rostering, time and wage compliance - complex ANZ awards interpreted correctly.",
+    ourAngle: "Tanda gets people paid correctly for shifts worked. It has nothing to say about who you should hire or whether they fit.",
+    watchOut: "Genuine award-compliance depth - hard, valuable work. Concede it."
+  },
+  landmines: [
+    "The award is handled - but what helps you pick the right person for a high-turnover role?",
+    "Compliance protects the pay run - what protects the hiring decision?",
+    "What in the platform reduces churn rather than administering it?"
+  ],
   social: "Solid ANZ workforce-management presence. Verify on refresh.",
   recentActivity: []
 }
@@ -2051,6 +2841,16 @@ const COMPETITORS = [
   wins: ["Broad but acquisition-assembled - modules vary in depth and integration", "No validated behavioural science anywhere in the stack", "Recruitment and learning modules are process tools, not people intelligence", "Their breadth is our both/and: keep Access admin, add our intelligence"],
   losses: ["Genuine breadth across HR, payroll and finance", "Large, well-resourced vendor", "Growing ANZ footprint via acquisitions"],
   battlecard: "The Access Group sells breadth - a wide suite that consolidates vendors. Concede the convenience. The wedge is depth and coherence: acquisition-built suites have uneven modules and, crucially, no validated people science. Ask the prospect to find the behavioural model inside the recruitment or learning module - there is not one. Compono coexists: keep Access for broad admin, use Compono for the hiring, engagement and development decisions that need specialist science. Both/and beats a shallow all-in-one.",
+  quickTake: {
+    theirPitch: "One large vendor consolidating HR, payroll, recruitment and learning - much of it acquired.",
+    ourAngle: "Acquisition-built suites have uneven modules and no validated people science. Keep Access for admin, add our intelligence.",
+    watchOut: "Genuine breadth, deep resources and a growing ANZ footprint via acquisitions."
+  },
+  landmines: [
+    "Find the behavioural model inside the recruitment or learning module - what is there?",
+    "How well do the acquired modules actually integrate with each other?",
+    "Which module would you have chosen on its own merits?"
+  ],
   social: "Corporate suite presence, acquisition-led. Verify on refresh.",
   recentActivity: []
 }
@@ -2071,6 +2871,16 @@ const COMPETITORS = [
   wins: ["Recruiting and performance modules are process features, not behavioural science", "No validated work personality or matching model", "Europe-focused with limited ANZ relevance and support", "Their breadth is our both/and: keep Personio, add our intelligence"],
   losses: ["Strong all-in-one breadth for SMB and mid-market", "Dominant European brand with deep funding", "Genuinely capable core HR"],
   battlecard: "Personio is a strong all-in-one in Europe - concede the breadth where it is relevant, though note its limited ANZ presence. The wedge is the suite pattern: its recruiting and performance modules are competent process tools with no people science underneath. Ask the prospect to find the validated behavioural model - there is none. Compono coexists: keep Personio for core HR, add Compono for decisions that need defensible science. Both/and, not rip-and-replace.",
+  quickTake: {
+    theirPitch: "Europe's leading all-in-one HR platform for SMB and mid-market.",
+    ourAngle: "The suite pattern - competent process modules with no people science underneath. And limited ANZ presence.",
+    watchOut: "Strong all-in-one breadth and deep funding, dominant in DACH."
+  },
+  landmines: [
+    "Find the validated behavioural model in the recruiting or performance module - what is there?",
+    "What does ANZ support and localisation look like for a Europe-focused vendor?",
+    "Broad modules, but which people decision got better?"
+  ],
   social: "Strong European HR brand. Verify on refresh.",
   recentActivity: []
 }
@@ -2091,6 +2901,16 @@ const COMPETITORS = [
   wins: ["Workforce management and payroll, not people-decision science", "No behavioural matching or capability diagnosis", "High-turnover sectors left unsupported on selection fit", "Their operational core is our both/and: keep Foundu, add our hiring intelligence"],
   losses: ["Genuine ANZ all-in-one workforce-management depth", "Native payroll and award handling", "Good local fit for shift-based SMBs"],
   battlecard: "Foundu is a capable ANZ all-in-one for shift-based businesses - concede the operational breadth and native payroll. The wedge is scope: Foundu runs the operational employment cycle but has no people-decision science. Ask: 'Foundu rosters and pays them - but what helps you hire the right people for high-turnover roles?' Compono adds validated work personality matching. Keep Foundu for operations; add Compono for the hire. Both/and, both ANZ.",
+  quickTake: {
+    theirPitch: "ANZ all-in-one for shift businesses - onboarding, rostering, time and native payroll.",
+    ourAngle: "Foundu runs the operational employment cycle. It has no people-decision science. Keep it for operations, add us for the hire.",
+    watchOut: "Genuine local all-in-one depth with native payroll and award handling."
+  },
+  landmines: [
+    "Foundu rosters and pays them - but what helps you hire the right people for high-turnover roles?",
+    "The operations are covered - what covers the decisions?",
+    "What is churn costing you that better selection would fix?"
+  ],
   social: "Local workforce-management presence. Verify on refresh.",
   recentActivity: []
 }
@@ -2111,6 +2931,16 @@ const COMPETITORS = [
   wins: ["Hiring module is workflow, not behavioural matching science", "No validated work personality or capability model", "High-turnover sectors left unsupported on selection fit", "Their single-platform core is our both/and: keep Roubler, add our intelligence"],
   losses: ["Genuine end-to-end single-platform breadth", "Native payroll across multiple countries", "Good fit for multi-site shift businesses"],
   battlecard: "Roubler's pitch is one platform from hire to pay - concede the operational elegance. The wedge: the hiring module is a workflow, not selection science. Ask the prospect to find the validated behavioural model inside it - there is not one. Compono coexists: keep Roubler for the operational employment cycle, add Compono for the hiring, engagement and development decisions that need defensible science. Both/and, with two ANZ-born players.",
+  quickTake: {
+    theirPitch: "One system from hire to pay for shift-based, multi-site businesses.",
+    ourAngle: "The hiring module is a workflow, not selection science. Keep Roubler for the cycle, add Compono for the decisions.",
+    watchOut: "Genuine end-to-end breadth with native payroll across several countries."
+  },
+  landmines: [
+    "Inside the hiring module, where is the validated behavioural model?",
+    "Hire to pay is covered - but is the hire any better than before?",
+    "What does the platform know about fit, engagement drivers or capability?"
+  ],
   social: "ANZ and international workforce-management presence. Verify on refresh.",
   recentActivity: []
 }
@@ -2131,6 +2961,16 @@ const COMPETITORS = [
   wins: ["Talent and performance modules are process features bolted to payroll, no people science", "Suite breadth without validated behavioural matching", "Enterprise weight and cost for mid-market buyers", "Their payroll core is our both/and: keep ADP, add our intelligence"],
   losses: ["Unmatched payroll and compliance scale", "Trusted global brand and reliability", "Broad HCM module coverage"],
   battlecard: "Never fight ADP on payroll - concede it and compliment the compliance scale. The wedge: ADP's talent and performance modules are admin features attached to a payroll engine, with no behavioural science. Ask the prospect to open the recruiting or performance module and find the people model - there is none. Compono coexists: keep ADP for payroll and HR, use Compono for the decisions that determine who you hire and how they perform. Both/and defuses the consolidation pitch.",
+  quickTake: {
+    theirPitch: "Payroll, HR and talent on one platform, backed by ADP's compliance scale.",
+    ourAngle: "The talent modules are admin features attached to a payroll engine. Keep ADP for pay, add Compono for the decisions.",
+    watchOut: "Unmatched payroll and compliance scale from a trusted global brand. Never fight the payroll."
+  },
+  landmines: [
+    "Open the recruiting or performance module - where is the people model?",
+    "How much of the suite does your HR team actively use beyond payroll?",
+    "What is the enterprise weight costing a mid-market team in fees and admin?"
+  ],
   social: "Massive global payroll-and-HR brand. Verify on refresh.",
   recentActivity: []
 }
@@ -2151,6 +2991,16 @@ const COMPETITORS = [
   wins: ["Talent, recruiting and learning modules are process and tracking, not validated behavioural science", "Skills Cloud is inference and tagging, not work personality diagnosis", "Enterprise cost, complexity and implementation weight - a liability for mid-market", "Their system of record is our both/and: keep Workday, add our intelligence"],
   losses: ["Dominant enterprise system of record", "Unmatched breadth and data unification at scale", "Deep enterprise credibility and ANZ presence"],
   battlecard: "Workday is the enterprise gravity well - for a true enterprise, it is the system of record and you concede that. Two wedges. First, both/and: Workday's talent and learning modules track process, with no validated behavioural science - keep Workday, add Compono for the decisions. Second, right-sizing: for a 60-1000 employee mid-market prospect, Workday's weight, cost and implementation are a liability, not a benefit. Ask: 'Do you need an enterprise system of record, or people-decision science you can adopt in weeks?' Compono is the latter.",
+  quickTake: {
+    theirPitch: "The enterprise system of record - HR, talent, payroll and analytics at maximum scale.",
+    ourAngle: "Two wedges - keep Workday, add our science for decisions; and for mid-market, its weight and cost are a liability, not a benefit.",
+    watchOut: "The enterprise gravity well, with deep ANZ presence. For true enterprises, concede the record."
+  },
+  landmines: [
+    "Do you need an enterprise system of record, or people-decision science you can adopt in weeks?",
+    "Is Skills Cloud validated measurement, or inference and tagging?",
+    "What will implementation cost and take before anyone sees value?"
+  ],
   social: "Dominant enterprise-HCM brand. Verify on refresh.",
   recentActivity: [
     { date: "Jun 2026", note: "A US federal court allowed state discrimination claims to proceed in the long-running lawsuit alleging bias in Workday's AI screening tools. Buyers are asking harder questions about black-box AI in hiring." },
@@ -2174,6 +3024,16 @@ const COMPETITORS = [
   wins: ["Talent, recruiting and learning modules track process, with no validated behavioural science", "Heavy, slow, costly implementations", "Enterprise weight is a liability for mid-market buyers", "Their HCM record is our both/and: keep SuccessFactors, add our intelligence"],
   losses: ["Enterprise breadth and SAP ecosystem integration", "Global scale and deep enterprise credibility", "Strong ANZ enterprise footprint"],
   battlecard: "SAP SuccessFactors is enterprise infrastructure - for SAP-committed enterprises, concede it as the HCM record. Same two wedges as Workday. Both/and: its modules are process and tracking, no behavioural science - keep SuccessFactors, add Compono for the decisions. Right-sizing: for a mid-market prospect, SuccessFactors' implementation weight and cost are a board-level liability. Ask: 'Do you want enterprise HCM infrastructure, or people-decision science live in weeks?' Compono is defensible, specialist, and light.",
+  quickTake: {
+    theirPitch: "Global enterprise HCM unified with the SAP ecosystem.",
+    ourAngle: "Same two wedges as Workday - process modules with no behavioural science, and implementation weight a mid-market board should question.",
+    watchOut: "Enterprise breadth and a strong ANZ enterprise footprint. Concede it for SAP-committed enterprises."
+  },
+  landmines: [
+    "Do you want enterprise HCM infrastructure, or people-decision science live in weeks?",
+    "What did the last SuccessFactors implementation cost, and how long did it run?",
+    "Where is the validated behavioural science in the talent modules?"
+  ],
   social: "Enterprise-HCM presence via SAP. Verify on refresh.",
   recentActivity: [
     { date: "Jun 2026", note: "At Sapphire, SAP repositioned its AI stack under new SAP Business AI and Autonomous Suite brands, shifting messaging from AI features to business outcomes." }
@@ -2196,6 +3056,16 @@ const COMPETITORS = [
   wins: ["Talent, recruiting and learning modules track process, with no validated behavioural science", "Heavy, costly, slow implementations", "Enterprise complexity is a liability for mid-market", "Their HCM record is our both/and: keep Oracle, add our intelligence"],
   losses: ["Enterprise breadth and Oracle ecosystem integration", "Global scale and credibility", "Strong ANZ enterprise presence"],
   battlecard: "Oracle HCM is enterprise ERP-grade infrastructure - concede it for Oracle-committed enterprises. Same two wedges. Both/and: modules are process and tracking, no behavioural science - keep Oracle, add Compono for decisions. Right-sizing: for mid-market, Oracle's weight, cost and implementation timeline are a liability you can name to a board. Ask: 'Do you need enterprise HCM infrastructure, or people-decision science you can run in weeks?' Compono is specialist, defensible and light.",
+  quickTake: {
+    theirPitch: "Global HR and talent on the Oracle ERP backbone, at very large scale.",
+    ourAngle: "Enterprise infrastructure with no people science in the talent modules. Keep Oracle where it belongs, add our decision layer.",
+    watchOut: "Enterprise scale and ecosystem integration, with real ANZ enterprise presence."
+  },
+  landmines: [
+    "Do you need enterprise HCM infrastructure, or people-decision science you can run in weeks?",
+    "What is the realistic implementation timeline and cost for an organisation your size?",
+    "Which talent module improves a decision rather than recording one?"
+  ],
   social: "Enterprise-HCM presence via Oracle. Verify on refresh.",
   recentActivity: []
 }
@@ -2216,6 +3086,16 @@ const COMPETITORS = [
   wins: ["Payroll and accounting, not an HRIS or people-decision platform at all", "No talent, engagement or behavioural capability", "Clearly complementary, rarely a real competitor", "Their payroll is our both/and: keep Xero, add our intelligence"],
   losses: ["Dominant ANZ small-business accounting and payroll", "Trusted, ubiquitous local brand", "Deep accountant-channel relationships"],
   battlecard: "Xero is not really a competitor - it is a complement, and you should say so plainly. Xero handles accounting and payroll for small business; it does not attempt hiring, engagement or development. There is no contest on people decisions because Xero does not play there. The line is simple: keep Xero for the books and the pay run, add Compono for the people decisions Xero was never built to make. Pure both/and - and a natural integration story given Xero's ANZ ubiquity.",
+  quickTake: {
+    theirPitch: "Payroll inside the accounting platform most ANZ small businesses already run.",
+    ourAngle: "Not a competitor - a complement. Keep Xero for the books and the pay run, add Compono for the people decisions it was never built to make.",
+    watchOut: "Ubiquitous, trusted, and deeply tied to the accountant channel. Say plainly there is no contest."
+  },
+  landmines: [
+    "Xero pays them - what helps you decide who to hire and how they fit?",
+    "Where do hiring, engagement and development live in your current stack?",
+    "What would connecting people decisions to your Xero-run business look like?"
+  ],
   social: "Dominant ANZ small-business brand. Verify on refresh.",
   recentActivity: []
 }
@@ -2236,6 +3116,16 @@ const COMPETITORS = [
   wins: ["Accounting and payroll, not an HRIS or people-decision platform", "No talent, engagement or behavioural capability", "Clearly complementary, rarely a real competitor", "Their payroll is our both/and: keep MYOB, add our intelligence"],
   losses: ["Long-established ANZ accounting and payroll brand", "Deep small-business and accountant relationships", "Trusted local incumbent"],
   battlecard: "Like Xero, MYOB is a complement, not a competitor - be straight about that. MYOB does accounting and payroll; it does not attempt hiring, engagement or development, so there is no contest on people decisions. The line: keep MYOB for the books and the pay run, add Compono for the people decisions it was never designed to make. Both/and, with an obvious local integration story.",
+  quickTake: {
+    theirPitch: "Long-established ANZ accounting and payroll with basic employee admin.",
+    ourAngle: "Like Xero - a complement, not a competitor. MYOB does the books and the pay run; we do the people decisions.",
+    watchOut: "Deep small-business and accountant relationships. Be straight that there is no contest."
+  },
+  landmines: [
+    "MYOB pays them - what informs who you hire and how they perform?",
+    "Where does people data live beyond the payroll record?",
+    "What would defensible hiring look like alongside the MYOB core?"
+  ],
   social: "Established ANZ small-business brand. Verify on refresh.",
   recentActivity: []
 }
@@ -2256,6 +3146,16 @@ const COMPETITORS = [
   wins: ["Global payroll and compliance, not people-decision science", "Emerging HRIS modules are process, not behavioural matching", "No validated work personality or capability model", "Their global-employment engine is our both/and: keep Deel, add our intelligence"],
   losses: ["Best-in-class global payroll, contractor and EOR", "Huge momentum and funding", "Strong fit for distributed and global teams"],
   battlecard: "Deel won the global-employment logistics race - concede it, paying people compliantly across borders is genuinely hard. The wedge is scope: Deel solves how to employ and pay globally; its emerging HRIS is process, with no people-decision science. Ask: 'Deel gets them hired and paid anywhere - but what helps you decide who to hire and whether they fit?' Compono adds validated work personality science. Keep Deel for global employment; add Compono for the decision. Both/and.",
+  quickTake: {
+    theirPitch: "Hire and pay anyone, anywhere, compliantly - global payroll, contractors and EOR.",
+    ourAngle: "Deel solves how to employ and pay globally. We solve who to hire and whether they fit. Keep Deel, add Compono.",
+    watchOut: "Best-in-class global employment logistics with huge momentum. Concede it - it is genuinely hard."
+  },
+  landmines: [
+    "Deel gets them hired and paid anywhere - but what helps you decide who to hire?",
+    "The emerging HRIS modules - process, or people science?",
+    "Across a distributed team, what tells you how people fit and work together?"
+  ],
   social: "Very high-profile global-employment brand. Verify on refresh.",
   recentActivity: [
     { date: "Jul 2026", note: "Asked the court to strike key claims in Rippling's espionage lawsuit after the central witness refused to testify. The dispute keeps trust questions in front of buyers." },
@@ -2279,6 +3179,16 @@ const COMPETITORS = [
   wins: ["Global employment and payroll, not people-decision science", "Emerging HR features are process, not behavioural matching", "No validated work personality or capability model", "Their EOR engine is our both/and: keep Remote, add our intelligence"],
   losses: ["Strong global EOR and payroll capability", "Good compliance coverage and momentum", "Solid fit for distributed teams"],
   battlecard: "Remote, like Deel, solves global-employment logistics well - concede it. The wedge is identical: Remote handles the legal and payroll mechanics of employing people internationally; it has no people-decision science. Ask: 'Remote gets them legally employed anywhere - but what tells you they are the right hire?' Compono adds validated work personality matching. Keep Remote for global employment compliance; add Compono for the hiring decision itself. Both/and.",
+  quickTake: {
+    theirPitch: "Employ international talent compliantly without local entities - Deel's main rival.",
+    ourAngle: "Identical wedge to Deel - they handle the legal and payroll mechanics; we handle the hiring decision itself.",
+    watchOut: "Strong global EOR capability and good compliance coverage."
+  },
+  landmines: [
+    "Remote gets them legally employed anywhere - but what tells you they are the right hire?",
+    "What people science sits in the emerging HR features?",
+    "For a distributed team, what explains fit and team dynamics across borders?"
+  ],
   social: "High-profile global-employment brand. Verify on refresh.",
   recentActivity: [
     { date: "Feb 2026", note: "Acquired Atlas, a rival employer-of-record provider, consolidating its global employment platform." }
