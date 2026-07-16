@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "16 June 2026 (added Develop feature-comparison tables for all 21 competitors - LMS platforms, LXPs and content libraries, 1-v-1 vs Compono; all three categories now complete)";
+const LAST_UPDATED = "16 July 2026 (monthly refresh - recent activity updated across major competitors; company logos added to cards, pages and comparison tables)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
@@ -21,6 +21,7 @@ const COMPETITORS = [
 {
   id: "workable",
   name: "Workable",
+  domain: "workable.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Offers cognitive and personality 'Workable Assessments' as an add-on, plus third-party integrations. Generic off-the-shelf tests, not a validated behavioural matching model tied to role or team fit." },
   snapshot: { hq: "Boston, USA (founded Greece)", founded: "2012", funding: "VC-backed, ~US$84M raised", headcount: "~400", anz: "Sells into ANZ, no local office or local support presence" },
@@ -47,6 +48,7 @@ const COMPETITORS = [
 {
   id: "jobadder",
   name: "JobAdder",
+  domain: "jobadder.com",
   category: "hire",
   assessment: { level: "None", detail: "No native assessment capability. Relies entirely on marketplace integrations for any testing." },
   snapshot: { hq: "Sydney, Australia", founded: "2007", funding: "Private, bootstrapped then PE investment", headcount: "~200", anz: "Strong - ANZ heartland, local support" },
@@ -73,6 +75,7 @@ const COMPETITORS = [
 {
   id: "teamtailor",
   name: "Teamtailor",
+  domain: "teamtailor.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Partner integrations (e.g. Alva Labs, Thomas) for assessments. Nothing native - candidate experience is the product, not people science." },
   snapshot: { hq: "Stockholm, Sweden", founded: "2013", funding: "Private, profitable, minimal external funding", headcount: "~500", anz: "Growing ANZ push with local team presence" },
@@ -99,6 +102,7 @@ const COMPETITORS = [
 {
   id: "lever",
   name: "Lever",
+  domain: "lever.co",
   category: "hire",
   assessment: { level: "None", detail: "No native assessments - integration partners only. Positioning is CRM-style talent relationship management." },
   snapshot: { hq: "San Francisco, USA (acquired by Employ Inc.)", founded: "2012", funding: "Acquired by Employ (PE-backed) in 2022", headcount: "Part of Employ group", anz: "Sells remotely, no local presence" },
@@ -125,6 +129,7 @@ const COMPETITORS = [
 {
   id: "greenhouse",
   name: "Greenhouse",
+  domain: "greenhouse.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Structured interview kits and scorecards (process rigour, not psychometric science) plus a large partner marketplace for actual assessments." },
   snapshot: { hq: "New York, USA", founded: "2012", funding: "PE-owned (TPG majority)", headcount: "~800", anz: "Sells into ANZ enterprise, limited local footprint" },
@@ -145,12 +150,15 @@ const COMPETITORS = [
     ]
   },
   social: "High-volume thought leadership engine, strong brand. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "May 2026", note: "Acquired Ezra AI Labs, a voice AI interviewer, extending AI screening to the top of its funnel. Expect Greenhouse deals to lean harder on AI interviewing." }
+  ]
 }
 ,
 {
   id: "smartrecruiters",
   name: "SmartRecruiters",
+  domain: "smartrecruiters.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Native screening questions and an assessment partner marketplace. No proprietary behavioural science." },
   snapshot: { hq: "San Francisco, USA", founded: "2010", funding: "Acquired by SAP in 2025 (~US$1.5B); being integrated into SAP SuccessFactors, kept available standalone", headcount: "~600", anz: "Enterprise deals only, minimal local presence" },
@@ -171,12 +179,13 @@ const COMPETITORS = [
     ]
   },
   social: "Active enterprise-focused content, conference-heavy. Verify on refresh.",
-  recentActivity: [{ date: "Aug 2025", note: "Acquired by SAP for about US$1.5 billion, to be integrated into SAP SuccessFactors while remaining a standalone option." }]
+  recentActivity: []
 }
 ,
 {
   id: "recruitee",
   name: "Recruitee",
+  domain: "recruitee.com",
   category: "hire",
   assessment: { level: "None", detail: "No native assessments - integration partners only." },
   snapshot: { hq: "Amsterdam, Netherlands (Tellent group)", founded: "2015", funding: "Merged into Tellent (with Javelo, KiwiHR)", headcount: "~250 (group)", anz: "No local presence" },
@@ -203,6 +212,7 @@ const COMPETITORS = [
 {
   id: "breezy",
   name: "Breezy HR",
+  domain: "breezy.hr",
   category: "hire",
   assessment: { level: "None", detail: "No native assessment science - questionnaires and third-party integrations only." },
   snapshot: { hq: "Jacksonville, USA (LearnUpon group)", founded: "2014", funding: "Acquired by LearnUpon 2021", headcount: "Part of group", anz: "No local presence" },
@@ -229,6 +239,7 @@ const COMPETITORS = [
 {
   id: "zoho-recruit",
   name: "Zoho Recruit",
+  domain: "zoho.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Basic pre-screening and assessment add-ons within the Zoho ecosystem. Generic, not behavioural science." },
   snapshot: { hq: "Chennai, India", founded: "2009 (Recruit product)", funding: "Private, profitable (Zoho Corp)", headcount: "Zoho Corp 15,000+", anz: "Sells globally, ecosystem-led" },
@@ -255,6 +266,7 @@ const COMPETITORS = [
 {
   id: "expr3ss",
   name: "Expr3ss!",
+  domain: "expr3ss.com",
   category: "hire",
   assessment: { level: "Native", detail: "Has its own predictive hiring/psych profiling angle ('Spot On' matching). Closest local philosophical competitor - but proprietary black-box approach with thinner published validation than Compono's organisational psychology foundation." },
   snapshot: { hq: "Australia", founded: "2004", funding: "Private", headcount: "Small (<50)", anz: "ANZ native - this is their entire market" },
@@ -281,6 +293,7 @@ const COMPETITORS = [
 {
   id: "pageup",
   name: "PageUp",
+  domain: "pageuppeople.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Partner-led assessments. Core strength is enterprise talent workflow, not people science." },
   snapshot: { hq: "Melbourne, Australia", founded: "1997", funding: "PE-owned (Battery Ventures)", headcount: "~400", anz: "Strong ANZ enterprise base, especially government, higher ed, healthcare" },
@@ -307,6 +320,7 @@ const COMPETITORS = [
 {
   id: "livehire",
   name: "LiveHire",
+  domain: "livehire.com",
   category: "hire",
   assessment: { level: "None", detail: "No native assessment science - talent community and direct sourcing focus." },
   snapshot: { hq: "Melbourne, Australia", founded: "2011", funding: "Acquired by Humanforce in 2025; delisted from the ASX (formerly ASX: LVH)", headcount: "~100", anz: "ANZ native, now part of Humanforce" },
@@ -327,12 +341,13 @@ const COMPETITORS = [
     ]
   },
   social: "Light-moderate. Verify on refresh.",
-  recentActivity: [{ date: "Mar 2025", note: "Acquired by Humanforce and delisted from the ASX; now part of the Humanforce group." }]
+  recentActivity: []
 }
 ,
 {
   id: "bullhorn",
   name: "Bullhorn",
+  domain: "bullhorn.com",
   category: "hire",
   assessment: { level: "None", detail: "No native behavioural or work personality assessment. Bullhorn is a staffing and recruitment CRM - any assessment comes from third-party marketplace integrations, not a validated matching model built into the product." },
   snapshot: { hq: "Boston, USA", founded: "1999", funding: "PE-backed (Stone Point Capital and Vista Equity Partners)", headcount: "~1,500", anz: "Sells into ANZ with regional presence, strong among local recruitment agencies" },
@@ -359,6 +374,7 @@ const COMPETITORS = [
 {
   id: "scout-talent",
   name: "Scout Talent",
+  domain: "scouttalent.com.au",
   category: "hire",
   assessment: { level: "None", detail: "No native validated behavioural assessment. Scout Talent focuses on recruitment marketing, sourcing and ATS workflow - candidate quality relies on the recruiter and on advertising reach, not an embedded matching model." },
   snapshot: { hq: "Brisbane, Australia", founded: "2004", funding: "Acquired by AD1 Holdings (ASX-listed) in 2022", headcount: "~200", anz: "ANZ-born, strong local presence and support" },
@@ -385,6 +401,7 @@ const COMPETITORS = [
 {
   id: "recruit-crm",
   name: "Recruit CRM",
+  domain: "recruitcrm.io",
   category: "hire",
   assessment: { level: "None", detail: "No native validated behavioural assessment. Recruit CRM is an agency ATS and CRM - matching is keyword, skills and recruiter-driven, with no embedded work personality model." },
   snapshot: { hq: "Norwood, New Jersey, USA (remote, team largely in India)", founded: "2017", funding: "Bootstrapped and profitable", headcount: "~350", anz: "Sells into ANZ remotely, no dedicated local office" },
@@ -411,6 +428,7 @@ const COMPETITORS = [
 {
   id: "pinpoint",
   name: "Pinpoint",
+  domain: "pinpointhq.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Offers structured scorecards and integrates third-party assessments, and has added AI screening features. These organise and capture opinion - they are not a native validated work personality model matching candidates to role and team." },
   snapshot: { hq: "Jersey, Channel Islands", founded: "2017", funding: "Bootstrapped, no external funding", headcount: "~80", anz: "Sells into ANZ, limited local presence" },
@@ -437,6 +455,7 @@ const COMPETITORS = [
 {
   id: "ashby",
   name: "Ashby",
+  domain: "ashbyhq.com",
   category: "hire",
   assessment: { level: "None", detail: "No native validated behavioural assessment. Ashby's strength is analytics and operating workflow - assessment is via third-party integrations, not an embedded work personality matching model." },
   snapshot: { hq: "San Francisco, USA", founded: "2018", funding: "VC-backed, ~US$130M raised (Series D)", headcount: "~445", anz: "Sells into ANZ remotely, no local office" },
@@ -463,6 +482,7 @@ const COMPETITORS = [
 {
   id: "manatal",
   name: "Manatal",
+  domain: "manatal.com",
   category: "hire",
   assessment: { level: "Basic", detail: "Provides AI candidate scoring and recommendations based on resume-to-job matching. This is keyword and skills inference, not a validated work personality model tied to role and team fit." },
   snapshot: { hq: "Bangkok, Thailand", founded: "2019", funding: "VC-backed, ~US$5M seed (Sequoia Surge)", headcount: "~130", anz: "Sells into ANZ remotely, no local presence" },
@@ -489,6 +509,7 @@ const COMPETITORS = [
 {
   id: "jazzhr",
   name: "JazzHR",
+  domain: "jazzhr.com",
   category: "hire",
   assessment: { level: "None", detail: "No native validated behavioural assessment. JazzHR offers knockout questions and integrates third-party tests - it has no embedded work personality matching model." },
   snapshot: { hq: "Pittsburgh, USA (parent Employ Inc., Waltham)", founded: "2009", funding: "Owned by Employ Inc. (parent of Jobvite, Lever)", headcount: "Part of Employ Inc.", anz: "Sells into ANZ remotely, US-centric" },
@@ -515,6 +536,7 @@ const COMPETITORS = [
 {
   id: "springboard",
   name: "Springboard",
+  domain: "",
   category: "hire",
   assessment: { level: "None", detail: "No native validated behavioural assessment. Springboard is an ANZ talent acquisition suite spanning attraction, ATS and onboarding - reference checking is via an embedded Xref partnership and any psychometric testing is third-party, not a built-in work personality matching model." },
   snapshot: { hq: "Sydney, Australia", founded: "2002", funding: "Privately held (HRX/RPO origins)", headcount: "~50-100", anz: "ANZ-born, strong local presence and support" },
@@ -543,6 +565,7 @@ const COMPETITORS = [
 {
   id: "culture-amp",
   name: "Culture Amp",
+  domain: "cultureamp.com",
   category: "engage",
   snapshot: { hq: "Melbourne, Australia", founded: "2009", funding: "VC-backed, ~US$260M raised, ~US$1.5B valuation (unicorn)", headcount: "~950", anz: "Strong - Melbourne-founded, major local brand" },
   targetMarket: "Mid-market to enterprise, global, HR/people teams",
@@ -562,12 +585,16 @@ const COMPETITORS = [
     ]
   },
   social: "Very strong - one of the loudest HR tech brands globally. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jun 2026", note: "Cut about 70 roles (roughly 9 per cent of staff) in its third round of layoffs in three years, as the new CEO restructures the business." },
+    { date: "Jan 2026", note: "Caroline Rawlinson appointed CEO; founder Didier Elzinga moved to executive chair to focus on AI strategy." }
+  ]
 }
 ,
 {
   id: "peakon",
   name: "Peakon (Workday)",
+  domain: "workday.com",
   category: "engage",
   snapshot: { hq: "Copenhagen / Workday (Pleasanton, USA)", founded: "2014, acquired by Workday 2021", funding: "Workday-owned", headcount: "Within Workday", anz: "Sold through Workday enterprise motion" },
   targetMarket: "Enterprise, especially existing Workday customers",
@@ -593,6 +620,7 @@ const COMPETITORS = [
 {
   id: "lattice",
   name: "Lattice",
+  domain: "lattice.com",
   category: "engage",
   snapshot: { hq: "San Francisco, USA", founded: "2015", funding: "VC-backed, ~US$3B peak valuation era", headcount: "~600", anz: "Sells remotely, modest local presence" },
   targetMarket: "Mid-market, tech-leaning, people ops teams",
@@ -618,6 +646,7 @@ const COMPETITORS = [
 {
   id: "15five",
   name: "15Five",
+  domain: "15five.com",
   category: "engage",
   snapshot: { hq: "San Francisco, USA", founded: "2011", funding: "VC-backed, ~US$80M raised", headcount: "~300", anz: "Remote sales only" },
   targetMarket: "SMB to mid-market, manager-enablement angle",
@@ -643,6 +672,7 @@ const COMPETITORS = [
 {
   id: "qualtrics",
   name: "Qualtrics EmployeeXM",
+  domain: "qualtrics.com",
   category: "engage",
   snapshot: { hq: "Provo/Seattle, USA", founded: "2002", funding: "PE-owned (Silver Lake, ~US$12.5B take-private)", headcount: "~5,000", anz: "Enterprise presence, local enterprise sales" },
   targetMarket: "Enterprise, experience-management buyers",
@@ -662,12 +692,15 @@ const COMPETITORS = [
     ]
   },
   social: "Large corporate presence. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "May 2026", note: "Completed its US$6.75 billion acquisition of Press Ganey Forsta, deepening its healthcare experience data and AI position." }
+  ]
 }
 ,
 {
   id: "leapsome",
   name: "Leapsome",
+  domain: "leapsome.com",
   category: "engage",
   snapshot: { hq: "Berlin, Germany", founded: "2016", funding: "VC-backed, ~US$60M raised", headcount: "~250", anz: "Remote sales only" },
   targetMarket: "European mid-market, expanding globally",
@@ -693,6 +726,7 @@ const COMPETITORS = [
 {
   id: "officevibe",
   name: "Workleap Officevibe",
+  domain: "workleap.com",
   category: "engage",
   snapshot: { hq: "Montreal, Canada", founded: "2013 (Workleap group)", funding: "PE investment in Workleap (~CA$125M)", headcount: "~400 (group)", anz: "Remote only" },
   targetMarket: "SMB, team-manager level entry",
@@ -718,6 +752,7 @@ const COMPETITORS = [
 {
   id: "predictive-index",
   name: "The Predictive Index",
+  domain: "predictiveindex.com",
   category: "engage",
   snapshot: { hq: "Westwood, USA", founded: "1955", funding: "PE-backed (General Catalyst era investment)", headcount: "~400 + partner network", anz: "Sold via certified partner network locally" },
   targetMarket: "SMB to mid-market via consultant/partner channel",
@@ -743,6 +778,7 @@ const COMPETITORS = [
 {
   id: "sapia",
   name: "Sapia.ai",
+  domain: "sapia.ai",
   category: "engage",
   snapshot: { hq: "Melbourne, Australia", founded: "2013 (as PredictiveHire)", funding: "VC-backed, ~A$24M raised (Macquarie, W23)", headcount: "~60", anz: "ANZ native, strong local enterprise logos" },
   targetMarket: "Enterprise volume hiring - retail, contact centres, airlines, banking",
@@ -762,12 +798,16 @@ const COMPETITORS = [
     ]
   },
   social: "Active ANZ presence, AI-ethics-led content. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Apr 2026", note: "Launched Ask Sapia.ai, a public chat tool that explains how its AI hiring decisions work - a push for 'glass box' AI." },
+    { date: "Feb 2026", note: "Launched Phai, a consumer AI career coach, extending the brand beyond employer-side hiring." }
+  ]
 }
 ,
 {
   id: "criteria",
   name: "Criteria Corp",
+  domain: "criteriacorp.com",
   category: "engage",
   snapshot: { hq: "Los Angeles, USA", founded: "2006", funding: "PE-backed (Sumeru ~US$56M)", headcount: "~200", anz: "Yes - acquired Australian video-interview player Alcami; local presence" },
   targetMarket: "SMB to mid-market, test-led hiring buyers",
@@ -793,6 +833,7 @@ const COMPETITORS = [
 {
   id: "harrison",
   name: "Harrison Assessments",
+  domain: "harrisonassessments.com",
   category: "engage",
   snapshot: { hq: "Hong Kong / global partner network", founded: "1990", funding: "Private", headcount: "Partner-distributed model", anz: "Active local consultant/partner network" },
   targetMarket: "Mid-market to enterprise via consultants - talent acquisition and development assessment",
@@ -818,6 +859,7 @@ const COMPETITORS = [
 {
   id: "xref-engage",
   name: "Xref Engage",
+  domain: "xref.com",
   category: "engage",
   snapshot: { hq: "Sydney, Australia", founded: "2009 (Xref); Engage via Voice Project acquisition (2022)", funding: "ASX-listed", headcount: "~100", anz: "ANZ-born, strong local and public sector presence" },
   targetMarket: "ANZ mid-market, government and education, survey-led",
@@ -843,6 +885,7 @@ const COMPETITORS = [
 {
   id: "glint",
   name: "Glint (Microsoft Viva Glint)",
+  domain: "microsoft.com",
   category: "engage",
   snapshot: { hq: "Redwood City, USA (Microsoft)", founded: "2013, acquired by LinkedIn/Microsoft", funding: "Part of Microsoft", headcount: "Part of Microsoft Viva", anz: "Sold globally via Microsoft, no distinct local team" },
   targetMarket: "Enterprise, Microsoft and LinkedIn ecosystem buyers",
@@ -868,6 +911,7 @@ const COMPETITORS = [
 {
   id: "wtw",
   name: "WTW (Willis Towers Watson - Employee Experience)",
+  domain: "wtwco.com",
   category: "engage",
   snapshot: { hq: "London, UK / global", founded: "Towers Watson heritage, merged 2016", funding: "NASDAQ-listed global advisory", headcount: "40,000+ (firm-wide)", anz: "Global advisory with ANZ offices and consultants" },
   targetMarket: "Large enterprise, consulting-led engagement and rewards",
@@ -893,6 +937,7 @@ const COMPETITORS = [
 {
   id: "quantum-workplace",
   name: "Quantum Workplace",
+  domain: "quantumworkplace.com",
   category: "engage",
   snapshot: { hq: "Omaha, USA", founded: "2002", funding: "PE-backed (LLR Partners)", headcount: "~150", anz: "US-centric, sells into ANZ remotely" },
   targetMarket: "US mid-market to enterprise, engagement and performance",
@@ -918,6 +963,7 @@ const COMPETITORS = [
 {
   id: "perceptyx",
   name: "Perceptyx",
+  domain: "perceptyx.com",
   category: "engage",
   snapshot: { hq: "Temecula, USA", founded: "2003", funding: "Growth-equity backed, ~US$80M raised (TCV)", headcount: "~380", anz: "US-centric enterprise, sells into ANZ remotely" },
   targetMarket: "Large enterprise, listening and people analytics",
@@ -937,12 +983,15 @@ const COMPETITORS = [
     ]
   },
   social: "Enterprise people-analytics thought leadership. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Feb 2026", note: "Acquired Lyceum, an AI-native learning platform, moving beyond listening into acting on engagement data." }
+  ]
 }
 ,
 {
   id: "joyous",
   name: "Joyous",
+  domain: "joyoushq.com",
   category: "engage",
   snapshot: { hq: "Auckland, New Zealand", founded: "2018", funding: "VC-backed, ~NZ$15M raised (Square Peg, AirTree)", headcount: "~50", anz: "ANZ-born (NZ), local presence" },
   targetMarket: "Enterprise and large workforces, conversational feedback",
@@ -968,6 +1017,7 @@ const COMPETITORS = [
 {
   id: "shl",
   name: "SHL",
+  domain: "shl.com",
   category: "engage",
   snapshot: { hq: "Thames Ditton, UK / global", founded: "1977", funding: "PE-backed (Exponent era)", headcount: "~1,000 + partner network", anz: "Global, with ANZ offices and partner delivery" },
   targetMarket: "Large enterprise, high-volume assessment and talent measurement",
@@ -993,6 +1043,7 @@ const COMPETITORS = [
 {
   id: "aon-assessment",
   name: "Aon Assessment (formerly cut-e)",
+  domain: "aon.com",
   category: "engage",
   snapshot: { hq: "Hamburg, Germany / global (Aon)", founded: "cut-e 2002, acquired by Aon", funding: "Part of Aon plc (NYSE-listed)", headcount: "Part of Aon", anz: "Global advisory with ANZ delivery" },
   targetMarket: "Large enterprise, high-volume and graduate assessment",
@@ -1018,6 +1069,7 @@ const COMPETITORS = [
 {
   id: "hogan",
   name: "Hogan Assessments",
+  domain: "hoganassessments.com",
   category: "engage",
   snapshot: { hq: "Tulsa, USA", founded: "1987", funding: "Privately held", headcount: "~230 + global distributor network", anz: "Sold via certified local distributors and coaches" },
   targetMarket: "Leadership and executive assessment, mid-market to enterprise via consultants",
@@ -1043,6 +1095,7 @@ const COMPETITORS = [
 {
   id: "thomas-intl",
   name: "Thomas International",
+  domain: "thomas.co",
   category: "engage",
   snapshot: { hq: "Marlow, UK / global", founded: "1981", funding: "Privately held", headcount: "~300 + partner network", anz: "ANZ presence via local office and partners" },
   targetMarket: "SMB to mid-market, behavioural and aptitude assessment",
@@ -1068,6 +1121,7 @@ const COMPETITORS = [
 {
   id: "everything-disc",
   name: "Everything DiSC (Wiley)",
+  domain: "everythingdisc.com",
   category: "engage",
   snapshot: { hq: "USA (John Wiley & Sons)", founded: "DiSC model 1970s; Everything DiSC by Wiley", funding: "Part of Wiley (NYSE-listed)", headcount: "Part of Wiley", anz: "Sold via authorised partners and facilitators locally" },
   targetMarket: "Team development and training, sold via facilitators",
@@ -1093,6 +1147,7 @@ const COMPETITORS = [
 {
   id: "gallup-cliftonstrengths",
   name: "Gallup CliftonStrengths",
+  domain: "gallup.com",
   category: "engage",
   snapshot: { hq: "Washington DC, USA", founded: "Gallup 1935; CliftonStrengths 2001", funding: "Privately held", headcount: "~1,000s (Gallup overall)", anz: "Sold globally and via certified coaches locally" },
   targetMarket: "Strengths-based development and engagement, all sizes via coaches",
@@ -1118,6 +1173,7 @@ const COMPETITORS = [
 {
   id: "plum",
   name: "Plum",
+  domain: "plum.io",
   category: "engage",
   snapshot: { hq: "Kitchener, Canada", founded: "2012", funding: "Acquired by Phenom (US) in 2026; had raised ~C$19M", headcount: "~40", anz: "North America-centric, sells into ANZ remotely" },
   targetMarket: "Mid-market to enterprise, talent assessment and matching",
@@ -1143,6 +1199,7 @@ const COMPETITORS = [
 {
   id: "saville-assessment",
   name: "Saville Assessment",
+  domain: "savilleassessment.com",
   category: "engage",
   snapshot: { hq: "Esher, UK", founded: "2004", funding: "Owned by Tenzing (PE) since 2023; WTW remains preferred partner", headcount: "Part of WTW", anz: "Global with ANZ delivery via WTW and partners" },
   targetMarket: "Mid-market to enterprise, aptitude and personality assessment",
@@ -1168,6 +1225,7 @@ const COMPETITORS = [
 {
   id: "mcquaig",
   name: "McQuaig",
+  domain: "mcquaig.com",
   category: "engage",
   snapshot: { hq: "Toronto, Canada", founded: "1966", funding: "Privately held (The McQuaig Institute)", headcount: "~50 + partner network", anz: "Sold via local distributors and partners" },
   targetMarket: "SMB to mid-market, behavioural hiring and development",
@@ -1195,6 +1253,7 @@ const COMPETITORS = [
 {
   id: "go1",
   name: "Go1",
+  domain: "go1.com",
   category: "develop",
   snapshot: { hq: "Brisbane, Australia", founded: "2015", funding: "VC-backed unicorn, ~US$430M raised, ~US$3B valuation", headcount: "~650", anz: "ANZ-born, strong local presence" },
   targetMarket: "Mid-market to enterprise - content aggregation buyers, often via HRIS/LMS partners",
@@ -1213,12 +1272,16 @@ const COMPETITORS = [
     ]
   },
   social: "Strong ANZ tech brand presence. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Feb 2026", note: "Launched Go1 Pay, letting HR fund manager-led development beyond eLearning." },
+    { date: "Jan 2026", note: "Announced a new product direction built on in-the-flow-of-work learning, led by its AI agent Morgan inside Slack and Teams." }
+  ]
 }
 ,
 {
   id: "cornerstone",
   name: "Cornerstone OnDemand",
+  domain: "cornerstoneondemand.com",
   category: "develop",
   snapshot: { hq: "Santa Monica, USA", founded: "1999", funding: "PE-owned (Clearlake, ~US$5.2B take-private)", headcount: "~3,000", anz: "Enterprise presence locally" },
   targetMarket: "Large enterprise talent/learning suites",
@@ -1237,12 +1300,16 @@ const COMPETITORS = [
     ]
   },
   social: "Large corporate presence. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "May 2026", note: "Launched Cornerstone Workforce AI, repositioning the platform around workforce readiness, skills intelligence and AI agents." },
+    { date: "Mar 2026", note: "Released an Adaptive Learning Agent and AI Course Assistant in its spring release." }
+  ]
 }
 ,
 {
   id: "docebo",
   name: "Docebo",
+  domain: "docebo.com",
   category: "develop",
   snapshot: { hq: "Toronto, Canada (Italian-founded)", founded: "2005", funding: "Public (NASDAQ: DCBO)", headcount: "~900", anz: "Growing local enterprise presence" },
   targetMarket: "Mid-market to enterprise, internal + external (customer/partner) training",
@@ -1261,12 +1328,15 @@ const COMPETITORS = [
     ]
   },
   social: "Active, AI-narrative-led. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Feb 2026", note: "Acquired 365Talents, a skills intelligence platform, to link skills data with learning and workforce decisions." }
+  ]
 }
 ,
 {
   id: "talentlms",
   name: "TalentLMS",
+  domain: "talentlms.com",
   category: "develop",
   snapshot: { hq: "San Francisco, USA (Epignosis)", founded: "2012", funding: "Private/PE-backed (Insight Partners)", headcount: "~300 (Epignosis)", anz: "Self-serve global, no local presence" },
   targetMarket: "SMB, self-serve, budget LMS buyers",
@@ -1291,6 +1361,7 @@ const COMPETITORS = [
 {
   id: "litmos",
   name: "Litmos",
+  domain: "litmos.com",
   category: "develop",
   snapshot: { hq: "San Ramon, USA", founded: "2007 (ex-SAP Litmos, now Francisco Partners)", funding: "PE-owned", headcount: "~300", anz: "NZ-founded heritage, some local base" },
   targetMarket: "Mid-market, compliance and customer training",
@@ -1315,6 +1386,7 @@ const COMPETITORS = [
 {
   id: "learnupon",
   name: "LearnUpon",
+  domain: "learnupon.com",
   category: "develop",
   snapshot: { hq: "Dublin, Ireland", founded: "2012", funding: "PE-backed (Summit Partners US$56M)", headcount: "~300", anz: "Sydney office - real local presence" },
   targetMarket: "Mid-market, multi-audience training (employee + customer + partner)",
@@ -1339,6 +1411,7 @@ const COMPETITORS = [
 {
   id: "360learning",
   name: "360Learning",
+  domain: "360learning.com",
   category: "develop",
   snapshot: { hq: "Paris, France", founded: "2013", funding: "VC-backed, ~US$240M raised", headcount: "~400", anz: "Remote sales only" },
   targetMarket: "Mid-market to enterprise, L&D teams bought into collaborative learning",
@@ -1363,6 +1436,7 @@ const COMPETITORS = [
 {
   id: "acorn-plms",
   name: "Acorn PLMS",
+  domain: "acornlms.com",
   category: "develop",
   snapshot: { hq: "Australia", founded: "Australian-founded (2010s)", funding: "Privately held", headcount: "~100", anz: "ANZ-born, strong local and government presence" },
   targetMarket: "ANZ mid-market, government and enterprise, performance-led learning",
@@ -1387,6 +1461,7 @@ const COMPETITORS = [
 {
   id: "tribal-habits",
   name: "Tribal Habits",
+  domain: "tribalhabits.com",
   category: "develop",
   snapshot: { hq: "Melbourne, Australia", founded: "2015", funding: "Privately held", headcount: "~20", anz: "ANZ-born, local presence" },
   targetMarket: "ANZ SMB to mid-market, content-creation-led learning",
@@ -1411,6 +1486,7 @@ const COMPETITORS = [
 {
   id: "howtoo",
   name: "HowToo",
+  domain: "howtoo.co",
   category: "develop",
   snapshot: { hq: "Sydney, Australia", founded: "2019", funding: "VC-backed", headcount: "~30", anz: "ANZ-born, local presence" },
   targetMarket: "ANZ mid-market, authoring and microlearning led",
@@ -1435,6 +1511,7 @@ const COMPETITORS = [
 {
   id: "thrive",
   name: "Thrive (Thrive Learning)",
+  domain: "thrivelearning.com",
   category: "develop",
   snapshot: { hq: "Manchester, UK", founded: "2010s", funding: "VC/PE-backed", headcount: "~200", anz: "UK-centric, sells into ANZ remotely" },
   targetMarket: "Mid-market to enterprise, learning experience and content",
@@ -1459,6 +1536,7 @@ const COMPETITORS = [
 {
   id: "moodle",
   name: "Moodle",
+  domain: "moodle.com",
   category: "develop",
   snapshot: { hq: "Perth, Australia", founded: "2002", funding: "Open source + Moodle Pty Ltd and partners", headcount: "~200 + global community", anz: "ANZ-born (Perth), global open-source footprint" },
   targetMarket: "Education, government and enterprise, open-source LMS",
@@ -1483,6 +1561,7 @@ const COMPETITORS = [
 {
   id: "edume",
   name: "eduMe",
+  domain: "edume.com",
   category: "develop",
   snapshot: { hq: "London, UK", founded: "2016", funding: "VC-backed", headcount: "~80", anz: "UK/US-centric, sells into ANZ remotely" },
   targetMarket: "Deskless and frontline workforces, mobile microlearning",
@@ -1507,6 +1586,7 @@ const COMPETITORS = [
 {
   id: "ispring-learn",
   name: "iSpring Learn",
+  domain: "ispringsolutions.com",
   category: "develop",
   snapshot: { hq: "Alexandria, USA", founded: "2001", funding: "Privately held", headcount: "~400", anz: "Global, sells into ANZ remotely" },
   targetMarket: "SMB to mid-market, authoring-plus-LMS buyers",
@@ -1531,6 +1611,7 @@ const COMPETITORS = [
 {
   id: "absorb-lms",
   name: "Absorb LMS",
+  domain: "absorblms.com",
   category: "develop",
   snapshot: { hq: "Calgary, Canada", founded: "2003", funding: "PE-backed", headcount: "~600", anz: "Global, with ANZ sales presence" },
   targetMarket: "Mid-market to enterprise, corporate and external training",
@@ -1555,6 +1636,7 @@ const COMPETITORS = [
 {
   id: "sana",
   name: "Sana Labs",
+  domain: "sanalabs.com",
   category: "develop",
   snapshot: { hq: "Stockholm, Sweden", founded: "2016", funding: "Acquired by Workday in 2025; had raised ~US$140M", headcount: "~250", anz: "Europe/US-centric, sells into ANZ remotely" },
   targetMarket: "Mid-market to enterprise, AI-native learning and knowledge",
@@ -1573,12 +1655,15 @@ const COMPETITORS = [
     ]
   },
   social: "High-profile AI-learning content. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "May 2026", note: "Workday shipped Sana-built self-service agents into Microsoft 365 Copilot and across its suite - Sana is now the engine of Workday's agentic AI." }
+  ]
 }
 ,
 {
   id: "degreed",
   name: "Degreed",
+  domain: "degreed.com",
   category: "develop",
   snapshot: { hq: "Pleasanton, USA", founded: "2012", funding: "VC-backed (raised US$400M+)", headcount: "~600", anz: "Global enterprise, sells into ANZ remotely" },
   targetMarket: "Large enterprise, skills and learning experience",
@@ -1603,6 +1688,7 @@ const COMPETITORS = [
 {
   id: "edcast",
   name: "EdCast (Cornerstone)",
+  domain: "cornerstoneondemand.com",
   category: "develop",
   snapshot: { hq: "Mountain View, USA (Cornerstone)", founded: "2013, acquired by Cornerstone 2022", funding: "Part of Cornerstone OnDemand", headcount: "Part of Cornerstone", anz: "Global via Cornerstone, ANZ presence" },
   targetMarket: "Enterprise, learning experience and knowledge",
@@ -1627,6 +1713,7 @@ const COMPETITORS = [
 {
   id: "fuse",
   name: "Fuse Universal",
+  domain: "fuseuniversal.com",
   category: "develop",
   snapshot: { hq: "London, UK", founded: "2008", funding: "VC/PE-backed", headcount: "~150", anz: "UK-centric, sells into ANZ remotely" },
   targetMarket: "Mid-market to enterprise, social and knowledge-led learning",
@@ -1651,6 +1738,7 @@ const COMPETITORS = [
 {
   id: "linkedin-learning",
   name: "LinkedIn Learning",
+  domain: "linkedin.com",
   category: "develop",
   snapshot: { hq: "Sunnyvale, USA (Microsoft)", founded: "Lynda.com 1995, LinkedIn Learning 2016", funding: "Part of Microsoft", headcount: "Part of LinkedIn/Microsoft", anz: "Sold globally via LinkedIn, no distinct local team" },
   targetMarket: "All sizes, content library buyers, LinkedIn ecosystem",
@@ -1675,6 +1763,7 @@ const COMPETITORS = [
 {
   id: "udemy-business",
   name: "Udemy Business",
+  domain: "udemy.com",
   category: "develop",
   snapshot: { hq: "San Francisco, USA", founded: "Udemy 2010, Business arm later", funding: "NASDAQ-listed", headcount: "~1,500 (Udemy overall)", anz: "Global, sells into ANZ remotely" },
   targetMarket: "All sizes, content library buyers, tech-skills heavy",
@@ -1701,6 +1790,7 @@ const COMPETITORS = [
 {
   id: "employment-hero",
   name: "Employment Hero",
+  domain: "employmenthero.com",
   category: "hris",
   snapshot: { hq: "Sydney, Australia", founded: "2014", funding: "VC/PE-backed double unicorn (KKR investor), ~A$2B+ valuation; acquired Humi (Canada) 2025", headcount: "~1,000", anz: "ANZ native, aggressive local growth" },
   targetMarket: "ANZ SMB to lower mid-market, payroll-led",
@@ -1714,12 +1804,16 @@ const COMPETITORS = [
   losses: ["Consolidation economics are seductive for SMBs", "Massive ANZ brand momentum and channel (accountants)", "Payroll gravity - owning payroll makes everything else sticky"],
   battlecard: "Never fight Employment Hero on payroll - concede it, even compliment it. The wedge: ask the prospect to open the hiring or engagement module and find the science. There is none - they are admin features wearing product names. Compono coexists: keep EH for employment admin, use Compono for the decisions that determine who you employ and how they perform. Both/and beats rip-and-replace, and it defuses their consolidation pitch.",
   social: "Very loud ANZ presence, aggressive marketing. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jun 2026", note: "Partnered with Intuit QuickBooks to embed its HeroClear super engine in QuickBooks Payroll ahead of Payday Super starting 1 July 2026." },
+    { date: "Apr 2026", note: "Launched HeroForce, an AI-powered employer-of-record service that takes on payroll, award compliance and super for small businesses." }
+  ]
 }
 ,
 {
   id: "elmo",
   name: "ELMO Software",
+  domain: "elmosoftware.com.au",
   category: "hris",
   snapshot: { hq: "Sydney, Australia", founded: "2002", funding: "PE-owned (K1 take-private from ASX, ~A$486M)", headcount: "~600", anz: "ANZ/UK mid-market staple" },
   targetMarket: "ANZ mid-market HR suites - 200-2,000 employees",
@@ -1739,6 +1833,7 @@ const COMPETITORS = [
 {
   id: "rippling",
   name: "Rippling",
+  domain: "rippling.com",
   category: "hris",
   snapshot: { hq: "San Francisco, USA", founded: "2016", funding: "VC mega-backed, ~US$2B raised, ~US$16.8B valuation", headcount: "~6,000", anz: "Launched ANZ (Sydney) - expanding aggressively with local payroll" },
   targetMarket: "SMB to mid-market, ops/finance-led buyers consolidating HR+IT+finance",
@@ -1752,12 +1847,15 @@ const COMPETITORS = [
   losses: ["Ferocious product velocity and funding", "Consolidation pitch resonates with cost-cutting CFOs", "Slick demo experience"],
   battlecard: "Rippling's genius is admin automation - conceding that costs nothing because it is not our category. The reframe: Rippling treats an employee as a record to provision; Compono treats them as a human to understand. No employee graph tells you whether a candidate fits the team or why a team is misfiring. Coexistence is natural: their rails, our intelligence. Watch their ANZ localisation claims closely on refresh - it is moving fast.",
   social: "Extremely loud, high-velocity marketing. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Feb 2026", note: "Won a US federal court ruling allowing its racketeering and trade-secret lawsuit against Deel to proceed towards trial." }
+  ]
 }
 ,
 {
   id: "bamboohr",
   name: "BambooHR",
+  domain: "bamboohr.com",
   category: "hris",
   snapshot: { hq: "Lindon, Utah, USA", founded: "2008", funding: "Private (ICONIQ Growth and Sorenson Capital backed)", headcount: "~1,800", anz: "Sells remotely, US-centric" },
   targetMarket: "Global SMB HRIS, HR-led buyers",
@@ -1777,6 +1875,7 @@ const COMPETITORS = [
 {
   id: "sage-hr",
   name: "Sage HR / Sage People",
+  domain: "sage.com",
   category: "hris",
   snapshot: { hq: "Newcastle, UK (Sage Group)", founded: "Sage 1981; HR via acquisitions", funding: "Public (LSE: SGE)", headcount: "11,000+ (group)", anz: "Present via Sage accounting ecosystem" },
   targetMarket: "SMB (Sage HR) and mid-market (Sage People) inside Sage finance estates",
@@ -1796,6 +1895,7 @@ const COMPETITORS = [
 {
   id: "humanforce",
   name: "Humanforce",
+  domain: "humanforce.com",
   category: "hris",
   snapshot: { hq: "Sydney, Australia", founded: "2002 (as TimeTarget)", funding: "PE-owned (Accel-KKR); acquired intelliHR, Wagestream AU and LiveHire", headcount: "~300", anz: "ANZ native, frontline-workforce focus" },
   targetMarket: "ANZ frontline/deskless industries - care, hospitality, retail, mining services",
@@ -1809,12 +1909,16 @@ const COMPETITORS = [
   losses: ["Deep frontline/awards moat in ANZ", "Entrenched in care/hospitality verticals we also target"],
   battlecard: "Humanforce owns the roster; the open question is who deserves to be on it. In shared verticals (care especially), the pitch is sequential: Compono selects for personality and care quality - per our childcare/early-learning positioning - and explains team dynamics; Humanforce schedules the result. If their intelliHR module is raised, distinguish dashboards about people from science about how people work.",
   social: "Moderate ANZ presence. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jul 2026", note: "Launched Humanforce HR Analytics and Humanforce Learning, adding AI-driven workforce insight and automated compliance training to its frontline suite." },
+    { date: "Apr 2026", note: "Acquired Emprevo and ShiftMatch and launched Humanforce Connect, a labour fulfilment layer spanning internal, agency and contingent workforces." }
+  ]
 }
 ,
 {
   id: "dayforce",
   name: "Dayforce (Ceridian)",
+  domain: "dayforce.com",
   category: "hris",
   snapshot: { hq: "Minneapolis, USA", founded: "1992 (Ceridian lineage), rebranded Dayforce 2024", funding: "Taken private by Thoma Bravo in 2026 (~US$12.3B); formerly NYSE/TSX: DAY", headcount: "~9,000", anz: "Established ANZ enterprise payroll presence" },
   targetMarket: "Enterprise HCM - payroll-led, 1,000+ employees",
@@ -1834,6 +1938,7 @@ const COMPETITORS = [
 {
   id: "ukg",
   name: "UKG",
+  domain: "ukg.com",
   category: "hris",
   snapshot: { hq: "Lowell/Weston, USA", founded: "2020 merger (Ultimate + Kronos)", funding: "PE-owned (Hellman & Friedman), ~US$22B+ valuation era", headcount: "~15,000", anz: "Workforce-management-led local presence (Kronos heritage)" },
   targetMarket: "Enterprise HCM and workforce management",
@@ -1853,6 +1958,7 @@ const COMPETITORS = [
 {
   id: "hibob",
   name: "HiBob",
+  domain: "hibob.com",
   category: "hris",
   snapshot: { hq: "London, UK / Tel Aviv", founded: "2015", funding: "VC-backed, ~US$600M raised, ~US$2.4B valuation", headcount: "~1,950", anz: "Growing ANZ presence, popular with local scale-ups" },
   targetMarket: "Mid-market, modern people-first HRIS",
@@ -1872,6 +1978,7 @@ const COMPETITORS = [
 {
   id: "worknice",
   name: "Worknice",
+  domain: "worknice.com",
   category: "hris",
   snapshot: { hq: "Sydney, Australia", founded: "2021", funding: "Privately held / early VC", headcount: "~30", anz: "ANZ-born, local focus" },
   targetMarket: "ANZ SMB to lower mid-market, modern core HR",
@@ -1891,6 +1998,7 @@ const COMPETITORS = [
 {
   id: "deputy",
   name: "Deputy",
+  domain: "deputy.com",
   category: "hris",
   snapshot: { hq: "Sydney, Australia", founded: "2008", funding: "VC-backed (raised US$100M+)", headcount: "~400", anz: "ANZ-born, strong global shift-work presence" },
   targetMarket: "Shift-based and hourly workforces, hospitality, retail, healthcare",
@@ -1910,6 +2018,7 @@ const COMPETITORS = [
 {
   id: "tanda",
   name: "Tanda",
+  domain: "tanda.co",
   category: "hris",
   snapshot: { hq: "Brisbane, Australia", founded: "2012", funding: "Privately held / VC", headcount: "~200", anz: "ANZ-born, strong local workforce-management presence" },
   targetMarket: "ANZ shift-based and hourly workforces, retail, hospitality, healthcare",
@@ -1929,6 +2038,7 @@ const COMPETITORS = [
 {
   id: "the-access-group",
   name: "The Access Group",
+  domain: "theaccessgroup.com",
   category: "hris",
   snapshot: { hq: "Loughborough, UK", founded: "1991", funding: "PE-backed (large)", headcount: "~7,000", anz: "Acquired into ANZ (incl. local HR/payroll brands), growing presence" },
   targetMarket: "Mid-market to enterprise, broad business and HR software suite",
@@ -1948,6 +2058,7 @@ const COMPETITORS = [
 {
   id: "personio",
   name: "Personio",
+  domain: "personio.com",
   category: "hris",
   snapshot: { hq: "Munich, Germany", founded: "2015", funding: "VC-backed, ~US$725M raised (unicorn)", headcount: "~1,850", anz: "Europe-centric, limited ANZ presence" },
   targetMarket: "European SMB to mid-market, all-in-one HR",
@@ -1967,6 +2078,7 @@ const COMPETITORS = [
 {
   id: "foundu",
   name: "Foundu",
+  domain: "foundu.com.au",
   category: "hris",
   snapshot: { hq: "Brisbane, Australia", founded: "2017", funding: "Privately held", headcount: "~50", anz: "ANZ-born, local workforce-management focus" },
   targetMarket: "ANZ shift-based and hourly workforces, all-in-one workforce management",
@@ -1986,6 +2098,7 @@ const COMPETITORS = [
 {
   id: "roubler",
   name: "Roubler",
+  domain: "roubler.com",
   category: "hris",
   snapshot: { hq: "Brisbane, Australia", founded: "2015", funding: "Privately held", headcount: "~100", anz: "ANZ-born, also in UK and Asia" },
   targetMarket: "Shift-based and hourly workforces, all-in-one HR and payroll",
@@ -2005,6 +2118,7 @@ const COMPETITORS = [
 {
   id: "adp-workforce-now",
   name: "ADP Workforce Now",
+  domain: "adp.com",
   category: "hris",
   snapshot: { hq: "Roseland, USA", founded: "ADP 1949", funding: "NASDAQ-listed (ADP)", headcount: "60,000+ (ADP overall)", anz: "Global with ANZ payroll and HR presence" },
   targetMarket: "Mid-market to enterprise, payroll-led HCM",
@@ -2024,6 +2138,7 @@ const COMPETITORS = [
 {
   id: "workday",
   name: "Workday",
+  domain: "workday.com",
   category: "hris",
   snapshot: { hq: "Pleasanton, USA", founded: "2005", funding: "NASDAQ-listed", headcount: "~20,000", anz: "Strong ANZ enterprise presence" },
   targetMarket: "Large enterprise, HCM and finance",
@@ -2037,12 +2152,16 @@ const COMPETITORS = [
   losses: ["Dominant enterprise system of record", "Unmatched breadth and data unification at scale", "Deep enterprise credibility and ANZ presence"],
   battlecard: "Workday is the enterprise gravity well - for a true enterprise, it is the system of record and you concede that. Two wedges. First, both/and: Workday's talent and learning modules track process, with no validated behavioural science - keep Workday, add Compono for the decisions. Second, right-sizing: for a 60-1000 employee mid-market prospect, Workday's weight, cost and implementation are a liability, not a benefit. Ask: 'Do you need an enterprise system of record, or people-decision science you can adopt in weeks?' Compono is the latter.",
   social: "Dominant enterprise-HCM brand. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jun 2026", note: "A US federal court allowed state discrimination claims to proceed in the long-running lawsuit alleging bias in Workday's AI screening tools. Buyers are asking harder questions about black-box AI in hiring." },
+    { date: "May 2026", note: "Named a Leader in the 2026 Gartner Magic Quadrant for Talent Acquisition and reported quarterly revenue of US$2.54 billion, up 13.5 per cent." }
+  ]
 }
 ,
 {
   id: "sap-successfactors",
   name: "SAP SuccessFactors",
+  domain: "sap.com",
   category: "hris",
   snapshot: { hq: "Walldorf, Germany (SAP)", founded: "SuccessFactors 2001, SAP acquired 2012", funding: "Part of SAP (NYSE/Frankfurt-listed)", headcount: "Part of SAP", anz: "Strong ANZ enterprise presence" },
   targetMarket: "Large enterprise, global HCM",
@@ -2056,12 +2175,15 @@ const COMPETITORS = [
   losses: ["Enterprise breadth and SAP ecosystem integration", "Global scale and deep enterprise credibility", "Strong ANZ enterprise footprint"],
   battlecard: "SAP SuccessFactors is enterprise infrastructure - for SAP-committed enterprises, concede it as the HCM record. Same two wedges as Workday. Both/and: its modules are process and tracking, no behavioural science - keep SuccessFactors, add Compono for the decisions. Right-sizing: for a mid-market prospect, SuccessFactors' implementation weight and cost are a board-level liability. Ask: 'Do you want enterprise HCM infrastructure, or people-decision science live in weeks?' Compono is defensible, specialist, and light.",
   social: "Enterprise-HCM presence via SAP. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jun 2026", note: "At Sapphire, SAP repositioned its AI stack under new SAP Business AI and Autonomous Suite brands, shifting messaging from AI features to business outcomes." }
+  ]
 }
 ,
 {
   id: "oracle-hcm",
   name: "Oracle HCM (Fusion Cloud HCM)",
+  domain: "oracle.com",
   category: "hris",
   snapshot: { hq: "Austin, USA (Oracle)", founded: "Oracle 1977; Fusion HCM 2011", funding: "NYSE-listed (Oracle)", headcount: "Part of Oracle", anz: "Strong ANZ enterprise presence" },
   targetMarket: "Large enterprise, global HCM and ERP",
@@ -2081,6 +2203,7 @@ const COMPETITORS = [
 {
   id: "xero-payroll",
   name: "Xero Payroll",
+  domain: "xero.com",
   category: "hris",
   snapshot: { hq: "Wellington, New Zealand", founded: "Xero 2006", funding: "ASX-listed", headcount: "~5,000 (Xero overall)", anz: "ANZ-born, dominant small-business accounting and payroll" },
   targetMarket: "ANZ small business, accounting-led payroll",
@@ -2100,6 +2223,7 @@ const COMPETITORS = [
 {
   id: "myob",
   name: "MYOB",
+  domain: "myob.com",
   category: "hris",
   snapshot: { hq: "Melbourne, Australia", founded: "1991", funding: "PE-backed (KKR)", headcount: "~1,500", anz: "ANZ-born, major small-business accounting and payroll" },
   targetMarket: "ANZ small to mid business, accounting-led payroll",
@@ -2119,6 +2243,7 @@ const COMPETITORS = [
 {
   id: "deel",
   name: "Deel",
+  domain: "deel.com",
   category: "hris",
   snapshot: { hq: "San Francisco, USA", founded: "2019", funding: "VC-backed, ~US$1.3B raised, ~US$17B valuation (IPO expected)", headcount: "~9,000", anz: "Global, growing ANZ presence for global hiring" },
   targetMarket: "Companies hiring globally, contractors and EOR, plus emerging HRIS",
@@ -2132,12 +2257,16 @@ const COMPETITORS = [
   losses: ["Best-in-class global payroll, contractor and EOR", "Huge momentum and funding", "Strong fit for distributed and global teams"],
   battlecard: "Deel won the global-employment logistics race - concede it, paying people compliantly across borders is genuinely hard. The wedge is scope: Deel solves how to employ and pay globally; its emerging HRIS is process, with no people-decision science. Ask: 'Deel gets them hired and paid anywhere - but what helps you decide who to hire and whether they fit?' Compono adds validated work personality science. Keep Deel for global employment; add Compono for the decision. Both/and.",
   social: "Very high-profile global-employment brand. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Jul 2026", note: "Asked the court to strike key claims in Rippling's espionage lawsuit after the central witness refused to testify. The dispute keeps trust questions in front of buyers." },
+    { date: "Feb 2026", note: "A US federal court allowed Rippling's racketeering and trade-secret claims to proceed against Deel and its top executives." }
+  ]
 }
 ,
 {
   id: "remote",
   name: "Remote",
+  domain: "remote.com",
   category: "hris",
   snapshot: { hq: "San Francisco, USA (remote-first)", founded: "2019", funding: "VC-backed (raised US$300M+, unicorn)", headcount: "~1,500", anz: "Global, ANZ coverage for global hiring" },
   targetMarket: "Companies hiring globally, EOR and global payroll",
@@ -2151,6 +2280,8 @@ const COMPETITORS = [
   losses: ["Strong global EOR and payroll capability", "Good compliance coverage and momentum", "Solid fit for distributed teams"],
   battlecard: "Remote, like Deel, solves global-employment logistics well - concede it. The wedge is identical: Remote handles the legal and payroll mechanics of employing people internationally; it has no people-decision science. Ask: 'Remote gets them legally employed anywhere - but what tells you they are the right hire?' Compono adds validated work personality matching. Keep Remote for global employment compliance; add Compono for the hiring decision itself. Both/and.",
   social: "High-profile global-employment brand. Verify on refresh.",
-  recentActivity: []
+  recentActivity: [
+    { date: "Feb 2026", note: "Acquired Atlas, a rival employer-of-record provider, consolidating its global employment platform." }
+  ]
 }
 ];

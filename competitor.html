@@ -39,6 +39,22 @@
     document.title = c.name + " - Compono Intelligence Hub";
     const cat = CATEGORIES[c.category];
 
+    // Company logo chip. Uses the competitor's website favicon via Google's
+    // public favicon service (no files to host or maintain). If a competitor
+    // has no domain set, or the image fails, a coloured initial shows instead.
+    function logoChip(domain, name, category, size) {
+      const initial = (name || "?").trim().charAt(0).toUpperCase();
+      const img = domain
+        ? `<img class="logo-img" src="https://www.google.com/s2/favicons?domain=${domain}&sz=128" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : "";
+      return `<span class="logo-chip ${size || ""} ${category || ""}">${img}<span class="logo-fallback"${domain ? ' style="display:none"' : ""}>${initial}</span></span>`;
+    }
+    const compChip = logoChip(c.domain, c.name, c.category);
+    const compChipLg = logoChip(c.domain, c.name, c.category, "lg");
+    const compChipSm = logoChip(c.domain, c.name, c.category, "sm");
+    const componoChipSm = logoChip("compono.com", "Compono", "", "sm");
+    const componoChip = logoChip("compono.com", "Compono", "");
+
     const assessSection = (c.category === "hire" && c.assessment) ? `
       <div class="section">
         <h2>Assessment capability</h2>
@@ -57,7 +73,7 @@
 
       <div class="comp-header">
         <div class="eyebrow">${cat.label} competitor</div>
-        <h1>${c.name}</h1>
+        <div class="comp-title-row">${compChipLg}<h1>${c.name}</h1></div>
         <p style="color:var(--muted); max-width:760px;">${c.summary}</p>
         <div class="card-meta" style="margin-top:14px;">
           <span class="pill">${c.targetMarket}</span>
@@ -104,13 +120,13 @@
         <h2>FAB - theirs vs ours</h2>
         <div class="fab-grid">
           <div class="panel fab-col theirs">
-            <h3>${c.name}'s pitch</h3>
+            <h3>${compChip}<span>${c.name}'s pitch</span></h3>
             <div class="fab-block"><div class="fab-label">Features</div><p>${c.fabTheirs.features}</p></div>
             <div class="fab-block"><div class="fab-label">Advantages</div><p>${c.fabTheirs.advantages}</p></div>
             <div class="fab-block"><div class="fab-label">Benefits</div><p>${c.fabTheirs.benefits}</p></div>
           </div>
           <div class="panel fab-col ours">
-            <h3>Compono in this matchup</h3>
+            <h3>${componoChip}<span>Compono in this matchup</span></h3>
             <div class="fab-block"><div class="fab-label">Features</div><p>${c.fabOurs.features}</p></div>
             <div class="fab-block"><div class="fab-label">Advantages</div><p>${c.fabOurs.advantages}</p></div>
             <div class="fab-block"><div class="fab-label">Benefits</div><p>${c.fabOurs.benefits}</p></div>
@@ -138,7 +154,7 @@
                 <table class="fab-compare-table">
                   <colgroup><col class="col-cap"><col class="col-them"><col class="col-us"></colgroup>
                   <thead>
-                    <tr><th class="cap">Capability</th><th class="vendor">${c.name}</th><th class="vendor us">Compono</th></tr>
+                    <tr><th class="cap">Capability</th><th class="vendor"><span class="th-vendor">${compChipSm}<span>${c.name}</span></span></th><th class="vendor us"><span class="th-vendor">${componoChipSm}<span>Compono</span></span></th></tr>
                   </thead>
                   <tbody>
                     ${g.rows.map(r => `

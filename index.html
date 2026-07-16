@@ -105,6 +105,17 @@
     });
   }
 
+  // Company logo chip. Uses the competitor's website favicon via Google's
+  // public favicon service (no files to host or maintain). If a competitor
+  // has no domain set, or the image fails, a coloured initial shows instead.
+  function logoChip(c, size) {
+    const initial = (c.name || "?").trim().charAt(0).toUpperCase();
+    const img = c.domain
+      ? `<img class="logo-img" src="https://www.google.com/s2/favicons?domain=${c.domain}&sz=128" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      : "";
+    return `<span class="logo-chip ${size || ""} ${c.category}">${img}<span class="logo-fallback"${c.domain ? ' style="display:none"' : ""}>${initial}</span></span>`;
+  }
+
   function assessPill(c) {
     if (c.category !== "hire" || !c.assessment) return "";
     const lvl = c.assessment.level;
@@ -140,7 +151,7 @@
 
     gridEl.innerHTML = list.length ? list.map(c => `
       <a class="comp-card ${c.category}" href="competitor.html?id=${c.id}">
-        <h3>${c.name}</h3>
+        <div class="card-head">${logoChip(c)}<h3>${c.name}</h3></div>
         <div class="card-meta">
           ${searching ? categoryPill(c) : ""}
           <span class="pill">${c.targetMarket.split(",")[0]}</span>

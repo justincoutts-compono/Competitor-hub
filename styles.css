@@ -340,3 +340,54 @@ ul.clean.wins li:hover,ul.clean.losses li:hover{transform:translateX(3px);}
 
 .panel{transition:box-shadow .25s ease;}
 .section:hover>.panel{box-shadow:0 8px 24px -12px rgba(26,25,68,0.15);}
+
+/* ============================================================
+   COMPANY LOGO CHIPS
+   Favicon-based logos with a coloured-initial fallback.
+   Added July 2026 refresh - cards, page headers, FAB columns
+   and the 1-v-1 comparison table headers.
+   ============================================================ */
+.logo-chip{
+  width:34px; height:34px; border-radius:9px;
+  border:1px solid var(--line); background:#fff;
+  display:inline-flex; align-items:center; justify-content:center;
+  overflow:hidden; flex:0 0 auto;
+  box-shadow:0 1px 3px rgba(26,25,68,.06);
+}
+.logo-chip .logo-img{ width:22px; height:22px; object-fit:contain; }
+.logo-chip .logo-fallback{
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:15px; color:#fff; background:var(--navy);
+}
+.logo-chip.hire .logo-fallback{ background:var(--cyan); }
+.logo-chip.engage .logo-fallback{ background:var(--purple); }
+.logo-chip.develop .logo-fallback{ background:var(--coral); }
+.logo-chip.hris .logo-fallback{ background:var(--amber); }
+
+/* Card grid */
+.card-head{ display:flex; align-items:center; gap:12px; }
+.card-head h3{ margin:0; }
+
+/* Competitor page header */
+.comp-title-row{ display:flex; align-items:center; gap:14px; margin:6px 0 10px; }
+.comp-title-row h1{ margin:0; }
+.logo-chip.lg{ width:54px; height:54px; border-radius:14px; }
+.logo-chip.lg .logo-img{ width:36px; height:36px; }
+.logo-chip.lg .logo-fallback{ font-size:22px; }
+
+/* FAB column headings */
+.fab-col h3 .logo-chip{ width:26px; height:26px; border-radius:7px; }
+.fab-col h3 .logo-chip .logo-img{ width:17px; height:17px; }
+.fab-col h3 .logo-chip .logo-fallback{ font-size:12px; }
+
+/* Comparison table headers */
+.logo-chip.sm{ width:20px; height:20px; border-radius:5px; box-shadow:none; }
+.logo-chip.sm .logo-img{ width:14px; height:14px; }
+.logo-chip.sm .logo-fallback{ font-size:10px; }
+.th-vendor{ display:inline-flex; align-items:center; gap:7px; vertical-align:middle; }
+.fab-compare-table th.us .logo-chip.sm{ border-color:rgba(255,255,255,.5); }
+
+@media (max-width:600px){
+  .fab-compare-table .logo-chip.sm{ display:none; }
+}
