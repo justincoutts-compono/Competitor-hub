@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Competitors - Compono Intelligence Hub</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo-horizontal-color.png" alt="Compono">
+      <span class="brand-title">Competitor Intelligence Hub</span>
+    </div>
+    <div class="last-updated">Updated <strong id="lastUpdated"></strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="index.html">← Back to the hub</a>
+
+  <div class="cat-header" id="catHeader"></div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="toolbar">
+    <input type="text" class="search" id="search" placeholder="Search a competitor or a feature they have (eg requisition, SCORM, assessment)...">
+    <span class="tab-desc" id="tabDesc"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.</div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  // Header shows the short date only. The full refresh note sits in the tooltip.
+  const luEl = document.getElementById("lastUpdated");
+  luEl.textContent = LAST_UPDATED.split(" (")[0];
+  luEl.parentElement.title = LAST_UPDATED;
+
+  const tabOrder = ["hire", "engage", "develop", "hris"];
+
+  // The category comes from the URL (set by the home page tiles). Falls back
+  // to the last tab used this session, then to Hire.
+  const urlCat = new URLSearchParams(location.search).get("cat");
+  let activeTab = tabOrder.includes(urlCat) ? urlCat
+    : (sessionStorage.getItem("activeTab") || "hire");
+  sessionStorage.setItem("activeTab", activeTab);
+  let query = "";
+
+  const catHeaderEl = document.getElementById("catHeader");
+  const tabsEl = document.getElementById("tabs");
+  const gridEl = document.getElementById("grid");
+  const descEl = document.getElementById("tabDesc");
+  const searchEl = document.getElementById("search");
+
+  // Build the searchable text for each competitor once, on load.
+  // Capability-true only: this is what a competitor actually HAS.
+  // We include the name (so you can still find them by name), their own
+  // features, a real assessment capability for Hire (Basic or Native, never
+  // None), and the FAB comparison rows they tick (them = yes or partial).
+  // We deliberately leave OUT summary, their marketing pitch and integrations,
+  // so a competitor is not pulled up for a feature just because it appears in
+  // their description, or because they only plug into a partner that does it.
+  function buildSearchText(c) {
+    const parts = [];
+    parts.push(c.name || "");
+    if (Array.isArray(c.features)) parts.push(c.features.join("  "));
+    if (c.category === "hire" && c.assessment && c.assessment.level !== "None") parts.push("assessment");
+    if (c.fabComparison && Array.isArray(c.fabComparison.groups)) {
+      c.fabComparison.groups.forEach(g => {
+        (g.rows || []).forEach(r => {
+          if (r && (r.them === "yes" || r.them === "partial")) parts.push(r.label || "");
+        });
+      });
+    }
+    return parts.join("  ").toLowerCase();
+  }
+  COMPETITORS.forEach(c => { c._search = buildSearchText(c); });
+
+  // All words typed must be present (so "native assessment" narrows the list).
+  function matchesQuery(c) {
+    if (query === "") return true;
+    return query.split(/\s+/).filter(Boolean).every(token => c._search.includes(token));
+  }
+
+  function renderCatHeader() {
+    const cat = CATEGORIES[activeTab];
+    const count = COMPETITORS.filter(c => c.category === activeTab).length;
+    document.title = cat.label + " competitors - Compono Intelligence Hub";
+    catHeaderEl.innerHTML = `
+      <div class="eyebrow"><span class="dot dot-${activeTab}"></span>${cat.label} competitors</div>
+      <h1>${cat.label}</h1>
+      <p>${cat.desc}</p>
+      <div class="cat-count">${count} competitors tracked</div>`;
+    catHeaderEl.className = "cat-header " + activeTab;
+  }
+
+  function renderTabs() {
+    const searching = query !== "";
+    tabsEl.innerHTML = tabOrder.map(key => {
+      const count = COMPETITORS.filter(c => c.category === key).length;
+      const isActive = !searching && key === activeTab;
+      return `<button class="tab ${isActive ? "active" : ""}" data-tab="${key}">
+        <span class="dot dot-${key}"></span>${CATEGORIES[key].label} <span class="count">${count}</span>
+      </button>`;
+    }).join("");
+    tabsEl.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Clicking a tab returns to normal browsing and clears any search.
+        activeTab = btn.dataset.tab;
+        sessionStorage.setItem("activeTab", activeTab);
+        history.replaceState(null, "", "category.html?cat=" + activeTab);
+        query = "";
+        searchEl.value = "";
+        renderCatHeader(); renderTabs(); renderGrid();
+      });
+    });
+  }
+
+  // Company logo chip. Uses the competitor's website favicon via Google's
+  // public favicon service (no files to host or maintain). If a competitor
+  // has no domain set, or the image fails, a coloured initial shows instead.
+  function logoChip(c, size) {
+    const initial = (c.name || "?").trim().charAt(0).toUpperCase();
+    const img = c.domain
+      ? `<img class="logo-img" src="https://www.google.com/s2/favicons?domain=${c.domain}&sz=128" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      : "";
+    return `<span class="logo-chip ${size || ""} ${c.category}">${img}<span class="logo-fallback"${c.domain ? ' style="display:none"' : ""}>${initial}</span></span>`;
+  }
+
+  function assessPill(c) {
+    if (c.category !== "hire" || !c.assessment) return "";
+    const lvl = c.assessment.level;
+    const cls = lvl === "Native" ? "assess-native" : lvl === "Basic" ? "assess-basic" : "assess-none";
+    return `<span class="pill ${cls}">Assessment: ${lvl}</span>`;
+  }
+
+  // Category tag shown on cards when searching across all tabs.
+  function categoryPill(c) {
+    const label = CATEGORIES[c.category] ? CATEGORIES[c.category].label : c.category;
+    return `<span class="pill"><span class="dot dot-${c.category}" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px"></span>${label}</span>`;
+  }
+
+  function renderGrid() {
+    const searching = query !== "";
+
+    // Empty search browses the active tab. A search looks across all categories.
+    const list = searching
+      ? COMPETITORS.filter(matchesQuery)
+      : COMPETITORS.filter(c => c.category === activeTab);
+
+    if (searching) {
+      descEl.textContent = list.length === 1
+        ? "1 competitor matches across all categories"
+        : list.length + " competitors match across all categories";
+    } else {
+      descEl.textContent = "";
+    }
+
+    const emptyMsg = searching
+      ? "No competitors match that search."
+      : "No competitors in this tab.";
+
+    gridEl.innerHTML = list.length ? list.map(c => `
+      <a class="comp-card ${c.category}" href="competitor.html?id=${c.id}">
+        <div class="card-head">${logoChip(c)}<h3>${c.name}</h3></div>
+        <div class="card-meta">
+          ${searching ? categoryPill(c) : ""}
+          <span class="pill">${c.targetMarket.split(",")[0]}</span>
+          ${assessPill(c)}
+        </div>
+        <p>${c.summary}</p>
+        <span class="card-link">Full breakdown →</span>
+      </a>
+    `).join("") : `<p style="color:var(--muted)">${emptyMsg}</p>`;
+  }
+
+  searchEl.addEventListener("input", e => {
+    query = e.target.value.toLowerCase().trim();
+    renderTabs(); renderGrid();
+  });
+
+  renderCatHeader();
+  renderTabs();
+  renderGrid();
+</script>
+</body>
+</html>

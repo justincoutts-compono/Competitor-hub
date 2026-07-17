@@ -69,7 +69,7 @@
       : `<p class="recent-empty">No entries yet - run the monthly refresh prompt to populate this section with the latest product releases, brand messaging changes and partnerships.</p>`;
 
     page.innerHTML = `
-      <a class="back-link" href="index.html">← Back to all competitors</a>
+      <a class="back-link" href="category.html?cat=${c.category}">← Back to ${cat.label} competitors</a>
 
       <div class="comp-header ${c.category}">
         <div class="eyebrow">${cat.label} competitor</div>

@@ -26,18 +26,20 @@
   <div class="home-hero">
     <div class="eyebrow">Internal use only</div>
     <h1>Know the field.<br>Win the conversation.</h1>
-    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Open any competitor for the full breakdown - quick take, FAB, pricing, win/loss reasons, landmine questions and the battle card seed.</p>
+    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Pick a category, or search by company or feature.</p>
     <div class="hero-stats" id="heroStats"></div>
+  </div>
+
+  <div class="toolbar home-toolbar">
+    <input type="text" class="search" id="search" placeholder="Search a competitor or a feature they have (eg requisition, SCORM, assessment)...">
   </div>
 
   <div class="modules" id="modules"></div>
 
-  <div class="toolbar">
-    <input type="text" class="search" id="search" placeholder="Search a competitor or a feature they have (eg requisition, SCORM, assessment)...">
-    <span class="tab-desc" id="tabDesc"></span>
+  <div class="search-results" id="searchResults" hidden>
+    <div class="search-meta" id="searchMeta"></div>
+    <div class="grid" id="grid"></div>
   </div>
-
-  <div class="grid" id="grid"></div>
 </main>
 
 <footer class="site-footer">
@@ -65,23 +67,23 @@
   })();
 
   const tabOrder = ["hire", "engage", "develop", "hris"];
-  let activeTab = sessionStorage.getItem("activeTab") || "hire";
   let query = "";
 
   const modulesEl = document.getElementById("modules");
+  const resultsEl = document.getElementById("searchResults");
   const gridEl = document.getElementById("grid");
-  const descEl = document.getElementById("tabDesc");
+  const metaEl = document.getElementById("searchMeta");
   const searchEl = document.getElementById("search");
 
-  // Short tile copy. The longer category description still shows above the grid.
+  // Short tile copy for the landing cards.
   const MODULE_UI = {
-    hire:    { line: "Applicant tracking systems" },
-    engage:  { line: "Culture, engagement and assessment" },
-    develop: { line: "LMS and capability platforms" },
-    hris:    { line: "Full-suite platforms that overlap" }
+    hire:    { line: "Applicant tracking systems. Process-strong, mostly insight-light." },
+    engage:  { line: "Culture, engagement, personality and behavioural assessment tools." },
+    develop: { line: "LMS and capability platforms, LXPs and content libraries." },
+    hris:    { line: "Full-suite platforms that bleed into Hire, Engage or Develop territory." }
   };
 
-  // Inline icons (Lucide set) - no external requests, prints and loads offline.
+  // Inline icons (Lucide set) - no external requests, loads offline.
   const MODULE_ICONS = {
     hire: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>`,
     engage: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -120,29 +122,18 @@
   }
 
   function renderModules() {
-    const searching = query !== "";
     modulesEl.innerHTML = tabOrder.map(key => {
       const count = COMPETITORS.filter(c => c.category === key).length;
-      const isActive = !searching && key === activeTab;
-      return `<button class="module ${key} ${isActive ? "active" : ""}" data-tab="${key}" aria-pressed="${isActive}">
-        <span class="module-icon">${MODULE_ICONS[key]}</span>
-        <span class="module-body">
-          <span class="module-name">${CATEGORIES[key].label}</span>
-          <span class="module-line">${MODULE_UI[key].line}</span>
+      return `<a class="module ${key}" href="category.html?cat=${key}">
+        <span class="module-top">
+          <span class="module-icon">${MODULE_ICONS[key]}</span>
+          <span class="module-count">${count}</span>
         </span>
-        <span class="module-count">${count}</span>
-      </button>`;
+        <span class="module-name">${CATEGORIES[key].label}</span>
+        <span class="module-line">${MODULE_UI[key].line}</span>
+        <span class="module-go">Browse competitors →</span>
+      </a>`;
     }).join("");
-    modulesEl.querySelectorAll(".module").forEach(btn => {
-      btn.addEventListener("click", () => {
-        // Clicking a module returns to normal browsing and clears any search.
-        activeTab = btn.dataset.tab;
-        sessionStorage.setItem("activeTab", activeTab);
-        query = "";
-        searchEl.value = "";
-        renderModules(); renderGrid();
-      });
-    });
   }
 
   // Company logo chip. Uses the competitor's website favicon via Google's
@@ -163,53 +154,43 @@
     return `<span class="pill ${cls}">Assessment: ${lvl}</span>`;
   }
 
-  // Category tag shown on cards when searching across all tabs.
+  // Category tag - search results span all categories, so always show it.
   function categoryPill(c) {
     const label = CATEGORIES[c.category] ? CATEGORIES[c.category].label : c.category;
     return `<span class="pill"><span class="dot dot-${c.category}" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px"></span>${label}</span>`;
   }
 
-  function renderGrid() {
+  function renderSearch() {
     const searching = query !== "";
+    modulesEl.hidden = searching;
+    resultsEl.hidden = !searching;
+    if (!searching) { gridEl.innerHTML = ""; return; }
 
-    // Empty search browses the active tab. A search looks across all categories.
-    const list = searching
-      ? COMPETITORS.filter(matchesQuery)
-      : COMPETITORS.filter(c => c.category === activeTab);
-
-    if (searching) {
-      descEl.textContent = list.length === 1
-        ? "1 competitor matches across all categories"
-        : list.length + " competitors match across all categories";
-    } else {
-      descEl.textContent = CATEGORIES[activeTab].desc;
-    }
-
-    const emptyMsg = searching
-      ? "No competitors match that search."
-      : "No competitors in this tab.";
+    const list = COMPETITORS.filter(matchesQuery);
+    metaEl.textContent = list.length === 1
+      ? "1 competitor matches across all categories"
+      : list.length + " competitors match across all categories";
 
     gridEl.innerHTML = list.length ? list.map(c => `
       <a class="comp-card ${c.category}" href="competitor.html?id=${c.id}">
         <div class="card-head">${logoChip(c)}<h3>${c.name}</h3></div>
         <div class="card-meta">
-          ${searching ? categoryPill(c) : ""}
+          ${categoryPill(c)}
           <span class="pill">${c.targetMarket.split(",")[0]}</span>
           ${assessPill(c)}
         </div>
         <p>${c.summary}</p>
         <span class="card-link">Full breakdown →</span>
       </a>
-    `).join("") : `<p class="grid-empty">${emptyMsg}</p>`;
+    `).join("") : `<p class="grid-empty">No competitors match that search.</p>`;
   }
 
   searchEl.addEventListener("input", e => {
     query = e.target.value.toLowerCase().trim();
-    renderModules(); renderGrid();
+    renderSearch();
   });
 
   renderModules();
-  renderGrid();
 </script>
 </body>
 </html>
