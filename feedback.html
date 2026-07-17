@@ -68,6 +68,7 @@
     </div>
   </section>
 
+  <div class="fb-filters" id="fbStatusFilters"></div>
   <div class="fb-filters" id="fbFilters"></div>
   <div class="fb-list" id="fbList"></div>
 </main>
@@ -104,6 +105,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
   var listEl = document.getElementById("fbList");
   var filtersEl = document.getElementById("fbFilters");
+  var statusFiltersEl = document.getElementById("fbStatusFilters");
   var formEl = document.getElementById("fbForm");
   var nameEl = document.getElementById("fbName");
   var catEl = document.getElementById("fbCategory");
@@ -115,6 +117,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
   var allPosts = [];
   var activeFilter = "All";
+  var statusFilter = "all";
 
   var configured = SUPABASE_URL.indexOf("YOUR-PROJECT-REF") === -1
     && SUPABASE_ANON_KEY.indexOf("YOUR-ANON") === -1;
@@ -149,6 +152,29 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
     return new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" });
   }
 
+  // Full date and time in Australian eastern time (AEST in winter, AEDT in
+  // summer - the short name shown updates automatically so it is always right).
+  function fmtAEST(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return "";
+    try {
+      return d.toLocaleString("en-AU", {
+        timeZone: "Australia/Sydney",
+        day: "numeric", month: "short", year: "numeric",
+        hour: "numeric", minute: "2-digit", hour12: true,
+        timeZoneName: "short"
+      });
+    } catch (e) {
+      return relTime(iso);
+    }
+  }
+
+  function statusMeta(s) {
+    return (s === "actioned")
+      ? { cls: "actioned", label: "Actioned" }
+      : { cls: "pending", label: "Pending review" };
+  }
+
   function setStatus(msg, kind) {
     statusEl.textContent = msg || "";
     statusEl.className = "fb-status " + (kind || "muted");
@@ -169,26 +195,79 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
     });
   }
 
+  function renderStatusFilters() {
+    var opts = [["all", "All"], ["pending", "Pending review"], ["actioned", "Actioned"]];
+    statusFiltersEl.innerHTML = opts.map(function (o) {
+      return '<button class="fb-filter ' + (o[0] === statusFilter ? "active" : "") +
+        '" data-s="' + o[0] + '">' + esc(o[1]) + "</button>";
+    }).join("");
+    statusFiltersEl.querySelectorAll(".fb-filter").forEach(function (b) {
+      b.addEventListener("click", function () {
+        statusFilter = b.getAttribute("data-s");
+        renderStatusFilters();
+        renderList();
+      });
+    });
+  }
+
   function renderList() {
-    var list = activeFilter === "All"
-      ? allPosts
-      : allPosts.filter(function (p) { return p.category === activeFilter; });
+    var list = allPosts.filter(function (p) {
+      var st = p.status || "pending";
+      var catOk = (activeFilter === "All") || (p.category === activeFilter);
+      var stOk = (statusFilter === "all") || (st === statusFilter);
+      return catOk && stOk;
+    });
 
     if (!list.length) {
-      listEl.innerHTML = '<p class="fb-note">No posts here yet. Add the first one above.</p>';
+      listEl.innerHTML = '<p class="fb-note">No posts match this view.</p>';
       return;
     }
     listEl.innerHTML = list.map(function (p) {
-      return '<div class="fb-post ' + catClass(p.category) + '">' +
+      var st = statusMeta(p.status || "pending");
+      var next = (p.status === "actioned") ? "pending" : "actioned";
+      var toggleLabel = (p.status === "actioned") ? "Mark pending" : "Mark actioned";
+      return '<div class="fb-post ' + st.cls + '">' +
         '<div class="fb-post-top">' +
           '<span class="fb-post-name">' + esc(p.name) + "</span>" +
           '<span class="pill">' + esc(p.category) + "</span>" +
-          '<span class="fb-post-time">' + relTime(p.created_at) + "</span>" +
+          '<span class="fb-status-badge ' + st.cls + '">' + st.label + "</span>" +
+          '<span class="fb-post-time">' + fmtAEST(p.created_at) + "</span>" +
         "</div>" +
         (p.subject ? '<div class="fb-post-subject">' + esc(p.subject) + "</div>" : "") +
         '<div class="fb-post-message">' + esc(p.message) + "</div>" +
+        '<div class="fb-post-actions">' +
+          '<button class="fb-toggle" type="button" data-id="' + esc(p.id) + '" data-next="' + next + '">' + toggleLabel + "</button>" +
+        "</div>" +
       "</div>";
     }).join("");
+
+    listEl.querySelectorAll(".fb-toggle").forEach(function (b) {
+      b.addEventListener("click", function () {
+        updatePostStatus(b.getAttribute("data-id"), b.getAttribute("data-next"), b);
+      });
+    });
+  }
+
+  function updatePostStatus(id, next, btn) {
+    if (!configured || !id) return;
+    if (btn) btn.disabled = true;
+    var h = Object.assign({}, headers, { "Prefer": "return=representation" });
+    fetch(SUPABASE_URL + "/rest/v1/feedback?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: h, body: JSON.stringify({ status: next })
+    }).then(function (res) {
+      if (!res.ok) return res.text().then(function (t) { throw new Error(t || ("update failed " + res.status)); });
+      return res.json();
+    }).then(function (rows) {
+      var updated = rows && rows[0];
+      for (var i = 0; i < allPosts.length; i++) {
+        if (allPosts[i].id === id) { allPosts[i].status = updated ? updated.status : next; break; }
+      }
+      renderList();
+    }).catch(function (err) {
+      console.error(err);
+      if (btn) btn.disabled = false;
+      setStatus("Could not update status. Try again.", "err");
+    });
   }
 
   function loadPosts() {
@@ -226,11 +305,13 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
     addPost({ name: name, category: category, subject: subject || null, message: message })
       .then(function (rows) {
-        var row = rows && rows[0] ? rows[0] : { name: name, category: category, subject: subject || null, message: message, created_at: new Date().toISOString() };
+        var row = rows && rows[0] ? rows[0] : { name: name, category: category, subject: subject || null, message: message, status: "pending", created_at: new Date().toISOString() };
         allPosts.unshift(row);
         subjEl.value = "";
         msgEl.value = "";
         activeFilter = "All";
+        statusFilter = "all";
+        renderStatusFilters();
         renderFilters();
         renderList();
         setStatus("Posted. Thanks for the feedback.", "ok");
@@ -243,6 +324,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
   });
 
   // Init
+  renderStatusFilters();
   renderFilters();
   if (!configured) {
     listEl.innerHTML = '<p class="fb-note err">The feedback board is not connected yet. ' +
