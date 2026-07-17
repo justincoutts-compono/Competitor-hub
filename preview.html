@@ -1,10 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Compono Competitor Intelligence Hub</title>
+<style>
 /* Compono Competitor Intelligence Hub — internal tool styling
    Lighter take on the Compono GTM design system */
 
-@font-face { font-family:"Axiforma"; src:url("./fonts/Axiforma-Regular.otf") format("opentype"); font-weight:400; font-display:swap; }
-@font-face { font-family:"Axiforma"; src:url("./fonts/Axiforma-Medium.otf") format("opentype"); font-weight:500; font-display:swap; }
-@font-face { font-family:"Axiforma"; src:url("./fonts/Axiforma-SemiBold.otf") format("opentype"); font-weight:600; font-display:swap; }
-@font-face { font-family:"Axiforma"; src:url("./fonts/Axiforma-Bold.otf") format("opentype"); font-weight:700; font-display:swap; }
+
+
+
+
 
 :root {
   --navy:#1A1944;
@@ -660,3 +668,235 @@ body.home .grid-empty { color:rgba(255,255,255,.60); }
 
 /* ---------- Footer ---------- */
 body.home .site-footer { border-top-color:rgba(255,255,255,.10); color:rgba(255,255,255,.45); }
+
+</style>
+</head>
+<body class="home">
+
+<div class="home-glow glow-a"></div>
+<div class="home-glow glow-b"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span style="font-weight:700;font-size:19px;color:#fff;letter-spacing:-0.3px;">Compono</span>
+      <span class="brand-title">Competitor Intelligence Hub</span>
+    </div>
+    <div class="last-updated">Updated <strong id="lastUpdated"></strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="home-hero">
+    <div class="eyebrow">Internal use only</div>
+    <h1>Know the field.<br>Win the conversation.</h1>
+    <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Open any competitor for the full breakdown - quick take, FAB, pricing, win/loss reasons, landmine questions and the battle card seed.</p>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+
+  <div class="modules" id="modules"></div>
+
+  <div class="toolbar">
+    <input type="text" class="search" id="search" placeholder="Search a competitor or a feature they have (eg requisition, SCORM, assessment)...">
+    <span class="tab-desc" id="tabDesc"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.</div>
+</footer>
+
+<script>
+
+const LAST_UPDATED = "16 July 2026 (hub v2 - quick take and landmine questions added for every competitor; battle card copy button, upgraded hero, category-coloured pages and print styles)";
+const CATEGORIES = {
+  hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
+  engage:  { label: "Engage",  desc: "Culture, engagement, personality and behavioural assessment tools. Compono Engage explains how people work, not just how they feel." },
+  develop: { label: "Develop", desc: "LMS and capability platforms. Compono Develop tracks what people need, not what they completed." },
+  hris:    { label: "HRIS",    desc: "Full-suite platforms that bleed into Hire, Engage or Develop territory. Broad but shallow - they do everything, master nothing." }
+};
+function mk(id,name,cat,tm,sum,lvl){var o={id:id,name:name,category:cat,targetMarket:tm,summary:sum,features:[],domain:"",fabComparison:{groups:[]}};if(cat==="hire")o.assessment={level:lvl,detail:""};return o;}
+const COMPETITORS = [
+  mk("workable","Workable","hire","SMB to mid-market","Well-known global ATS with AI sourcing and a big job board network. Process-strong, insight-light.","Basic"),
+  mk("lever","Lever","hire","Mid-market","ATS plus CRM in one. Strong pipeline nurture, no native behavioural assessment.","None"),
+  mk("smartrecruiters","SmartRecruiters","hire","Mid-market to enterprise","Enterprise talent acquisition suite, now part of SAP. Broad process tooling.","Basic"),
+  mk("teamtailor","Teamtailor","hire","SMB to mid-market","Employer-branding-first ATS from Sweden. Beautiful career sites, light on insight.","None"),
+  mk("cultureamp","Culture Amp","engage","Mid-market to enterprise","The engagement survey heavyweight. Measures how people feel at scale.",""),
+  mk("peakon","Workday Peakon","engage","Enterprise","Always-on listening inside the Workday estate.",""),
+  mk("docebo","Docebo","develop","Mid-market to enterprise","AI-powered LMS with a large content ecosystem.",""),
+  mk("litmos","Litmos","develop","Mid-market","Fast-to-deploy LMS with a big off-the-shelf course library.",""),
+  mk("elmo","ELMO","hris","ANZ mid-market","ANZ full-suite HRIS that bleeds into all three of our modules.",""),
+  mk("employmenthero","Employment Hero","hris","ANZ SMB","Payroll-led platform sprinting into hiring and engagement.","")
+];
+
+</script>
+<script>
+  // Header shows the short date only. The full refresh note sits in the tooltip.
+  const shortDate = LAST_UPDATED.split(" (")[0];
+  const luEl = document.getElementById("lastUpdated");
+  luEl.textContent = shortDate;
+  luEl.parentElement.title = LAST_UPDATED;
+
+  // Hero stat chips - computed from the data so they never go stale.
+  (function () {
+    const statsEl = document.getElementById("heroStats");
+    if (!statsEl) return;
+    const tables = COMPETITORS.filter(c => c.fabComparison).length;
+    statsEl.innerHTML = `
+      <span class="stat-chip"><strong>${COMPETITORS.length}</strong> competitors</span>
+      <span class="stat-chip"><strong>${Object.keys(CATEGORIES).length}</strong> categories</span>
+      <span class="stat-chip"><strong>${tables}</strong> comparison tables</span>
+      <span class="stat-chip">Refreshed monthly</span>`;
+  })();
+
+  const tabOrder = ["hire", "engage", "develop", "hris"];
+  let activeTab = sessionStorage.getItem("activeTab") || "hire";
+  let query = "";
+
+  const modulesEl = document.getElementById("modules");
+  const gridEl = document.getElementById("grid");
+  const descEl = document.getElementById("tabDesc");
+  const searchEl = document.getElementById("search");
+
+  // Short tile copy. The longer category description still shows above the grid.
+  const MODULE_UI = {
+    hire:    { line: "Applicant tracking systems" },
+    engage:  { line: "Culture, engagement and assessment" },
+    develop: { line: "LMS and capability platforms" },
+    hris:    { line: "Full-suite platforms that overlap" }
+  };
+
+  // Inline icons (Lucide set) - no external requests, prints and loads offline.
+  const MODULE_ICONS = {
+    hire: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>`,
+    engage: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    develop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
+    hris: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>`
+  };
+
+  // Build the searchable text for each competitor once, on load.
+  // Capability-true only: this is what a competitor actually HAS.
+  // We include the name (so you can still find them by name), their own
+  // features, a real assessment capability for Hire (Basic or Native, never
+  // None), and the FAB comparison rows they tick (them = yes or partial).
+  // We deliberately leave OUT summary, their marketing pitch and integrations,
+  // so a competitor is not pulled up for a feature just because it appears in
+  // their description, or because they only plug into a partner that does it.
+  function buildSearchText(c) {
+    const parts = [];
+    parts.push(c.name || "");
+    if (Array.isArray(c.features)) parts.push(c.features.join("  "));
+    if (c.category === "hire" && c.assessment && c.assessment.level !== "None") parts.push("assessment");
+    if (c.fabComparison && Array.isArray(c.fabComparison.groups)) {
+      c.fabComparison.groups.forEach(g => {
+        (g.rows || []).forEach(r => {
+          if (r && (r.them === "yes" || r.them === "partial")) parts.push(r.label || "");
+        });
+      });
+    }
+    return parts.join("  ").toLowerCase();
+  }
+  COMPETITORS.forEach(c => { c._search = buildSearchText(c); });
+
+  // All words typed must be present (so "native assessment" narrows the list).
+  function matchesQuery(c) {
+    if (query === "") return true;
+    return query.split(/\s+/).filter(Boolean).every(token => c._search.includes(token));
+  }
+
+  function renderModules() {
+    const searching = query !== "";
+    modulesEl.innerHTML = tabOrder.map(key => {
+      const count = COMPETITORS.filter(c => c.category === key).length;
+      const isActive = !searching && key === activeTab;
+      return `<button class="module ${key} ${isActive ? "active" : ""}" data-tab="${key}" aria-pressed="${isActive}">
+        <span class="module-icon">${MODULE_ICONS[key]}</span>
+        <span class="module-body">
+          <span class="module-name">${CATEGORIES[key].label}</span>
+          <span class="module-line">${MODULE_UI[key].line}</span>
+        </span>
+        <span class="module-count">${count}</span>
+      </button>`;
+    }).join("");
+    modulesEl.querySelectorAll(".module").forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Clicking a module returns to normal browsing and clears any search.
+        activeTab = btn.dataset.tab;
+        sessionStorage.setItem("activeTab", activeTab);
+        query = "";
+        searchEl.value = "";
+        renderModules(); renderGrid();
+      });
+    });
+  }
+
+  // Company logo chip. Uses the competitor's website favicon via Google's
+  // public favicon service (no files to host or maintain). If a competitor
+  // has no domain set, or the image fails, a coloured initial shows instead.
+  function logoChip(c, size) {
+    const initial = (c.name || "?").trim().charAt(0).toUpperCase();
+    const img = c.domain
+      ? `<img class="logo-img" src="https://www.google.com/s2/favicons?domain=${c.domain}&sz=128" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      : "";
+    return `<span class="logo-chip ${size || ""} ${c.category}">${img}<span class="logo-fallback"${c.domain ? ' style="display:none"' : ""}>${initial}</span></span>`;
+  }
+
+  function assessPill(c) {
+    if (c.category !== "hire" || !c.assessment) return "";
+    const lvl = c.assessment.level;
+    const cls = lvl === "Native" ? "assess-native" : lvl === "Basic" ? "assess-basic" : "assess-none";
+    return `<span class="pill ${cls}">Assessment: ${lvl}</span>`;
+  }
+
+  // Category tag shown on cards when searching across all tabs.
+  function categoryPill(c) {
+    const label = CATEGORIES[c.category] ? CATEGORIES[c.category].label : c.category;
+    return `<span class="pill"><span class="dot dot-${c.category}" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px"></span>${label}</span>`;
+  }
+
+  function renderGrid() {
+    const searching = query !== "";
+
+    // Empty search browses the active tab. A search looks across all categories.
+    const list = searching
+      ? COMPETITORS.filter(matchesQuery)
+      : COMPETITORS.filter(c => c.category === activeTab);
+
+    if (searching) {
+      descEl.textContent = list.length === 1
+        ? "1 competitor matches across all categories"
+        : list.length + " competitors match across all categories";
+    } else {
+      descEl.textContent = CATEGORIES[activeTab].desc;
+    }
+
+    const emptyMsg = searching
+      ? "No competitors match that search."
+      : "No competitors in this tab.";
+
+    gridEl.innerHTML = list.length ? list.map(c => `
+      <a class="comp-card ${c.category}" href="competitor.html?id=${c.id}">
+        <div class="card-head">${logoChip(c)}<h3>${c.name}</h3></div>
+        <div class="card-meta">
+          ${searching ? categoryPill(c) : ""}
+          <span class="pill">${c.targetMarket.split(",")[0]}</span>
+          ${assessPill(c)}
+        </div>
+        <p>${c.summary}</p>
+        <span class="card-link">Full breakdown →</span>
+      </a>
+    `).join("") : `<p class="grid-empty">${emptyMsg}</p>`;
+  }
+
+  searchEl.addEventListener("input", e => {
+    query = e.target.value.toLowerCase().trim();
+    renderModules(); renderGrid();
+  });
+
+  renderModules();
+  renderGrid();
+</script>
+</body>
+</html>
