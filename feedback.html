@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Feedback board - Compono Intelligence Hub</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="feedback">
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo-horizontal-color.png" alt="Compono">
+      <span class="brand-title">Competitor Intelligence Hub</span>
+    </div>
+    <div class="last-updated">Updated <strong id="lastUpdated"></strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="index.html">← Back to the hub</a>
+
+  <div class="fb-header">
+    <div class="eyebrow">Team feedback</div>
+    <h1>Feedback board</h1>
+    <p>Spotted a competitor we are missing, or something that looks out of date? Post it here. The team can see every note. This board is for discussion only - it does not change the competitor pages. Justin reviews posts and updates the data when needed.</p>
+  </div>
+
+  <section class="section">
+    <div class="panel">
+      <form class="fb-form" id="fbForm" autocomplete="off">
+        <div class="fb-row">
+          <div class="fb-field">
+            <label for="fbName">Your name</label>
+            <input class="fb-input" type="text" id="fbName" maxlength="60" placeholder="eg Justin C" required>
+          </div>
+          <div class="fb-field">
+            <label for="fbCategory">Category</label>
+            <select class="fb-select" id="fbCategory">
+              <option>General</option>
+              <option>Hire</option>
+              <option>Engage</option>
+              <option>Develop</option>
+              <option>HRIS</option>
+              <option>New competitor</option>
+            </select>
+          </div>
+        </div>
+        <div class="fb-field">
+          <label for="fbSubject">Competitor or subject (optional)</label>
+          <input class="fb-input" type="text" id="fbSubject" maxlength="80" placeholder="eg Workable, or a pricing note">
+        </div>
+        <div class="fb-field">
+          <label for="fbMessage">Your feedback</label>
+          <textarea class="fb-textarea" id="fbMessage" maxlength="2000" placeholder="What did you notice? Be specific so the team can act on it." required></textarea>
+        </div>
+        <!-- Honeypot: hidden from people, catches simple bots. Leave empty. -->
+        <div class="honeypot" aria-hidden="true">
+          <label>Do not fill this in <input type="text" id="fbWebsite" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="fb-actions">
+          <button class="btn" type="submit" id="fbSubmit">Post feedback</button>
+          <span class="fb-status muted" id="fbStatus"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="fb-filters" id="fbFilters"></div>
+  <div class="fb-list" id="fbList"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Compono internal tool. Feedback is visible to the team and reviewed before any competitor page changes. Not for external distribution.</div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   SUPABASE SETUP - paste your two values here.
+   1. In Supabase, open your project.
+   2. Settings -> API.
+   3. Copy the Project URL into SUPABASE_URL.
+   4. Copy the "anon public" key into SUPABASE_ANON_KEY.
+   These two values are safe to sit in the page. The database
+   rules (see the setup notes) control what they can do:
+   read the board and add a post - nothing else.
+   ============================================================ */
+const SUPABASE_URL = "https://ggfqyizslroqpzfhhxct.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdnZnF5aXpzbHJvcXB6ZmhoeGN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyODAyMjQsImV4cCI6MjA5OTg1NjIyNH0.IBXq0OXNvc4MeX9SwenGfg6r3dH6wxqp3XDwMLP08xQ";
+/* ========================================================== */
+
+(function () {
+  // Header date stamp, same as the rest of the hub.
+  try {
+    var luEl = document.getElementById("lastUpdated");
+    luEl.textContent = LAST_UPDATED.split(" (")[0];
+    luEl.parentElement.title = LAST_UPDATED;
+  } catch (e) {}
+
+  var CATEGORIES_FB = ["General", "Hire", "Engage", "Develop", "HRIS", "New competitor"];
+
+  var listEl = document.getElementById("fbList");
+  var filtersEl = document.getElementById("fbFilters");
+  var formEl = document.getElementById("fbForm");
+  var nameEl = document.getElementById("fbName");
+  var catEl = document.getElementById("fbCategory");
+  var subjEl = document.getElementById("fbSubject");
+  var msgEl = document.getElementById("fbMessage");
+  var hpEl = document.getElementById("fbWebsite");
+  var btnEl = document.getElementById("fbSubmit");
+  var statusEl = document.getElementById("fbStatus");
+
+  var allPosts = [];
+  var activeFilter = "All";
+
+  var configured = SUPABASE_URL.indexOf("YOUR-PROJECT-REF") === -1
+    && SUPABASE_ANON_KEY.indexOf("YOUR-ANON") === -1;
+
+  var headers = {
+    "apikey": SUPABASE_ANON_KEY,
+    "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+    "Content-Type": "application/json"
+  };
+
+  function esc(s) {
+    return (s == null ? "" : String(s)).replace(/[&<>"']/g, function (m) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m];
+    });
+  }
+
+  function catClass(cat) {
+    return {
+      "Hire": "hire", "Engage": "engage", "Develop": "develop",
+      "HRIS": "hris", "New competitor": "new", "General": "general"
+    }[cat] || "general";
+  }
+
+  function relTime(iso) {
+    var t = new Date(iso).getTime();
+    if (isNaN(t)) return "";
+    var s = Math.floor((Date.now() - t) / 1000);
+    if (s < 60) return "just now";
+    var m = Math.floor(s / 60); if (m < 60) return m + " min ago";
+    var h = Math.floor(m / 60); if (h < 24) return h + " hr ago";
+    var d = Math.floor(h / 24); if (d < 7) return d + (d === 1 ? " day ago" : " days ago");
+    return new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  function setStatus(msg, kind) {
+    statusEl.textContent = msg || "";
+    statusEl.className = "fb-status " + (kind || "muted");
+  }
+
+  function renderFilters() {
+    var opts = ["All"].concat(CATEGORIES_FB);
+    filtersEl.innerHTML = opts.map(function (o) {
+      return '<button class="fb-filter ' + (o === activeFilter ? "active" : "") +
+        '" data-f="' + esc(o) + '">' + esc(o) + "</button>";
+    }).join("");
+    filtersEl.querySelectorAll(".fb-filter").forEach(function (b) {
+      b.addEventListener("click", function () {
+        activeFilter = b.getAttribute("data-f");
+        renderFilters();
+        renderList();
+      });
+    });
+  }
+
+  function renderList() {
+    var list = activeFilter === "All"
+      ? allPosts
+      : allPosts.filter(function (p) { return p.category === activeFilter; });
+
+    if (!list.length) {
+      listEl.innerHTML = '<p class="fb-note">No posts here yet. Add the first one above.</p>';
+      return;
+    }
+    listEl.innerHTML = list.map(function (p) {
+      return '<div class="fb-post ' + catClass(p.category) + '">' +
+        '<div class="fb-post-top">' +
+          '<span class="fb-post-name">' + esc(p.name) + "</span>" +
+          '<span class="pill">' + esc(p.category) + "</span>" +
+          '<span class="fb-post-time">' + relTime(p.created_at) + "</span>" +
+        "</div>" +
+        (p.subject ? '<div class="fb-post-subject">' + esc(p.subject) + "</div>" : "") +
+        '<div class="fb-post-message">' + esc(p.message) + "</div>" +
+      "</div>";
+    }).join("");
+  }
+
+  function loadPosts() {
+    return fetch(SUPABASE_URL + "/rest/v1/feedback?select=*&order=created_at.desc", { headers: headers })
+      .then(function (res) {
+        if (!res.ok) throw new Error("read failed " + res.status);
+        return res.json();
+      });
+  }
+
+  function addPost(post) {
+    var h = Object.assign({}, headers, { "Prefer": "return=representation" });
+    return fetch(SUPABASE_URL + "/rest/v1/feedback", {
+      method: "POST", headers: h, body: JSON.stringify(post)
+    }).then(function (res) {
+      if (!res.ok) return res.text().then(function (t) { throw new Error(t || ("write failed " + res.status)); });
+      return res.json();
+    });
+  }
+
+  formEl.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (hpEl.value) return; // bot filled the honeypot - ignore silently
+
+    var name = nameEl.value.trim();
+    var category = catEl.value;
+    var subject = subjEl.value.trim();
+    var message = msgEl.value.trim();
+
+    if (!name || !message) { setStatus("Add your name and a message.", "err"); return; }
+    if (!configured) { setStatus("Board not connected yet. See the setup notes.", "err"); return; }
+
+    btnEl.disabled = true;
+    setStatus("Posting...", "muted");
+
+    addPost({ name: name, category: category, subject: subject || null, message: message })
+      .then(function (rows) {
+        var row = rows && rows[0] ? rows[0] : { name: name, category: category, subject: subject || null, message: message, created_at: new Date().toISOString() };
+        allPosts.unshift(row);
+        subjEl.value = "";
+        msgEl.value = "";
+        activeFilter = "All";
+        renderFilters();
+        renderList();
+        setStatus("Posted. Thanks for the feedback.", "ok");
+      })
+      .catch(function (err) {
+        console.error(err);
+        setStatus("Could not post. Try again in a moment.", "err");
+      })
+      .finally(function () { btnEl.disabled = false; });
+  });
+
+  // Init
+  renderFilters();
+  if (!configured) {
+    listEl.innerHTML = '<p class="fb-note err">The feedback board is not connected yet. ' +
+      'Add your Supabase Project URL and anon key at the top of feedback.html, then follow the setup notes.</p>';
+    return;
+  }
+  listEl.innerHTML = '<p class="fb-note">Loading posts...</p>';
+  loadPosts()
+    .then(function (rows) { allPosts = rows || []; renderList(); })
+    .catch(function (err) {
+      console.error(err);
+      listEl.innerHTML = '<p class="fb-note err">Could not load the board. Refresh to try again.</p>';
+    });
+})();
+</script>
+</body>
+</html>

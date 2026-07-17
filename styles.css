@@ -673,3 +673,107 @@ body.home .grid-empty { color:rgba(255,255,255,.60); }
 
 /* ---------- Footer ---------- */
 body.home .site-footer { border-top-color:rgba(255,255,255,.10); color:rgba(255,255,255,.45); }
+
+/* ============================================================
+   FEEDBACK BOARD
+   feedback.html (light page) plus the home-page tile.
+   Separate discussion layer - does not touch competitor data.
+   ============================================================ */
+
+/* ---------- Home-page feedback tile (full width) ---------- */
+body.home .module.feedback {
+  grid-column:1 / -1;
+  flex-direction:row;
+  align-items:center;
+  gap:22px;
+  min-height:auto;
+  padding:22px 26px;
+}
+body.home .module.feedback .module-icon {
+  flex:none;
+  background:linear-gradient(135deg, #35c6ff, #9a1a8d);
+}
+body.home .module.feedback .fb-text { display:flex; flex-direction:column; gap:4px; flex:1; }
+body.home .module.feedback .module-name { margin-top:0; }
+body.home .module.feedback .module-go { flex:none; }
+body.home .module.feedback:hover {
+  transform:translateY(-3px);
+  border-color:var(--cyan);
+  box-shadow:0 20px 40px -15px rgba(53,198,255,.40);
+}
+@media (max-width:520px){
+  body.home .module.feedback { flex-direction:column; align-items:flex-start; }
+}
+
+/* ---------- Feedback page intro ---------- */
+.fb-header { padding:14px 0 6px; }
+.fb-header .eyebrow { color:var(--blue); }
+.fb-header h1 { font-size:30px; font-weight:700; letter-spacing:-0.3px; margin:8px 0 6px; }
+.fb-header p { color:var(--muted); max-width:720px; font-size:14.5px; }
+
+/* ---------- Post form ---------- */
+.fb-form { display:grid; gap:14px; }
+.fb-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:600px){ .fb-row { grid-template-columns:1fr; } }
+.fb-field { display:flex; flex-direction:column; gap:6px; }
+.fb-field label { font-size:12px; font-weight:600; color:var(--muted); }
+.fb-input, .fb-select, .fb-textarea {
+  font-family:inherit; font-size:14px; color:var(--text);
+  border:1px solid var(--line); border-radius:10px;
+  padding:10px 13px; background:var(--card); width:100%;
+}
+.fb-input:focus, .fb-select:focus, .fb-textarea:focus { outline:none; border-color:var(--blue); }
+.fb-textarea { min-height:110px; resize:vertical; line-height:1.5; }
+.fb-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.honeypot { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+.btn {
+  font-family:inherit; font-size:14px; font-weight:600;
+  border:none; border-radius:9999px; padding:11px 24px;
+  background:var(--blue); color:#fff; cursor:pointer;
+  transition:background .15s ease;
+}
+.btn:hover { background:var(--blue-dark); }
+.btn:disabled { opacity:.55; cursor:not-allowed; }
+
+.fb-status { font-size:13px; }
+.fb-status.err { color:var(--red); }
+.fb-status.ok { color:var(--green); }
+.fb-status.muted { color:var(--muted); }
+
+/* ---------- Filters ---------- */
+.fb-filters { display:flex; gap:8px; flex-wrap:wrap; margin:26px 0 16px; }
+.fb-filter {
+  cursor:pointer; font-family:inherit;
+  font-size:12px; font-weight:600;
+  border-radius:9999px; padding:7px 15px;
+  background:var(--card); color:var(--muted); border:1px solid var(--line);
+  transition:all .15s ease;
+}
+.fb-filter:hover { border-color:var(--blue); color:var(--blue); }
+.fb-filter.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+
+/* ---------- Post list ---------- */
+.fb-list { display:flex; flex-direction:column; gap:14px; }
+.fb-post {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-left:4px solid var(--blue);
+  border-radius:var(--radius);
+  padding:18px 20px;
+}
+.fb-post.hire { border-left-color:var(--cyan); }
+.fb-post.engage { border-left-color:var(--purple); }
+.fb-post.develop { border-left-color:var(--coral); }
+.fb-post.hris { border-left-color:var(--amber); }
+.fb-post.new { border-left-color:var(--green); }
+.fb-post.general { border-left-color:var(--blue); }
+
+.fb-post-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+.fb-post-name { font-weight:700; font-size:14.5px; }
+.fb-post-time { font-size:12px; color:var(--muted); margin-left:auto; }
+.fb-post-subject { font-weight:600; font-size:14px; margin-bottom:4px; }
+.fb-post-message { font-size:14px; color:var(--text); white-space:pre-wrap; overflow-wrap:anywhere; }
+
+.fb-note { color:var(--muted); font-size:14px; padding:18px 0; }
+.fb-note.err { color:var(--red); }
