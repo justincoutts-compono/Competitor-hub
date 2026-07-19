@@ -24,6 +24,10 @@
 
 <main class="wrap">
   <div class="home-hero">
+    <div class="neon-mast">
+      <img class="neon-c" src="assets/logo-c-neon.png" alt="Compono" width="210" height="168">
+      <div class="neon-title">Compono Competitor Intelligence Hub</div>
+    </div>
     <div class="eyebrow">Internal use only</div>
     <h1>Know the field.<br>Win the conversation.</h1>
     <p>Living competitor intelligence across Hire, Engage, Develop and HRIS overlap. Pick a category, or search by company or feature.</p>
@@ -43,7 +47,10 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.</div>
+  <div class="wrap">
+    <div class="footer-updated">Last updated <strong id="footerUpdated"></strong></div>
+    Compono internal tool. Pricing and company data are approximate and verified on the monthly refresh cycle. Not for external distribution.
+  </div>
 </footer>
 
 <script src="data.js"></script>
@@ -53,6 +60,8 @@
   const luEl = document.getElementById("lastUpdated");
   luEl.textContent = shortDate;
   luEl.parentElement.title = LAST_UPDATED;
+  const footerEl = document.getElementById("footerUpdated");
+  if (footerEl) footerEl.textContent = LAST_UPDATED;
 
   // Hero stat chips - computed from the data so they never go stale.
   (function () {

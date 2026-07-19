@@ -798,3 +798,53 @@ body.home .module.feedback:hover {
 }
 .fb-toggle:hover { border-color:var(--blue); color:var(--blue); }
 .fb-toggle:disabled { opacity:.55; cursor:not-allowed; }
+
+/* ============================================================
+   NEON MASTHEAD (home hero)
+   The C logo artwork is unchanged - only a soft light layer
+   around it breathes. Honours reduced-motion preferences.
+   ============================================================ */
+body.home .home-hero {
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+  padding:44px 0 8px;
+}
+body.home .home-hero .hero-stats { justify-content:center; }
+body.home .home-hero p { margin-left:auto; margin-right:auto; }
+
+.neon-mast { display:flex; flex-direction:column; align-items:center; margin-bottom:30px; }
+
+.neon-c {
+  width:210px; height:auto; display:block;
+  animation:neonBreathe 5s ease-in-out infinite;
+  will-change:opacity, filter;
+}
+@keyframes neonBreathe {
+  0%, 100% { opacity:.80; filter:drop-shadow(0 0 8px rgba(120,160,255,.10)); }
+  50%      { opacity:1;   filter:drop-shadow(0 0 26px rgba(120,170,255,.32)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .neon-c { animation:none; opacity:1; filter:drop-shadow(0 0 14px rgba(120,170,255,.20)); }
+}
+
+.neon-title {
+  margin-top:14px;
+  font-size:14px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  color:rgba(255,255,255,.90);
+}
+
+/* Centre the search on the home page under the centred hero */
+body.home .home-toolbar { display:flex; justify-content:center; }
+
+@media (max-width:640px){
+  .neon-c { width:150px; }
+  .neon-title { font-size:12px; letter-spacing:2px; }
+  .neon-mast { margin-bottom:22px; }
+}
+
+/* ---------- Footer last-updated stamp ---------- */
+.footer-updated { margin-bottom:8px; font-size:12.5px; }
+body.home .footer-updated { color:rgba(255,255,255,.62); }
+.footer-updated strong { font-weight:600; }
