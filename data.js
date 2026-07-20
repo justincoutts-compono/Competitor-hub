@@ -6,7 +6,7 @@
    first monthly refresh cycle.
    ============================================================ */
 
-const LAST_UPDATED = "16 July 2026 (hub v2 - quick take and landmine questions added for every competitor; battle card copy button, upgraded hero, category-coloured pages and print styles)";
+const LAST_UPDATED = "20 July 2026 (added five competitors - Develop: Cloud Assess, Ready LMS, SuperPath; Hire: Recruit Wizard, JobTetris)";
 
 const CATEGORIES = {
   hire:    { label: "Hire",    desc: "Pure ATS players. Compono Hire wins on native behavioural insight - most of these are process-only." },
@@ -757,6 +757,80 @@ const COMPETITORS = [
     "Do the third-party tests sit inside the decision, or beside the workflow?"
   ],
   social: "Established ANZ talent-acquisition presence, lower content volume. Verify on refresh.",
+  recentActivity: []
+}
+,
+{
+  id: "recruit-wizard",
+  name: "Recruit Wizard",
+  domain: "recruitwizard.com",
+  category: "hire",
+  assessment: { level: "None", detail: "No native behavioural or psychometric assessment. Its 'AI assessment' means CV screening, shortlisting and note-taking. Any real testing or reference and background checks rely on integrations." },
+  snapshot: { hq: "Sydney, Australia", founded: "~2013", funding: "Privately held, Australian-owned", headcount: "~20", anz: "ANZ-born, local support, agency heartland" },
+  targetMarket: "ANZ recruitment agencies first, plus in-house talent teams. SMB to mid-market",
+  summary: "Australian recruitment CRM and ATS built for agencies and internal talent teams. Combines pipeline tracking with sales-style CRM, built-in e-signing, SMS and email marketing and AI shortlisting.",
+  pricing: "Per user per month. Core about A$99, Premium about A$129 (adds automation and generative AI). E-signing charged per document.",
+  features: ["Recruitment CRM and ATS in one", "Resume parsing and branded CV formatting", "Custom workflows", "Built-in e-signing", "SMS and email marketing from the database", "AI shortlisting and note-taking", "Analytics dashboards"],
+  integrations: ["Seek and job boards", "3CX (telephony)", "Deputy", "Email and calendar", "E-signing", "API"],
+  fabTheirs: { features: "Agency-grade CRM and ATS with strong local support", advantages: "Run the whole recruitment desk - candidates, clients and billing - in one Australian tool", benefits: "Recruiter productivity and a unified agency workflow at a low price" },
+  fabOurs: { features: "Hiring platform with native, validated behavioural matching against role and team", advantages: "Built to improve the hiring decision, not just run the recruitment desk", benefits: "Better quality of hire and decisions you can defend to executives and boards" },
+  wins: ["Zero people insight - a process, CRM and billing tool, not a decision tool", "AI features screen CVs and speed admin; they do not measure fit or predict performance", "Agency-desk DNA means in-house culture and team-fit use cases are an afterthought", "No engagement or development story - single product, not a platform"],
+  losses: ["Genuine agency CRM depth - pipelines, clients and billing in one", "Low price and strong local support", "Purpose-built for how ANZ recruitment agencies actually work"],
+  battlecard: "Recruit Wizard is a capable, low-cost Australian recruitment CRM and ATS - it runs the agency desk well, so respect that. Reframe the category, not the brand: Recruit Wizard manages the recruitment process and the client relationship; Compono improves the hiring decision. Its AI screens CVs and cuts admin, but it has no way to measure fit or predict performance. Ask what happens after the shortlist - how does anyone know the person will actually succeed in the role and team? Compono answers that natively, with validated behavioural science, and the insight carries into engagement and development.",
+  fabComparison: {
+    groups: [
+      { title: "What's expected of an ATS", rows: [{ label: "Job templates and description builder", them: "yes", us: "yes" }, { label: "Requisition and approval workflow", them: "partial", us: "no" }, { label: "Multi-board posting and distribution", them: "yes", us: "yes" }, { label: "Branded careers page / shareable job URL", them: "yes", us: "yes" }, { label: "CV parsing and candidate database", them: "yes", us: "yes" }, { label: "Pipeline, tagging and candidate management", them: "yes", us: "yes" }, { label: "Candidate email messaging, bulk send, templates", them: "yes", us: "yes" }, { label: "SMS / text candidate messaging", them: "yes", us: "no" }, { label: "Collaborative hiring (manager portal, permissions)", them: "yes", us: "yes" }, { label: "Interview scheduling built in", them: "yes", us: "yes" }, { label: "Structured interview scorecards", them: "partial", us: "no" }, { label: "Reference checking", them: "partial", us: "no" }, { label: "Offer management and e-signature", them: "yes", us: "no" }, { label: "Post-offer onboarding", them: "partial", us: "no" }, { label: "Recruitment analytics and reporting", them: "yes", us: "yes" }, { label: "SSO and roles / permissions", them: "partial", us: "partial" }, { label: "HRIS and API integrations", them: "yes", us: "partial" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
+    ]
+  },
+  quickTake: {
+    theirPitch: "Australian agency CRM and ATS in one - run candidates, clients and billing at a low price with local support.",
+    ourAngle: "Recruit Wizard runs the recruitment desk. Compono improves the hiring decision - with validated behavioural science, natively.",
+    watchOut: "Genuine agency CRM depth, low price and strong local support. Reframe the category, not the brand."
+  },
+  landmines: [
+    "After the shortlist, how do you know the person will succeed in the role and team?",
+    "The AI screens CVs and cuts admin - but what does it tell you about fit or performance?",
+    "How do you defend a hire to your executive team - process run, or evidence gathered?"
+  ],
+  social: "Small but active ANZ recruiter-focused presence. Verify on refresh.",
+  recentActivity: []
+}
+,
+{
+  id: "jobtetris",
+  name: "JobTetris",
+  domain: "jobtetris.com",
+  category: "hire",
+  assessment: { level: "None", detail: "No native behavioural or psychometric assessment. Focuses on live candidate availability and pipeline. Compliance and reference checks are captured or integrated, not validated testing." },
+  snapshot: { hq: "Australia", founded: "~2023", funding: "Privately held, early stage", headcount: "Small team", anz: "Australian, local support in AEST business hours" },
+  targetMarket: "Small ANZ recruitment agencies, plus hiring companies and job seekers",
+  summary: "New Australian recruitment platform that connects recruiters, hiring companies and job seekers in one place. Its signature feature is live candidate availability, so recruiters can see who is ready to move right now.",
+  pricing: "Tiered plans including a free tier. Direct Engagement from about A$10 per employee per month, priced by company size.",
+  features: ["Live candidate availability", "Candidate and client pipeline in one system", "Recruiter and client collaboration", "Automated scheduling and workflows", "Forecasting and predictive analytics", "Secure subtenant workspaces for internal hiring", "Job tracking from brief to placement"],
+  integrations: ["JobAdder", "Calendar tools", "Email", "API"],
+  fabTheirs: { features: "One connected system with live candidate availability", advantages: "Stop chasing updates - see who is active and ready to move in real time", benefits: "Less admin and a more predictable recruitment pipeline" },
+  fabOurs: { features: "Hiring platform with native, validated behavioural matching against role and team", advantages: "We show who will fit and perform, not just who is available", benefits: "Better quality of hire and decisions you can defend to executives and boards" },
+  wins: ["Availability is not suitability - knowing who can start is not knowing who will succeed", "A pipeline and CRM tool with no behavioural or fit data", "New and small - limited track record and integrations", "No engagement or development story beyond the hire"],
+  losses: ["A genuinely useful live availability feature", "Simple, low-cost and easy for small agencies", "Free tier lowers the barrier to entry"],
+  battlecard: "JobTetris is a new, low-cost Australian tool with one genuinely smart idea - live candidate availability - so do not dismiss it. But availability is not suitability. Knowing who is ready to move tells you nothing about who will actually fit the role and team. The wedge is simple: JobTetris tells you who is available; Compono tells you who is right. Ask what sits behind the shortlist beyond a CV and an availability status. Compono adds native, validated behavioural matching, and the insight carries into engagement and development long after the placement.",
+  fabComparison: {
+    groups: [
+      { title: "What's expected of an ATS", rows: [{ label: "Job templates and description builder", them: "yes", us: "yes" }, { label: "Requisition and approval workflow", them: "partial", us: "no" }, { label: "Multi-board posting and distribution", them: "partial", us: "yes" }, { label: "Branded careers page / shareable job URL", them: "partial", us: "yes" }, { label: "CV parsing and candidate database", them: "yes", us: "yes" }, { label: "Pipeline, tagging and candidate management", them: "yes", us: "yes" }, { label: "Candidate email messaging, bulk send, templates", them: "partial", us: "yes" }, { label: "SMS / text candidate messaging", them: "partial", us: "no" }, { label: "Collaborative hiring (manager portal, permissions)", them: "yes", us: "yes" }, { label: "Interview scheduling built in", them: "yes", us: "yes" }, { label: "Structured interview scorecards", them: "no", us: "no" }, { label: "Reference checking", them: "partial", us: "no" }, { label: "Offer management and e-signature", them: "partial", us: "no" }, { label: "Post-offer onboarding", them: "no", us: "no" }, { label: "Recruitment analytics and reporting", them: "yes", us: "yes" }, { label: "SSO and roles / permissions", them: "partial", us: "partial" }, { label: "HRIS and API integrations", them: "partial", us: "partial" }] },
+      { title: "What Compono adds (unique value)", rows: [{ label: "Skills mapping with fuzzy logic / relatability", them: "no", us: "yes" }, { label: "Work personality assessment (8 work types)", them: "no", us: "yes" }, { label: "Culture fit benchmark on a role", them: "no", us: "yes" }, { label: "Team fit and team-design insight", them: "no", us: "yes" }, { label: "Job motivation fit (18 dimensions)", them: "no", us: "yes" }, { label: "Explainable, dynamic candidate ranking on fit", them: "no", us: "yes" }, { label: "Insight that carries into engage and develop", them: "no", us: "yes" }] }
+    ]
+  },
+  quickTake: {
+    theirPitch: "New Australian platform with live candidate availability - see who is ready to move right now.",
+    ourAngle: "Availability is not suitability. We show who will fit and perform, not just who can start.",
+    watchOut: "A genuinely smart availability feature and a free tier. New and small, but do not dismiss it."
+  },
+  landmines: [
+    "Knowing who is available is useful - but how do you know who is right?",
+    "What sits behind the shortlist beyond a CV and an availability status?",
+    "Once the placement is made, what happens to that candidate insight?"
+  ],
+  social: "Early-stage ANZ social presence on LinkedIn and Facebook. Verify on refresh.",
   recentActivity: []
 }
 ,
@@ -2065,6 +2139,113 @@ const COMPETITORS = [
     "Is the spend going to better content, or better-targeted content?"
   ],
   social: "Design-led ANZ L&D presence. Verify on refresh.",
+  recentActivity: []
+}
+,
+{
+  id: "cloud-assess",
+  name: "Cloud Assess",
+  domain: "cloudassess.com",
+  category: "develop",
+  snapshot: { hq: "Coomera, Gold Coast, Australia", founded: "2013", funding: "Privately held, Australian-owned", headcount: "~40", anz: "ANZ-born, strong local presence, plus a UK office" },
+  targetMarket: "ANZ RTOs, VET providers and frontline workforces in high-risk industries",
+  summary: "Assessment-first training platform built for Australian RTOs and frontline teams. Strong in mining, construction, healthcare and aged care, with mobile assessment, verification of competency and built-in VET compliance.",
+  pricing: "Per-user subscription. Mid-range, locally contracted. Free trial available.",
+  features: ["Mobile-first assessment and marking", "Offline assessment on the app", "Verification of competency (VOC)", "AI assessment generation and marking", "AVETMISS and ASQA compliance", "Certificates with QR verification", "Student management (SMS) features"],
+  integrations: ["VETtrak", "aXcelerate", "Wisenet", "JobReady", "Humanforce", "Employment Hero", "Turnitin", "Stripe", "Zapier", "SCORM", "LTI", "API"],
+  fabTheirs: { features: "Assessment-first LMS built for VET and frontline compliance", advantages: "Assess and verify competency on any device, even offline, and stay audit-ready", benefits: "Less admin, stronger evidence and audits you can defend" },
+  fabOurs: { features: "Capability diagnosis grounded in work personality and role data, not just competency sign-off", advantages: "Cloud Assess proves someone met a standard; Compono works out what each person needs to grow next", benefits: "Development that builds real capability, not just a compliant record" },
+  wins: ["Verifies competency against set standards, but has no behavioural model of individual need", "Compliance and completion worldview we position against", "Assessment sign-off is a moment; it does not diagnose what to develop next", "Often complementary - can sit beneath Compono's capability intelligence layer"],
+  losses: ["Genuine VET and frontline compliance depth", "Strong mobile and offline assessment - a real strength we do not match", "Trusted ANZ incumbent with audit-ready evidence and good local support"],
+  battlecard: "Cloud Assess is a credible, assessment-first platform for RTOs and frontline compliance - respect that depth, especially the offline mobile assessment. The wedge is diagnosis versus sign-off: Cloud Assess proves a person met an accredited standard, but a tick against a unit is not the same as knowing what that person needs to develop next. Ask: 'Once the competency is signed off, what tells you what to build for this person?' Compono diagnoses capability gaps from work personality and role data - and can add a layer above compliance rather than replace it.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "partial", us: "yes" }, { label: "Native mobile app + offline", them: "yes", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
+  quickTake: {
+    theirPitch: "Assessment-first training and compliance for RTOs and frontline teams - assess on any device, even offline, and stay audit-ready.",
+    ourAngle: "Signing off a competency is not the same as knowing what to develop next. We diagnose the individual - and can sit above compliance, not replace it.",
+    watchOut: "Genuine VET compliance depth and strong offline mobile assessment we do not match."
+  },
+  landmines: [
+    "Once the competency is signed off, what tells you what to build for this person?",
+    "Does proving someone met a standard show you how they will grow or perform?",
+    "What individual data drives development - the unit they passed, or how they work?"
+  ],
+  social: "Solid ANZ VET and frontline training presence. Verify on refresh.",
+  recentActivity: [
+    { date: "Mar 2026", note: "Extended the mobile app to full assessment marking, including partial grading and AI recommendations." }
+  ]
+}
+,
+{
+  id: "ready-lms",
+  name: "Ready LMS (ReadyTech)",
+  domain: "readytech.io",
+  category: "develop",
+  snapshot: { hq: "Sydney, Australia", founded: "ReadyTech founded 1998, LMS launched ~2020", funding: "ASX-listed (ASX: RDY), ~A$122M revenue", headcount: "~365 group-wide", anz: "ANZ-born, strong education-sector presence, 4,000+ providers" },
+  targetMarket: "ANZ education and training providers - RTOs, TAFEs, universities and workforce development",
+  summary: "Learning management system from ASX-listed ReadyTech, powered by aNewSpring. Sold to education and training providers to deliver adaptive learning across the student lifecycle, sitting inside ReadyTech's student management ecosystem.",
+  pricing: "Subscription, contracted through ReadyTech. Often bundled with its student management systems.",
+  features: ["Adaptive and personalised learning", "AI course authoring", "Peer-to-peer and group learning", "Blended live, self-paced and workplace learning", "LTI and SCORM 1.2 support", "SSO and open APIs", "VET and higher-ed compliance"],
+  integrations: ["ReadyTech Ready Student", "VETtrak", "JRPlus", "aNewSpring", "LTI tools", "SCORM content", "Single sign-on", "API"],
+  fabTheirs: { features: "Adaptive LMS tied to a trusted student management ecosystem", advantages: "Personalise learning and manage the whole student journey to completion", benefits: "Better completion, engagement and compliance for education providers" },
+  fabOurs: { features: "Workforce capability intelligence grounded in work personality and role data", advantages: "Ready LMS helps providers deliver courses to students; Compono helps employers work out what their people need", benefits: "Development aimed at real workforce capability, not course completion" },
+  wins: ["Built for education providers delivering to students, not employers developing a workforce - often a different buyer", "Adaptive delivery, but no behavioural model of individual capability need", "Completion and compliance worldview we position against", "Insight stays inside learning; it does not flow across hiring and engagement like Compono's"],
+  losses: ["ASX-listed scale and a large, trusted education install base", "Deep VET and higher-ed compliance (AVETMISS, TEQSA, ASQA)", "Adaptive learning engine via aNewSpring and a connected student management ecosystem"],
+  battlecard: "Ready LMS is a serious, ASX-listed player - but check the buyer first. It is built for education and training providers delivering to students, which is often a different job from an employer developing its own workforce. Where they do overlap, the wedge is diagnosis versus delivery: Ready LMS delivers adaptive courses and tracks completion, but it has no behavioural model of what each employee needs to perform. Ask: 'Is this about running courses for students, or building capability in your team?' Compono diagnoses workforce capability from work personality and role data, and that insight carries across hiring, engagement and development.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "partial", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "partial", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "partial", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
+  quickTake: {
+    theirPitch: "Adaptive, ASX-backed LMS for education providers - personalise learning across the whole student journey.",
+    ourAngle: "That is about delivering courses to students. We help employers diagnose what their workforce needs - insight that carries across hire, engage and develop.",
+    watchOut: "ASX-listed scale, deep education compliance and a large provider install base."
+  },
+  landmines: [
+    "Is this about running courses for students, or building capability in your own team?",
+    "Adaptive delivery is good, but what diagnoses what each employee actually needs?",
+    "Where does the learning insight go next - or does it stay locked in the LMS?"
+  ],
+  social: "Active ASX-listed education-tech brand. Verify on refresh.",
+  recentActivity: []
+}
+,
+{
+  id: "superpath",
+  name: "SuperPath",
+  domain: "superpath.io",
+  category: "develop",
+  snapshot: { hq: "Sydney, Australia", founded: "2020", funding: "Privately held, bootstrapped", headcount: "~10 (small team)", anz: "ANZ-born, local support with a direct (not reseller) relationship" },
+  targetMarket: "ANZ SMB to mid-market, corporate onboarding, compliance and employee development",
+  summary: "Modern, low-cost corporate LMS and LXP for workplace learning. Links learning pathways to role skills and milestones, with an AI course builder, native Australian compliance content and clean HRIS integrations.",
+  pricing: "Transparent, per-user subscription from about AUD $5 per user per month. Also offers monthly active user pricing.",
+  features: ["Role and milestone-linked learning pathways", "Skills and competency tracking", "Career roadmaps and internal mobility", "AI course builder and AI assessments", "Native Australian compliance library (growing)", "Knowledge hub and CPD tracking", "HRIS integrations, API and SSO"],
+  integrations: ["HiBob (two-way)", "HRIS connectors", "Single sign-on", "SCORM 1.2 to 2004 import", "API", "Webhooks"],
+  fabTheirs: { features: "Modern LMS/LXP linking learning to role skills and career roadmaps", advantages: "Automate onboarding and compliance and give staff a clear path to progress, cheaply", benefits: "Measurable, low-admin learning aligned to roles" },
+  fabOurs: { features: "Capability diagnosis from validated work personality and role data, not admin-defined skill lists", advantages: "SuperPath maps learning to skills someone defines; Compono diagnoses what each person actually needs and why", benefits: "Development targeted at real, evidenced capability gaps that carry across the employee lifecycle" },
+  wins: ["Pathways map to role skills, but the skills and milestones are admin-defined, not diagnosed from behaviour", "No validated work personality model behind who needs what", "Completion and compliance worldview we position against, even with skills tracking on top", "Learning-only tool; insight does not flow across hiring and engagement like Compono's"],
+  losses: ["Very low price and genuinely easy to use", "Real skills tracking, career roadmaps and role-linked pathways - closer to our angle than most LMS", "Native Australian compliance content and clean HRIS integration, with direct local support"],
+  battlecard: "SuperPath is the closest of the ANZ LMS pack to our language - it tracks skills, builds role-linked pathways and talks about capability, all at a very low price. Do not dismiss it. The wedge is how the skills are worked out: SuperPath's pathways map to skills and milestones that an admin defines for a role, while Compono diagnoses what each person needs from validated work personality and role data. Ask: 'Where do the skills on that pathway come from - a list someone wrote, or evidence about how this person works?' And remember the lifecycle: Compono's people insight starts at hire and flows into engagement and development, where SuperPath is a learning tool alone.",
+  fabComparison: {
+    groups: [
+      { title: "What an LMS does", rows: [{ label: "Course delivery and hosting", them: "yes", us: "yes" }, { label: "Course authoring built in", them: "yes", us: "yes" }, { label: "Off-the-shelf content library", them: "partial", us: "yes" }, { label: "SCORM support (1.2 / 2004)", them: "yes", us: "yes" }, { label: "xAPI support", them: "no", us: "no" }, { label: "Assessments and quizzes", them: "yes", us: "yes" }, { label: "Certification and certificates", them: "yes", us: "yes" }, { label: "Learning paths", them: "yes", us: "yes" }, { label: "Blended / instructor-led training", them: "yes", us: "yes" }, { label: "Group / cohort management", them: "yes", us: "yes" }, { label: "Completion tracking and reporting", them: "yes", us: "yes" }, { label: "Sell courses externally (e-commerce)", them: "no", us: "yes" }, { label: "Native mobile app + offline", them: "no", us: "no" }, { label: "Mobile browser access", them: "yes", us: "yes" }, { label: "AI content generation", them: "yes", us: "no" }, { label: "SSO and user provisioning", them: "yes", us: "yes" }, { label: "Pre-built HRIS connectors", them: "yes", us: "no" }, { label: "API and webhooks", them: "yes", us: "yes" }] }
+    ]
+  },
+  quickTake: {
+    theirPitch: "Modern, cheap LMS that links learning to role skills and career roadmaps, with AI authoring and AU compliance content.",
+    ourAngle: "Their skills lists are admin-defined. We diagnose what each person needs from validated work personality data - and it carries across hire, engage and develop.",
+    watchOut: "Low price, genuine skills tracking and career roadmaps - closer to our angle than most. Do not dismiss it."
+  },
+  landmines: [
+    "Where do the skills on that pathway come from - a list someone wrote, or evidence about how this person works?",
+    "Skills tracking is good, but what diagnoses the gap in the first place?",
+    "Does that learning insight start at hiring and flow on, or does it live only in the LMS?"
+  ],
+  social: "Growing ANZ L&D and HR-tech content presence. Verify on refresh.",
   recentActivity: []
 }
 ,
