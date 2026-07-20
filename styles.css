@@ -681,6 +681,35 @@ body.home .module-name { font-size:21px; font-weight:700; margin-top:4px; }
 body.home .module-line { font-size:13px; color:rgba(255,255,255,.62); line-height:1.5; flex:1; }
 body.home .module-go { font-size:13px; font-weight:600; color:var(--cyan); }
 
+/* Feedback board - full-width horizontal banner below the category cards */
+body.home .module.feedback {
+  grid-column:1 / -1;
+  flex-direction:row;
+  align-items:center;
+  gap:22px;
+  min-height:0;
+  padding:24px 28px;
+}
+body.home .module.feedback .module-icon {
+  flex:0 0 auto;
+  background:linear-gradient(135deg, var(--cyan), var(--purple));
+}
+body.home .module.feedback .fb-text {
+  display:flex; flex-direction:column; gap:6px;
+  flex:1;
+}
+body.home .module.feedback .fb-text .module-name { margin-top:0; }
+body.home .module.feedback .module-line { flex:none; max-width:78ch; }
+body.home .module.feedback .module-go {
+  margin-left:auto;
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+@media (max-width:640px){
+  body.home .module.feedback { flex-direction:column; align-items:flex-start; gap:14px; }
+  body.home .module.feedback .module-go { margin-left:0; }
+}
+
 /* ---------- Search results on dark ---------- */
 body.home .search-results { padding-bottom:72px; }
 body.home .search-meta { font-size:13px; color:rgba(255,255,255,.60); margin-bottom:16px; }
